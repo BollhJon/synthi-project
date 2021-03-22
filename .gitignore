@@ -1,0 +1,4 @@
+#GitIgnore for synthi project
+synthi_project/quartus/db/
+synthi_project/quartus/incremental_db/
+synthi_project/quartus/output_files/
