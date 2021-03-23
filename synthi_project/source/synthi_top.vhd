@@ -234,8 +234,8 @@ begin  -- architecture str
   -- instance "path_control_1"
   path_control_1: path_control
     port map (
-      dds_l_i     => dds_l_i_sig,
-      dds_r_i     => dds_r_i_sig,
+      dds_l_i     => (others => '0'),
+      dds_r_i     => (others => '0'),
       adcdat_pl_i => adcdat_pl_i_sig,
       adcdat_pr_i => adcdat_pr_i_sig,
       dacdat_pl_o => dacdat_pl_o_sig,
