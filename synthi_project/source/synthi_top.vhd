@@ -6,7 +6,7 @@
 -- Author     :   <domin@DESKTOP-PQBL6RE>
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-03-17
+-- Last update: 2021-03-23
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -69,16 +69,24 @@ architecture str of synthi_top is
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
-  
+  signal rx_data_rdy_sig  : std_logic;
+  signal rx_data_sig      : std_logic_vector(7 DOWNTO 0);
   signal clk_6m_sig       : std_logic;
   signal reset_n_sig      : std_logic;
   signal usb_txd_sync_sig : std_logic;
   signal write_done_sig	  : std_logic;
   signal ack_error_sig	  : std_logic;
-  signal write_sig		  : std_logic;
+  signal write_sig	     : std_logic;
+  signal write_data_sig	  : std_logic_vector(15 downto 0);
+  signal dds_l_i_sig      : std_logic_vector(15 downto 0);
+  signal dds_r_i_sig      : std_logic_vector(15 downto 0);
+  signal adcdat_pl_i_sig  : std_logic_vector(15 downto 0);
+  signal adcdat_pr_i_sig  : std_logic_vector(15 downto 0);
+  signal dacdat_pl_o_sig  : std_logic_vector(15 downto 0);
+  signal dacdat_pr_o_sig  : std_logic_vector(15 downto 0);
+  signal step_o_sig       : std_logic;
+  signal ws_o_sig : std_logic;
   
- signal write_data_sig	  : std_logic_vector(15 downto 0);
- 
  -----------------------------------------------------------------------------
   -- Component declarations
   -----------------------------------------------------------------------------
@@ -100,7 +108,7 @@ architecture str of synthi_top is
       key_0        : in  std_logic;
       usb_txd      : in  std_logic;
       clk_12m      : out std_logic;
-		clk_6m		 : out std_logic;
+      clk_6m	    : out std_logic;
       reset_n      : out std_logic;
       usb_txd_sync : out std_logic;
       ledr_0       : out std_logic);
@@ -129,6 +137,31 @@ architecture str of synthi_top is
       ack_error_o  : out   std_logic);
   end component i2c_master;
 
+  component i2s_master is
+    port (
+      dacdat_pr_i : in  std_logic_vector(15 downto 0);
+      dacdat_pl_i : in  std_logic_vector(15 downto 0);
+      adcdat_s_i  : in  std_logic;
+      clk_6m      : in  std_logic;
+      rst_n       : in  std_logic;
+      dacdat_s_o  : out std_logic;
+      step_o      : out std_logic;
+      ws_o        : out std_logic;
+      adcdat_pl_o : out std_logic_vector(15 downto 0);
+      adcdat_pr_o : out std_logic_vector(15 downto 0));
+  end component i2s_master;
+
+  component path_control is
+    port (
+      dds_l_i     : in  std_logic_vector(15 downto 0);
+      dds_r_i     : in  std_logic_vector(15 downto 0);
+      adcdat_pl_i : in  std_logic_vector(15 downto 0);
+      adcdat_pr_i : in  std_logic_vector(15 downto 0);
+      dacdat_pl_o : out std_logic_vector(15 downto 0);
+      dacdat_pr_o : out std_logic_vector(15 downto 0);
+      sw          : in  std_logic);
+  end component path_control;
+
   
 
   
@@ -144,8 +177,8 @@ begin  -- architecture str
       clk         => clk_6m_sig,
       reset_n     => reset_n_sig,
       ser_data_i  => usb_txd_sync_sig,
---      rx_data_rdy => rx_data_rdy,
---      rx_data     => rx_data,
+      rx_data_rdy => rx_data_rdy_sig,
+      rx_data     => rx_data_sig,
       seg0_o      => HEX0,
       seg1_o      => HEX1);
 
@@ -156,7 +189,7 @@ begin  -- architecture str
       key_0        => KEY_0,
       usb_txd      => USB_TXD,
       clk_6m       => clk_6m_sig,
-		clk_12m		 => AUD_XCK,
+      clk_12m	    => AUD_XCK,
       reset_n      => reset_n_sig,
       usb_txd_sync => usb_txd_sync_sig,
       ledr_0       => LEDR_0);
@@ -183,6 +216,35 @@ begin  -- architecture str
       scl_o        => AUD_SCLK,
       write_done_o => write_done_sig,
       ack_error_o  => ack_error_sig);
+
+  -- instance "i2s_master_1"
+  i2s_master_1: i2s_master
+    port map (
+      dacdat_pr_i => dacdat_pr_o_sig,
+      dacdat_pl_i => dacdat_pl_o_sig,
+      adcdat_s_i  => AUD_ADCDAT,
+      clk_6m      => clk_6m_sig,
+      rst_n       => reset_n_sig,
+      dacdat_s_o  => AUD_DACDAT,
+      step_o      => step_o_sig,
+      ws_o        => ws_o_sig,
+      adcdat_pl_o => adcdat_pl_i_sig,
+      adcdat_pr_o => adcdat_pr_i_sig);
+
+  -- instance "path_control_1"
+  path_control_1: path_control
+    port map (
+      dds_l_i     => dds_l_i_sig,
+      dds_r_i     => dds_r_i_sig,
+      adcdat_pl_i => adcdat_pl_i_sig,
+      adcdat_pr_i => adcdat_pr_i_sig,
+      dacdat_pl_o => dacdat_pl_o_sig,
+      dacdat_pr_o => dacdat_pr_o_sig,
+      sw          => SW(3));
+
+  AUD_BCLK <= not clk_6m_sig;
+  AUD_DACLRCK <= ws_o_sig;
+  AUD_ADCLRCK <= ws_o_sig;
 
 end architecture str;
 
