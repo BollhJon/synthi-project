@@ -24,6 +24,10 @@ vcom -2008 -explicit -work work ../../../source/reg_table_pkg.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/codec_controller.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/i2c_master.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/i2c_slave_bfm.vhd
+vcom -2008 -explicit -work work ../../../source/i2c/i2s_master.vhd
+vcom -2008 -explicit -work work ../../../source/i2c/i2s_frame_generator.vhd
+vcom -2008 -explicit -work work ../../../source/i2c/path_control.vhd
+vcom -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd
 
 vcom -2008 -explicit -work work ../../../source/synthi_top.vhd
 vcom -2008 -explicit -work work ../../../source/synthi_top_tb.vhd

@@ -117,6 +117,8 @@ architecture struct of synthi_top_tb is
   signal reg_data9 : std_logic_vector(31 downto 0);
 
   signal gpi_signals          : std_logic_vector(31 downto 0);
+  signal dacdat_check		  : std_logic_vector(31 downto 0);
+  signal switch				  : std_logic_vector(31 downto 0);
 
   constant clock_freq   : natural := 50_000_000;
   constant clock_period : time    := 1000 ms/clock_freq;
@@ -236,6 +238,10 @@ begin  -- architecture struct
 		gpo_chk(tv, reg_data8);
 	  elsif cmd.all = string'("check_i2c_reg_9") then
 		gpo_chk(tv, reg_data9);
+	  elsif cmd.all = "send_i2s" then
+		i2s_sim(tv, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT);
+	  elsif cmd.all = "check_i2s" then
+		i2s_chk(tv, AUD_DACLRCK, AUD_BCLK, AUD_DACDAT,dacdat_check);
 		
         -- add further test commands below here
 
