@@ -23,6 +23,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.reg_table_pkg.all;
+use work.tone_gen_pkg.all;
 
 -------------------------------------------------------------------------------
 
@@ -86,6 +87,8 @@ architecture str of synthi_top is
   signal dacdat_pr_o_sig  : std_logic_vector(15 downto 0);
   signal step_o_sig       : std_logic;
   signal ws_o_sig : std_logic;
+  signal note_sig : std_logic_vector(6 downto 0);
+  signal velocity_sig : std_logic_vector(7 downto 0);
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -161,6 +164,18 @@ architecture str of synthi_top is
       dacdat_pr_o : out std_logic_vector(15 downto 0);
       sw          : in  std_logic);
   end component path_control;
+  
+  component tone_gen is
+	port(
+		clk_6m            : in  std_logic;
+		reset_n           : in  std_logic;
+		tone_on_i         : in std_logic;
+		note_i            : in std_logic_vector(6 downto 0);
+		step_i            : in std_logic;
+		velocity_i        : in std_logic_vector(7 downto 0);
+		dds_l_o           : out std_logic_vector(15 downto 0);
+		dds_r_o           : out std_logic_vector(15 downto 0));
+  end component tone_gen;
 
   
 
@@ -234,8 +249,8 @@ begin  -- architecture str
   -- instance "path_control_1"
   path_control_1: path_control
     port map (
-      dds_l_i     => (others => '0'),
-      dds_r_i     => (others => '0'),
+      dds_l_i     => dds_l_i_sig,
+      dds_r_i     => dds_r_i_sig,
       adcdat_pl_i => adcdat_pl_i_sig,
       adcdat_pr_i => adcdat_pr_i_sig,
       dacdat_pl_o => dacdat_pl_o_sig,
@@ -245,6 +260,22 @@ begin  -- architecture str
   AUD_BCLK <= not clk_6m_sig;
   AUD_DACLRCK <= ws_o_sig;
   AUD_ADCLRCK <= ws_o_sig;
+  
+  -- instance "tone_gen_1
+  
+  tone_gen_1: tone_gen
+	port map (
+		clk_6m => clk_6m_sig,
+		reset_n => reset_n_sig,
+		step_i		=> step_o_sig,
+		note_i		=> note_sig,
+		velocity_i 	=> velocity_sig,
+		tone_on_i	=> sw(4),
+		dds_l_o		=> dds_l_i_sig,
+		dds_r_o		=> dds_r_i_sig);
+	
+	note_sig <= sw(9 downto 8) & "00000";
+	velocity_sig <= sw(7 downto 5) & "00000";
 
 end architecture str;
 
