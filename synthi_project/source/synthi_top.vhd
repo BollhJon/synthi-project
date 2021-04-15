@@ -6,7 +6,7 @@
 -- Author     :   <domin@DESKTOP-PQBL6RE>
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-03-23
+-- Last update: 2021-04-15
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ architecture str of synthi_top is
   signal usb_txd_sync_sig : std_logic;
   signal write_done_sig	  : std_logic;
   signal ack_error_sig	  : std_logic;
-  signal write_sig	     : std_logic;
+  signal write_sig	  : std_logic;
   signal write_data_sig	  : std_logic_vector(15 downto 0);
   signal dds_l_i_sig      : std_logic_vector(15 downto 0);
   signal dds_r_i_sig      : std_logic_vector(15 downto 0);
@@ -86,9 +86,11 @@ architecture str of synthi_top is
   signal dacdat_pl_o_sig  : std_logic_vector(15 downto 0);
   signal dacdat_pr_o_sig  : std_logic_vector(15 downto 0);
   signal step_o_sig       : std_logic;
-  signal ws_o_sig : std_logic;
-  signal note_sig : std_logic_vector(6 downto 0);
-  signal velocity_sig : std_logic_vector(7 downto 0);
+  signal ws_o_sig         : std_logic;
+  signal note_sig         : std_logic_vector(6 downto 0);
+  signal velocity_sig     : std_logic_vector(7 downto 0);
+  signal codec_rst_n      : std_logic;
+  signal check_rst_n      : std_logic;
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -111,7 +113,7 @@ architecture str of synthi_top is
       key_0        : in  std_logic;
       usb_txd      : in  std_logic;
       clk_12m      : out std_logic;
-      clk_6m	    : out std_logic;
+      clk_6m	   : out std_logic;
       reset_n      : out std_logic;
       usb_txd_sync : out std_logic;
       ledr_0       : out std_logic);
@@ -177,6 +179,13 @@ architecture str of synthi_top is
 		dds_r_o           : out std_logic_vector(15 downto 0));
   end component tone_gen;
 
+  component vector_check is
+    port (
+      vector_i : in  std_logic_vector(2 downto 0);
+      clk_i    : in  std_logic;
+      signal_o : out std_logic);
+  end component vector_check;
+
   
 
   
@@ -204,7 +213,7 @@ begin  -- architecture str
       key_0        => KEY_0,
       usb_txd      => USB_TXD,
       clk_6m       => clk_6m_sig,
-      clk_12m	    => AUD_XCK,
+      clk_12m	   => AUD_XCK,
       reset_n      => reset_n_sig,
       usb_txd_sync => usb_txd_sync_sig,
       ledr_0       => LEDR_0);
@@ -216,7 +225,7 @@ begin  -- architecture str
       write_done_i => write_done_sig,
       ack_error_i  => ack_error_sig,
       clk          => clk_6m_sig,
-      reset_n      => reset_n_sig,
+      reset_n      => codec_rst_n,
       write_o      => write_sig,
       write_data_o => write_data_sig);
 
@@ -276,6 +285,15 @@ begin  -- architecture str
 	
 	note_sig <= sw(9 downto 8) & "00000";
 	velocity_sig <= sw(7 downto 5) & "00000";
+
+  -- instance "vector_check_1"
+  vector_check_1: vector_check
+    port map (
+      vector_i => SW(2 downto 0),
+      clk_i    => clk_6m_sig,
+      signal_o => check_rst_n);
+
+  codec_rst_n <= (not check_rst_n) and reset_n_sig;
 
 end architecture str;
 
