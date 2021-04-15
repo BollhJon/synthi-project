@@ -58,7 +58,16 @@ entity synthi_top is
         HEX0 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
         HEX1 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
 		  
-		  LEDR_0 : out std_logic
+        LEDR_0 : out std_logic;
+        LEDR_1 : out std_logic;
+        LEDR_2 : out std_logic;
+        LEDR_3 : out std_logic;
+        LEDR_4 : out std_logic;
+        LEDR_5 : out std_logic;
+        LEDR_6 : out std_logic;
+        LEDR_7 : out std_logic;
+        LEDR_8 : out std_logic;
+        LEDR_9 : out std_logic
     );
 
 end entity synthi_top;
@@ -72,6 +81,7 @@ architecture str of synthi_top is
   -----------------------------------------------------------------------------
   signal rx_data_rdy_sig  : std_logic;
   signal rx_data_sig      : std_logic_vector(7 DOWNTO 0);
+  signal clk_12m_sig       : std_logic;
   signal clk_6m_sig       : std_logic;
   signal reset_n_sig      : std_logic;
   signal usb_txd_sync_sig : std_logic;
@@ -107,16 +117,21 @@ architecture str of synthi_top is
       seg1_o      : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
   end component uart_top;
 
-  component infrastructure is
+    component infrastructure is
     port (
       clock_50     : in  std_logic;
       key_0        : in  std_logic;
+      key_1        : in  std_logic;
       usb_txd      : in  std_logic;
+      bt_txd       : in  std_logic;
+      clk_6m       : out std_logic;
       clk_12m      : out std_logic;
-      clk_6m	   : out std_logic;
-      reset_n      : out std_logic;
+      key_0_sync   : out std_logic;
+      key_1_sync   : out std_logic;
       usb_txd_sync : out std_logic;
-      ledr_0       : out std_logic);
+      bt_txd_sync  : out std_logic;
+      ledr_0       : out std_logic;
+      ledr_1       : out std_logic);
   end component infrastructure;
 
   component codec_controller is
@@ -168,15 +183,15 @@ architecture str of synthi_top is
   end component path_control;
   
   component tone_gen is
-	port(
-		clk_6m            : in  std_logic;
-		reset_n           : in  std_logic;
-		tone_on_i         : in std_logic;
-		note_i            : in std_logic_vector(6 downto 0);
-		step_i            : in std_logic;
-		velocity_i        : in std_logic_vector(7 downto 0);
-		dds_l_o           : out std_logic_vector(15 downto 0);
-		dds_r_o           : out std_logic_vector(15 downto 0));
+    port(
+      clk_6m            : in  std_logic;
+      reset_n           : in  std_logic;
+      tone_on_i         : in std_logic;
+      note_i            : in std_logic_vector(6 downto 0);
+      step_i            : in std_logic;
+      velocity_i        : in std_logic_vector(7 downto 0);
+      dds_l_o           : out std_logic_vector(15 downto 0);
+      dds_r_o           : out std_logic_vector(15 downto 0));
   end component tone_gen;
 
   component vector_check is
@@ -186,7 +201,6 @@ architecture str of synthi_top is
       signal_o : out std_logic);
   end component vector_check;
 
-  
 
   
 begin  -- architecture str
@@ -211,12 +225,17 @@ begin  -- architecture str
     port map (
       clock_50     => CLOCK_50,
       key_0        => KEY_0,
+      key_1        => KEY_1,
       usb_txd      => USB_TXD,
+      bt_txd       => BT_TXD,
       clk_6m       => clk_6m_sig,
-      clk_12m	   => AUD_XCK,
-      reset_n      => reset_n_sig,
+      clk_12m      => clk_12m_sig,
+      key_0_sync   => reset_n_sig,
+      key_1_sync   => open,
       usb_txd_sync => usb_txd_sync_sig,
-      ledr_0       => LEDR_0);
+      bt_txd_sync  => open,
+      ledr_0       => LEDR_0,
+      ledr_1       => open);
 
   -- instance "codec_controller_1"
   codec_controller_1: codec_controller
@@ -273,18 +292,18 @@ begin  -- architecture str
   -- instance "tone_gen_1
   
   tone_gen_1: tone_gen
-	port map (
-		clk_6m => clk_6m_sig,
-		reset_n => reset_n_sig,
-		step_i		=> step_o_sig,
-		note_i		=> note_sig,
-		velocity_i 	=> velocity_sig,
-		tone_on_i	=> sw(4),
-		dds_l_o		=> dds_l_i_sig,
-		dds_r_o		=> dds_r_i_sig);
+    port map (
+      clk_6m    => clk_6m_sig,
+      reset_n   => reset_n_sig,
+      step_i	=> step_o_sig,
+      note_i	=> note_sig,
+      velocity_i=> velocity_sig,
+      tone_on_i	=> sw(4),
+      dds_l_o	=> dds_l_i_sig,
+      dds_r_o	=> dds_r_i_sig);
 	
-	note_sig <= sw(9 downto 8) & "00000";
-	velocity_sig <= sw(7 downto 5) & "00000";
+  note_sig <= sw(9 downto 8) & "00000";
+  velocity_sig <= sw(7 downto 5) & "00000";
 
   -- instance "vector_check_1"
   vector_check_1: vector_check
@@ -294,6 +313,7 @@ begin  -- architecture str
       signal_o => check_rst_n);
 
   codec_rst_n <= (not check_rst_n) and reset_n_sig;
+
 
 end architecture str;
 
