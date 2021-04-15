@@ -57,6 +57,10 @@ entity synthi_top is
 
         HEX0 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
         HEX1 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
+        HEX2 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
+        HEX3 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
+       -- HEX4 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
+       -- HEX5 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
 		  
         LEDR_0 : out std_logic;
         LEDR_1 : out std_logic;
@@ -79,12 +83,15 @@ architecture str of synthi_top is
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
-  signal rx_data_rdy_sig  : std_logic;
-  signal rx_data_sig      : std_logic_vector(7 DOWNTO 0);
-  signal clk_12m_sig       : std_logic;
+  signal usb_data_rdy_sig  : std_logic;
+  signal usb_data_sig      : std_logic_vector(7 DOWNTO 0);
+  signal bt_data_rdy_sig  : std_logic;
+  signal bt_data_sig      : std_logic_vector(7 DOWNTO 0);
+  signal clk_12m_sig      : std_logic;
   signal clk_6m_sig       : std_logic;
   signal reset_n_sig      : std_logic;
   signal usb_txd_sync_sig : std_logic;
+  signal bt_txd_sync_sig  : std_logic;
   signal write_done_sig	  : std_logic;
   signal ack_error_sig	  : std_logic;
   signal write_sig	  : std_logic;
@@ -99,8 +106,8 @@ architecture str of synthi_top is
   signal ws_o_sig         : std_logic;
   signal note_sig         : std_logic_vector(6 downto 0);
   signal velocity_sig     : std_logic_vector(7 downto 0);
-  signal codec_rst_n      : std_logic;
-  signal check_rst_n      : std_logic;
+  signal codec_rst_n_sig      : std_logic;
+  signal check_rst_n_sig      : std_logic;
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -215,10 +222,21 @@ begin  -- architecture str
       clk         => clk_6m_sig,
       reset_n     => reset_n_sig,
       ser_data_i  => usb_txd_sync_sig,
-      rx_data_rdy => rx_data_rdy_sig,
-      rx_data     => rx_data_sig,
+      rx_data_rdy => usb_data_rdy_sig,
+      rx_data     => usb_data_sig,
       seg0_o      => HEX0,
       seg1_o      => HEX1);
+
+  -- instance "uart_top_2"
+  uart_top_2: uart_top
+    port map (
+      clk         => clk_12m_sig,
+      reset_n     => reset_n_sig,
+      ser_data_i  => bt_txd_sync_sig,
+      rx_data_rdy => bt_data_rdy_sig,
+      rx_data     => bt_data_sig,
+      seg0_o      => HEX2,
+      seg1_o      => HEX3);
 
   -- instance "infrastructure_1"
   infrastructure_1: infrastructure
@@ -233,9 +251,9 @@ begin  -- architecture str
       key_0_sync   => reset_n_sig,
       key_1_sync   => open,
       usb_txd_sync => usb_txd_sync_sig,
-      bt_txd_sync  => open,
+      bt_txd_sync  => bt_txd_sync_sig,
       ledr_0       => LEDR_0,
-      ledr_1       => open);
+      ledr_1       => LEDR_1);
 
   -- instance "codec_controller_1"
   codec_controller_1: codec_controller
@@ -244,7 +262,7 @@ begin  -- architecture str
       write_done_i => write_done_sig,
       ack_error_i  => ack_error_sig,
       clk          => clk_6m_sig,
-      reset_n      => codec_rst_n,
+      reset_n      => codec_rst_n_sig,
       write_o      => write_sig,
       write_data_o => write_data_sig);
 
@@ -310,9 +328,9 @@ begin  -- architecture str
     port map (
       vector_i => SW(2 downto 0),
       clk_i    => clk_6m_sig,
-      signal_o => check_rst_n);
+      signal_o => check_rst_n_sig);
 
-  codec_rst_n <= (not check_rst_n) and reset_n_sig;
+  codec_rst_n_sig <= (not check_rst_n_sig) and reset_n_sig;
 
 
 end architecture str;
