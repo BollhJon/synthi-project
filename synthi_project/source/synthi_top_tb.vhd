@@ -49,7 +49,7 @@ architecture struct of synthi_top_tb is
       USB_TXD     : in    std_logic;
       BT_RXD      : in    std_logic;
       BT_TXD      : in    std_logic;
-      BT_RST_N    : in    std_logic;
+      BT_RST_N    : out    std_logic;
       AUD_XCK     : out   std_logic;
       AUD_DACDAT  : out   std_logic;
       AUD_BCLK    : out   std_logic;
