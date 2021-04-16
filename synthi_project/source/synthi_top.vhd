@@ -6,7 +6,7 @@
 -- Author     :   <domin@DESKTOP-PQBL6RE>
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-04-15
+-- Last update: 2021-04-16
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ entity synthi_top is
 
         BT_RXD : in std_logic;             -- Bluetooth serial_input
         BT_TXD : in std_logic;             -- Bluetooth serial_output
-        BT_RST_N : in std_logic;           -- Bluetooth reset_n
+        BT_RST_N : out std_logic;           -- Bluetooth reset_n
 
         AUD_XCK     : out std_logic;        -- master clock for Audio Codec
         AUD_DACDAT  : out std_logic;        -- audio serial data to Codec-DAC
@@ -83,13 +83,14 @@ architecture str of synthi_top is
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
-  signal usb_data_rdy_sig  : std_logic;
-  signal usb_data_sig      : std_logic_vector(7 DOWNTO 0);
+  signal usb_data_rdy_sig : std_logic;
+  signal usb_data_sig     : std_logic_vector(7 DOWNTO 0);
   signal bt_data_rdy_sig  : std_logic;
   signal bt_data_sig      : std_logic_vector(7 DOWNTO 0);
   signal clk_12m_sig      : std_logic;
   signal clk_6m_sig       : std_logic;
   signal reset_n_sig      : std_logic;
+  signal reset_bt_n_sig   : std_logic;
   signal usb_txd_sync_sig : std_logic;
   signal bt_txd_sync_sig  : std_logic;
   signal write_done_sig	  : std_logic;
@@ -106,8 +107,9 @@ architecture str of synthi_top is
   signal ws_o_sig         : std_logic;
   signal note_sig         : std_logic_vector(6 downto 0);
   signal velocity_sig     : std_logic_vector(7 downto 0);
-  signal codec_rst_n_sig      : std_logic;
-  signal check_rst_n_sig      : std_logic;
+  signal codec_rst_n_sig  : std_logic;
+  signal check_rst_n_sig  : std_logic;
+  signal config_sig       : std_logic_vector(23 downto 0);
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -208,6 +210,15 @@ architecture str of synthi_top is
       signal_o : out std_logic);
   end component vector_check;
 
+  component reg_controller is
+    port (
+      rst_n    : in  std_logic;
+      data_i   : in  std_logic_vector(7 downto 0);
+      data_rdy : in  std_logic;
+      config_i : in  std_logic_vector(23 downto 0);
+      config_o : out std_logic_vector(23 downto 0));
+  end component reg_controller;
+
 
   
 begin  -- architecture str
@@ -238,6 +249,9 @@ begin  -- architecture str
       seg0_o      => HEX2,
       seg1_o      => HEX3);
 
+  BT_RST_N  <= reset_bt_n_sig;
+   
+
   -- instance "infrastructure_1"
   infrastructure_1: infrastructure
     port map (
@@ -249,7 +263,7 @@ begin  -- architecture str
       clk_6m       => clk_6m_sig,
       clk_12m      => clk_12m_sig,
       key_0_sync   => reset_n_sig,
-      key_1_sync   => open,
+      key_1_sync   => reset_bt_n_sig,
       usb_txd_sync => usb_txd_sync_sig,
       bt_txd_sync  => bt_txd_sync_sig,
       ledr_0       => LEDR_0,
@@ -258,7 +272,7 @@ begin  -- architecture str
   -- instance "codec_controller_1"
   codec_controller_1: codec_controller
     port map (
-      mode         => SW(2 downto 0),
+      mode         => config_sig(6 downto 4),
       write_done_i => write_done_sig,
       ack_error_i  => ack_error_sig,
       clk          => clk_6m_sig,
@@ -301,7 +315,7 @@ begin  -- architecture str
       adcdat_pr_i => adcdat_pr_i_sig,
       dacdat_pl_o => dacdat_pl_o_sig,
       dacdat_pr_o => dacdat_pr_o_sig,
-      sw          => SW(3));
+      sw          => config_sig(7));
 
   AUD_BCLK <= not clk_6m_sig;
   AUD_DACLRCK <= ws_o_sig;
@@ -316,23 +330,33 @@ begin  -- architecture str
       step_i	=> step_o_sig,
       note_i	=> note_sig,
       velocity_i=> velocity_sig,
-      tone_on_i	=> sw(4),
+      tone_on_i	=> config_sig(8),
       dds_l_o	=> dds_l_i_sig,
       dds_r_o	=> dds_r_i_sig);
 	
-  note_sig <= sw(9 downto 8) & "00000";
-  velocity_sig <= sw(7 downto 5) & "00000";
+  note_sig <= config_sig(13 downto 12) & "00000";
+  velocity_sig <= config_sig(11 downto 9) & "00000";
 
   -- instance "vector_check_1"
   vector_check_1: vector_check
     port map (
-      vector_i => SW(2 downto 0),
+      vector_i => config_sig(6 downto 4),
       clk_i    => clk_6m_sig,
       signal_o => check_rst_n_sig);
 
   codec_rst_n_sig <= (not check_rst_n_sig) and reset_n_sig;
 
-
+  -- instance "reg_controller_1"
+  reg_controller_1: reg_controller
+    port map (
+      rst_n    => reset_n_sig,
+      data_i   => bt_data_sig,
+      data_rdy => bt_data_rdy_sig,
+      config_i => "0000"&"0000"&("00"&SW(9 downto 8))&SW(7 downto 4)&SW(3 downto 0)&"0000",
+      config_o => config_sig);
+  
+  LEDR_9 <= config_sig(0);
+  
 end architecture str;
 
 -------------------------------------------------------------------------------

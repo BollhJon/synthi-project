@@ -11,6 +11,7 @@ vcom -2008 -explicit -work work ../../../source/infrastructure/modulo_divider.vh
 vcom -2008 -explicit -work work ../../../source/infrastructure/clock_sync.vhd
 vcom -2008 -explicit -work work ../../../source/infrastructure/signal_checker.vhd
 vcom -2008 -explicit -work work ../../../source/infrastructure/infrastructure.vhd
+vcom -2008 -explicit -work work ../../../source/infrastructure/vector_check.vhd
 vcom -2008 -explicit -work work ../../../source/midi/baud_tick.vhd
 vcom -2008 -explicit -work work ../../../source/midi/bit_counter.vhd
 vcom -2008 -explicit -work work ../../../source/midi/vhdl_hex2sevseg.vhd
@@ -28,6 +29,10 @@ vcom -2008 -explicit -work work ../../../source/i2c/i2s_master.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/i2s_frame_generator.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/path_control.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd
+vcom -2008 -explicit -work work ../../../source/synthi_control/reg_controller.vhd
+vcom -2008 -explicit -work work ../../../source/tone_gen/tone_gen_pkg.vhd
+vcom -2008 -explicit -work work ../../../source/tone_gen/dds.vhd
+vcom -2008 -explicit -work work ../../../source/tone_gen/tone_gen.vhd
 
 vcom -2008 -explicit -work work ../../../source/synthi_top.vhd
 vcom -2008 -explicit -work work ../../../source/synthi_top_tb.vhd

@@ -21,7 +21,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity reg_contoller is
+entity reg_controller is
   
   port (
     rst_n : in std_logic;
@@ -30,11 +30,11 @@ entity reg_contoller is
     config_i : in std_logic_vector(23 downto 0);
     config_o : out std_logic_vector(23 downto 0));
 
-end entity reg_contoller;
+end entity reg_controller;
 
 -- Architecture Declaration
 -------------------------------------------
-architecture rtl of reg_contoller is
+architecture rtl of reg_controller is
 -- Signals & Constants Declaration
 -------------------------------------------
   signal reg_0 : std_logic_vector(3 downto 0):= (others=>'0');
