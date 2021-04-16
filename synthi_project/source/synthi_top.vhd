@@ -57,10 +57,10 @@ entity synthi_top is
 
         HEX0 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
         HEX1 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
-        HEX2 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
-        HEX3 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
-       -- HEX4 : out std_logic_vector(6 downto 0);  -- output for HEX 0 display
-       -- HEX5 : out std_logic_vector(6 downto 0);  -- output for HEX 1 display
+        HEX2 : out std_logic_vector(6 downto 0);  -- output for HEX 2 display
+        HEX3 : out std_logic_vector(6 downto 0);  -- output for HEX 3 display
+       -- HEX4 : out std_logic_vector(6 downto 0);  -- output for HEX 4 display
+       -- HEX5 : out std_logic_vector(6 downto 0);  -- output for HEX 5 display
 		  
         LEDR_0 : out std_logic;
         LEDR_1 : out std_logic;
@@ -317,6 +317,7 @@ begin  -- architecture str
       dacdat_pr_o => dacdat_pr_o_sig,
       sw          => config_sig(7));
 
+  AUD_XCK <= clk_12m_sig;
   AUD_BCLK <= not clk_6m_sig;
   AUD_DACLRCK <= ws_o_sig;
   AUD_ADCLRCK <= ws_o_sig;
