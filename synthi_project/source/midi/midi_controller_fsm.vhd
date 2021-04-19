@@ -117,7 +117,8 @@ begin  -- architecture str
     end case;
   end process midi_fsm;
 
-  
+------------------------------------------------------------------------------
+
   midi_out : process(all)
   
 	begin
