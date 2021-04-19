@@ -19,9 +19,8 @@
 #-- 2019-02-13  1.0      Hans-Joachim    Created
 #-------------------------------------------------------------------------------
 
+# Testcases für tone_generator
 
-# testcases for i2s
 reset_target 20
-set_switches 00 00 00 08
-send_i2s 11 22 33 44
-check_i2s 11 22 33 44
+set_switches 00 00 01 10
+run_simulation_for 01 FF FF FF
