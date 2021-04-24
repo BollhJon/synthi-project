@@ -1,17 +1,27 @@
 -------------------------------------------------------------------------------
--- Project     : audio_top
--- Description : i2c interface to initialize audio codec WM8731
+-- Title      : audio top
+-- Project    : Synthi Project
+-------------------------------------------------------------------------------
+-- File       : audio_top.vhd
+-- Author     : dqtm
+-- Company    : 
+-- Created    : 2013-02-26
+-- Last update: 2013-02-26
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: i2c interface to initialize audio codec WM8731
 --
 --               sda_io is bidirectional: 
 --               output sda = '1' means high impedance
 --               output sda = '0' means pull down to ground
 --
 -------------------------------------------------------------------------------
---
--- Change History
--- Date     |Name      |Modification
-------------|----------|-------------------------------------------------------
--- 26.02.13 | dqtm     | file created for DTP2 Lab4 
+-- Copyright (c) 2013 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  			Description
+-- 2013-02-26  1.0      dqtm    			Created
 -------------------------------------------------------------------------------
 
 library ieee;

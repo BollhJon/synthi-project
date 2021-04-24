@@ -1,17 +1,23 @@
--------------------------------------------
--- Block code:  baud_tick.vhd
--- History: 	12.Nov.2013 - 1st version (dqtm)
---                 <date> - <changes>  (<author>)
--- Function: down-counter, with start input and count output. 
--- 			The input start should be a pulse which causes the 
---			counter to load its max-value. When start is off,
---			the counter decrements by one every clock cycle till 
---			count_o equals 0. Once the count_o reachs 0, the counter
---			freezes and wait till next start pulse. 
---			Can be used as enable for other blocks where need to 
---			count number of iterations.
--------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Title      : baud tick generator
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : baud_tick.vhd
+-- Author     : Boehi Dominik
+-- Company    : 
+-- Created    : 2020-11-12
+-- Last update: 2020-11-12
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: Generates the baud tick signal out of the 6.25kHz signal.
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author            Description
+-- 2020-11-12  1.0      Boehi Dominik	    Created
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------

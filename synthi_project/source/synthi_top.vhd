@@ -1,22 +1,23 @@
 -------------------------------------------------------------------------------
 -- Title      : synthi_top
--- Project    : 
+-- Project    : Synthi-Project
 -------------------------------------------------------------------------------
 -- File       : synthi_top.vhd
--- Author     :   <domin@DESKTOP-PQBL6RE>
+-- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
 -- Last update: 2021-04-16
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
--- Description: 
+-- Description: Top level file for Synthi-Project
 -------------------------------------------------------------------------------
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2021-03-01  1.0      domin	Created
+-- Date        Version  Author            Description
+-- 2021-03-01  1.0      Boehi Dominik	    Created
+-- 2021-04-16  1.1      Bollhalder Jonas  Modifications
 -------------------------------------------------------------------------------
 
 library ieee;

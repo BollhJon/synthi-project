@@ -1,11 +1,25 @@
--------------------------------------------
--- Block code:  modulo_divider.vhd
--- History: 	4. Sept.2019 - 1st version (gelk)
---                 <date> - <changes>  (<author>)
--- Function: modulo divider with generic width. Output MSB with 50% duty cycle.
---		Can be used for clock-divider when no exact ratio required.
--------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Title      : modulo divider
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : modulo divider
+-- Author     : gelk
+-- Company    : 
+-- Created    : 2019-09-04
+-- Last update: 2020-10-13
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: modulo divider with generic width. Output MSB with 50% duty cycle.
+--		          Can be used for clock-divider when no exact ratio required.
+-------------------------------------------------------------------------------
+-- Copyright (c) 2018 -2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author        Description
+-- 2018-02-08  1.0      gelk          Created
+-- 2020-10-13  1.2      Boehi Dominik changes for lab
+-------------------------------------------------------------------------------
 -- Library & Use Statements
 -------------------------------------------
 LIBRARY ieee;

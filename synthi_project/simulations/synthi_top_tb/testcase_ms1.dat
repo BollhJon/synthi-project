@@ -1,24 +1,21 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Template for testcases
-#-- Project    : DTP2
+#-- Title      : Testcases MS1
+#-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase.dat
-#-- Author     : Hans-Joachim Gelke
+#-- File       : testcase_ms1.dat
+#-- Author     : Bollhalder Jonas
 #-- Company    : 
-#-- Created    : 2018-10-21
-#-- Last update: 2019-2-13
+#-- Created    : 2021-04-06
+#-- Last update: 2021-04-06
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: For students as template
-#-------------------------------------------------------------------------------
-#-- Copyright (c) 2018 - 2019
+#-- Description: Testcases for Milestone 1 of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
-#-- Date        Version  Author  Description
-#-- 2019-02-13  1.0      Hans-Joachim    Created
+#-- Date        Version  Author             Description
+#-- 2021-04-06  1.0      Bollhalder Jonas   Created
 #-------------------------------------------------------------------------------
-
 # Digital AD/DA
 reset_target 20
 set_switches 00 00 00 00

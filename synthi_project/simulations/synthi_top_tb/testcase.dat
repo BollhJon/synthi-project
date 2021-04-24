@@ -1,26 +1,23 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Template for testcases
-#-- Project    : DTP2
+#-- Title      : Testcases MS3
+#-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase.dat
-#-- Author     : Hans-Joachim Gelke
+#-- File       : testcase_ms1.dat
+#-- Author     : Mueller Pavel
 #-- Company    : 
-#-- Created    : 2018-10-21
-#-- Last update: 2019-2-13
+#-- Created    : 2021-04-19
+#-- Last update: 2021-04-19
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: For students as template
-#-------------------------------------------------------------------------------
-#-- Copyright (c) 2018 - 2019
+#-- Description: Testcases for Milestone 3 of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
-#-- Date        Version  Author  Description
-#-- 2019-02-13  1.0      Hans-Joachim    Created
+#-- Date        Version  Author          Description
+#-- 2021-04-19  1.0      Mueller Pavel   Created
 #-------------------------------------------------------------------------------
 
 # Testcases für tone_generator
-
 reset_target 20
 set_switches 00 00 01 10
 run_simulation_for 01 FF FF FF

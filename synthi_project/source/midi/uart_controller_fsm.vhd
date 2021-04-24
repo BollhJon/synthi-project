@@ -1,12 +1,31 @@
--------------------------------------------
--- Block code:  fsm_template.vhd
--- History:     15.Jan.2017 - 1st version (dqtm)
---              19.Jan.2017 - further reduction for SEP HS17
---                 <date> - <changes>  (<author>)
--- Function: fsm and registers for UART-RX in DTP1 Mini-project alternative implementation.
---                      This block is the central piece of the UART-RX, coordinating byte reception and storage of 1 byte.
--------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Title      : uart controller final state machine
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : uart_controller_fsm.vhd
+-- Author     : Boehi Dominik
+-- Company    : 
+-- Created    : 2017-01-15
+-- Last update: 2020-12-07
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: shift-register working as a serial to parallel converter.
+--              The block has a shift_enable( or freeze_n) control input, plus 
+--              a serial data input. If shift_enable is high the data is 
+--              shifted, the serial data is taken in the MSB, and the further 
+--              bits are shifted towards the LSB. The parallel output contains 
+--              the 4 q-outputs of the D-FFs in the shiftregister. Can be used 
+--              as S2P in a serial interface, but need extra signal to identify 
+--              when shifting is done (data_ready).
+-------------------------------------------------------------------------------
+-- Copyright (c) 2017 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author            Description
+-- 2017-01-15  1.0      dqtm        	    Created
+-- 2020-12-07  1.1      Boehi Dominik     modification to uart controller
+-------------------------------------------------------------------------------
 -- Library & Use Statements
 -------------------------------------------
 library ieee;

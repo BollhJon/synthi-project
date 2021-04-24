@@ -5,7 +5,27 @@
 -- Function: edge detector with rise & fall outputs. 
 --           Declaring FFs as a shift-register.
 -------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Title      : Testbench for design "uart_top"
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : clock_sync.vhd
+-- Author     : gelk
+-- Company    : 
+-- Created    : 2019-09-04
+-- Last update: 2020-11-23
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: 
+-------------------------------------------------------------------------------
+-- Copyright (c) 2018 -2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2019-09-04  1.0      gelk    Created
+-- 2020-11-23  1.1      Boehi Dominik
+-------------------------------------------------------------------------------
 -- Library & Use Statements
 library ieee;
 use ieee.std_logic_1164.all;

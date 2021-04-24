@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 -- Title      : Testbench for design "synthi_top"
--- Project    : 
+-- Project    : Synthi-Project
 -------------------------------------------------------------------------------
 -- File       : synthi_top_tb.vhd
--- Author     :   <domin@DESKTOP-PQBL6RE>
+-- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-08
 -- Last update: 2021-03-15
@@ -15,8 +15,9 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2021-03-08  1.0      domin	Created
+-- Date        Version  Author          Description
+-- 2021-03-08  1.0      Boehi Dominik	  Created
+-- 2021-03-15  1.1      Boehi Dominik   small changes
 -------------------------------------------------------------------------------
 
 library ieee;
