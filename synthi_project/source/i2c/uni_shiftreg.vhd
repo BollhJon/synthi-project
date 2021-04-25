@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Title      : uni_shiftreg
--- Project    : 
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : uni_shiftreg.vhd
 -- Author     : muellpav
@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author          Description
--- 2021-03-22  1.0      muellpav	Created
+-- 2021-03-22  1.0      muellpav	      Created
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -32,7 +32,7 @@ entity uni_shiftreg is
 
   port (
     par_in      : in std_logic_vector(width-1 downto 0);
-	 ser_in		 : in std_logic;
+	  ser_in		 : in std_logic;
     load        : in std_logic;
     enable      : in std_logic;
     rst_n       : in std_logic;

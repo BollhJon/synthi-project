@@ -1,17 +1,30 @@
--------------------------------------------
--- Block code:  counter_updown.vhd
--- History:  24. Sept. 2019 - generated DT 2019  (gelk)  
---          
--- Function: down-counter, with start input and count output. 
---                      The input start should be a pulse which causes the 
---                      counter to load its max-value. When start is off,
---                      the counter decrements by one every clock cycle till 
---                      count_o equals 0. Once the count_o reachs 0, the counter
---                      freezes and wait till next start pulse. 
---                      Can be used as enable for other blocks where need to 
---                      count number of iterations.
--------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Title      : count up down template
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : counter_updown.vhd
+-- Author     : gelk
+-- Company    : 
+-- Created    : 2019-09-24
+-- Last update: 2019-09-24
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: down-counter, with start input and count output. 
+-- 			        The input start should be a pulse which causes the 
+--			        counter to load its max-value. When start is off,
+--			        the counter decrements by one every clock cycle till 
+--			        count_o equals 0. Once the count_o reachs 0, the counter
+--			        freezes and wait till next start pulse. 
+--			        Can be used as enable for other blocks where need to 
+--			        count number of iterations.
+-------------------------------------------------------------------------------
+-- Copyright (c) 2019 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  			Description
+-- 2019-09-24  1.0      gelk    			Created
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------

@@ -1,11 +1,27 @@
--------------------------------------------
--- Block code:  fsm_template.vhd
--- History:     15.Jan.2017 - 1st version (dqtm)
---              19.Jan.2017 - further reduction for SEP HS17
---                 <date> - <changes>  (<author>)
--- Function: fsm and registers for UART-RX in DTP1 Mini-project alternative implementation.
---                      This block is the central piece of the UART-RX, coordinating byte reception and storage of 1 byte.
--------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : count down template
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : count_down.vhd
+-- Author     : dqtm
+-- Company    : 
+-- Created    : 2017-01-15
+-- Last update: 2017-01-19
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: fsm and registers for UART-RX in DTP1 Mini-project alternative 
+--              implementation. This block is the central piece of the UART-RX,
+--              coordinating byte reception and storage of 1 byte.
+-------------------------------------------------------------------------------
+-- Copyright (c) 2017 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  			Description
+-- 2017-01-15  1.0      dqtm    			Created
+-- 2017-01-19  1.2      dqtm          furhter reduction for SEP HS17
+-------------------------------------------------------------------------------
+
 
 -- Library & Use Statements
 -------------------------------------------

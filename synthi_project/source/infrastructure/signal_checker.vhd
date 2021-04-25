@@ -1,5 +1,5 @@
 -------------------------------------------
--- Block code:  signal_checker.vhd
+-- Block code:  
 -- History:     15.Jan.2017 - 1st version (dqtm)
 --              19.Jan.2017 - further reduction for SEP HS1
 --					  3.Sept.2019 - Separate Bit counter from FSM
@@ -7,6 +7,32 @@
 -- Function: fsm and registers for UART-RX in DTP1 Mini-project alternative implementation.
 --                      This block is the central piece of the UART-RX, coordinating byte reception and storage of 1 byte.
 -------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : signal checker
+-- Project    : Synthi Project
+-------------------------------------------------------------------------------
+-- File       : signal_checker.vhd
+-- Author     : gelk
+-- Company    : 
+-- Created    : 2017-01-15
+-- Last update: 2020-12-03
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: fsm and registers for UART-RX in DTP1 Mini-project alternative 
+--              implementation. This block is the central piece of the 
+--              UART-RX, coordinating byte reception and storage of 1 
+--              byte.
+-------------------------------------------------------------------------------
+-- Copyright (c) 2017 -2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author        Description
+-- 2017-01-15  1.0      dqtm          Created
+-- 2017-01-19  1.1      dqtm          further reduction for SEP HS1
+-- 2019-09-03  1.2      gelk          Separate Bit counter from FSM
+-- 2020-12-03  1.3      Boehi dominik changes for mini-project
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------

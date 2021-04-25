@@ -1,17 +1,23 @@
--------------------------------------------
--- Block code:  count_down.vhd
--- History: 	12.Nov.2013 - 1st version (dqtm)
---                 <date> - <changes>  (<author>)
--- Function: down-counter, with start input and count output. 
--- 			The input start should be a pulse which causes the 
---			counter to load its max-value. When start is off,
---			the counter decrements by one every clock cycle till 
---			count_o equals 0. Once the count_o reachs 0, the counter
---			freezes and wait till next start pulse. 
---			Can be used as enable for other blocks where need to 
---			count number of iterations.
--------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Title      : output register
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : output_register.vhd
+-- Author     : Boehi Dominik
+-- Company    : 
+-- Created    : 2020-10-12
+-- Last update: 2020-10-12
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: output register for the sevensegment display
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author            Description
+-- 2020-10-12  1.0      Boehi Dominik	    Created
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------
@@ -38,8 +44,8 @@ END output_register;
 ARCHITECTURE rtl OF output_register IS
 -- Signals & Constants Declaration
 -------------------------------------------
-CONSTANT  	max_val: 			unsigned(width-1 downto 0):= to_unsigned(4,width); -- convert integer value 4 to unsigned with 4bits
-SIGNAL 		count, next_count: 	unsigned(width-1 downto 0);	 
+CONSTANT  	max_val: 			      unsigned(width-1 downto 0):= to_unsigned(4,width); -- convert integer value 4 to unsigned with 4bits
+SIGNAL 		  count, next_count: 	unsigned(width-1 downto 0);	 
 
 
 -- Begin Architecture

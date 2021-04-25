@@ -1,21 +1,25 @@
---------------------------------------------------------------------
---
--- Project     : Synthi_Project
---
--- File Name   : vector_check.vhd
--- Description : check vector on change and emit signal
---                                      
--- Features:    Der Baustein speichert den vorherigen Vektorzustand und
---              wenn sich der Wert des Vektors verändert, wird ein
+-------------------------------------------------------------------------------
+-- Title      : vector check
+-- Project    : Synthi Project
+-------------------------------------------------------------------------------
+-- File       : vector_check.vhd
+-- Author     : Bollhalder Jonas
+-- Company    : 
+-- Created    : 2021-04-15
+-- Last update: 2021-04-15
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: Der Baustein speichert den vorherigen Vektorzustand und
+--              wenn sich der Wert des Vektors veraendert, wird ein
 --              Signal aus gegeben.
---                              
---------------------------------------------------------------------
--- Change History
--- Date       |Name      |Modification
---------------|----------|------------------------------------------
--- 15.04.2021 | bollhjon | created file
---------------------------------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author              Description
+-- 2021-04-15  1.0      Bollhalder Jonas    Created
+-------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

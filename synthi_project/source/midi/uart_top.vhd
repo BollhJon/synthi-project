@@ -1,21 +1,23 @@
--- Copyright (C) 2020  Intel Corporation. All rights reserved.
--- Your use of Intel Corporation's design tools, logic functions 
--- and other software and tools, and any partner logic 
--- functions, and any output files from any of the foregoing 
--- (including device programming or simulation files), and any 
--- associated documentation or information are expressly subject 
--- to the terms and conditions of the Intel Program License 
--- Subscription Agreement, the Intel Quartus Prime License Agreement,
--- the Intel FPGA IP License Agreement, or other applicable license
--- agreement, including, without limitation, that your use is for
--- the sole purpose of programming logic devices manufactured by
--- Intel and sold by Intel or its authorized distributors.  Please
--- refer to the applicable agreement for further details, at
--- https://fpgasoftware.intel.com/eula.
-
--- PROGRAM		"Quartus Prime"
--- VERSION		"Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
--- CREATED		"Mon Mar 01 10:53:33 2021"
+-------------------------------------------------------------------------------
+-- Title      : uart_top
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : uart_top_tb.vhd
+-- Author     : Boehi Dominik
+-- Company    : 
+-- Created    : 2021-03-01
+-- Last update: 2021-03-01
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: 
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  		Description
+-- 2021-03-01  1.0      Boehi Dominik   Created
+-------------------------------------------------------------------------------
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
