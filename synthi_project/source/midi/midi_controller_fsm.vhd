@@ -122,13 +122,8 @@ begin  -- architecture str
   midi_out : process(all)
   
 	begin
-  
-		if status_reg(4) = '1' then
-			note_on <= '1'; -- turns note on
-		elsif status_reg(4) = '0' then
-			note_on <= '0'; -- turns note off
-		end if;
-		  
+		
+		note_on <= status_reg(4);
 		note_simple <= data1_reg; 
 		velocity_simple <= data2_reg;
 	  

@@ -110,13 +110,13 @@ begin
 
     case atte is
       when 0 => dds_o <= std_logic_vector(lut_val);
-      when 1 => dds_o <= std_logic_vector(shift_left(lut_val,1));
-      when 2 => dds_o <= std_logic_vector(shift_left(lut_val,2));
-      when 3 => dds_o <= std_logic_vector(shift_left(lut_val,3));
-      when 4 => dds_o <= std_logic_vector(shift_left(lut_val,4));
-      when 5 => dds_o <= std_logic_vector(shift_left(lut_val,5));
-      when 6 => dds_o <= std_logic_vector(shift_left(lut_val,6));
-      when 7 => dds_o <= std_logic_vector(shift_left(lut_val,7));
+      when 1 => dds_o <= std_logic_vector(shift_right(lut_val,1));
+      when 2 => dds_o <= std_logic_vector(shift_right(lut_val,2));
+      when 3 => dds_o <= std_logic_vector(shift_right(lut_val,3));
+      when 4 => dds_o <= std_logic_vector(shift_right(lut_val,4));
+      when 5 => dds_o <= std_logic_vector(shift_right(lut_val,5));
+      when 6 => dds_o <= std_logic_vector(shift_right(lut_val,6));
+      when 7 => dds_o <= std_logic_vector(shift_right(lut_val,7));
       when others => dds_o <= std_logic_vector(lut_val);
     end case;
   end process attenuator;

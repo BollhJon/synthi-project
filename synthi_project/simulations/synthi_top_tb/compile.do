@@ -15,15 +15,15 @@ vcom -2008 -explicit -work work ../../../source/infrastructure/vector_check.vhd
 
 vcom -2008 -explicit -work work ../../../source/midi/baud_tick.vhd
 vcom -2008 -explicit -work work ../../../source/midi/bit_counter.vhd
-vcom -2008 -explicit -work work ../../../source/midi/count_down.vhd
 vcom -2008 -explicit -work work ../../../source/midi/flanken_detekt_vhdl.vhd
 vcom -2008 -explicit -work work ../../../source/midi/output_register.vhd
 vcom -2008 -explicit -work work ../../../source/midi/shiftreg_uart.vhd
 vcom -2008 -explicit -work work ../../../source/midi/uart_controller_fsm.vhd
 vcom -2008 -explicit -work work ../../../source/midi/uart_top.vhd
 vcom -2008 -explicit -work work ../../../source/midi/vhdl_hex2sevseg.vhd
+vcom -2008 -explicit -work work ../../../source/midi/midi_controller_fsm.vhd
 
-vcom -2008 -explicit -work work ../../../source/reg_table_pkg.vhd
+vcom -2008 -explicit -work work ../../../source/i2c/reg_table_pkg.vhd
 
 vcom -2008 -explicit -work work ../../../source/i2c/codec_controller.vhd
 vcom -2008 -explicit -work work ../../../source/i2c/i2c_master.vhd

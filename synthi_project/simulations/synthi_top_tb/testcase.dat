@@ -1,94 +1,28 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases MS3
+#-- Title      : Testcases MS4
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
-#-- Author     : Mueller Pavel
+#-- Author     : Bollhalder Jonas
 #-- Company    : 
 #-- Created    : 2021-04-19
 #-- Last update: 2021-04-19
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for Milestone 3 of Synthi-Project
+#-- Description: Testcases for Milestone 4 of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
-#-- Date        Version  Author          Description
-#-- 2021-04-19  1.0      Mueller Pavel   Created
+#-- Date        Version  Author           Description
+#-- 2021-04-19  1.0      Bollhalder Jonas Created
 #-------------------------------------------------------------------------------
 
-# Digital AD/DA
 reset_target 20
-set_switches 00 00 00 00
-run_simulation_for 00 01 f0 00
-check_i2c_reg_0 00 00 00 17
-check_i2c_reg_1 00 00 00 17
-check_i2c_reg_2 00 00 00 79
-check_i2c_reg_3 00 00 00 79
-check_i2c_reg_4 00 00 00 12
-check_i2c_reg_5 00 00 00 00
-check_i2c_reg_6 00 00 00 00
-check_i2c_reg_7 00 00 00 02
-check_i2c_reg_8 00 00 00 00
-check_i2c_reg_9 00 00 00 01
+uart_send_data 90
+run_simulation_for 00 00 f0 00
 
-# Analog Bypass
-reset_target 20
-set_switches 00 00 00 01 
-run_simulation_for 00 01 f0 00
-check_i2c_reg_0 00 00 00 17
-check_i2c_reg_1 00 00 00 17
-check_i2c_reg_2 00 00 00 7d
-check_i2c_reg_3 00 00 00 7d
-check_i2c_reg_4 00 00 00 0a
-check_i2c_reg_5 00 00 00 08
-check_i2c_reg_6 00 00 00 00
-check_i2c_reg_7 00 00 00 02
-check_i2c_reg_8 00 00 00 00
-check_i2c_reg_9 00 00 00 01
+uart_send_data 5A
+run_simulation_for 00 00 f0 00
 
-# Mute Right
-reset_target 20
-set_switches 00 00 00 03 
-run_simulation_for 00 01 f0 00
-check_i2c_reg_0 00 00 00 0f
-check_i2c_reg_1 00 00 00 0f
-check_i2c_reg_2 00 00 00 79
-check_i2c_reg_3 00 00 00 00
-check_i2c_reg_4 00 00 00 0a
-check_i2c_reg_5 00 00 00 08
-check_i2c_reg_6 00 00 00 00
-check_i2c_reg_7 00 00 00 02
-check_i2c_reg_8 00 00 00 00
-check_i2c_reg_9 00 00 00 01
-
-# Mute Left
-reset_target 20
-set_switches 00 00 00 05 
-run_simulation_for 00 01 f0 00
-check_i2c_reg_0 00 00 00 0f
-check_i2c_reg_1 00 00 00 0f
-check_i2c_reg_2 00 00 00 00
-check_i2c_reg_3 00 00 00 79
-check_i2c_reg_4 00 00 00 0a
-check_i2c_reg_5 00 00 00 08
-check_i2c_reg_6 00 00 00 00
-check_i2c_reg_7 00 00 00 02
-check_i2c_reg_8 00 00 00 00
-check_i2c_reg_9 00 00 00 01
-
-# Mute Both
-reset_target 20
-set_switches 00 00 00 07 
-run_simulation_for 00 01 f0 00
-check_i2c_reg_0 00 00 00 0f
-check_i2c_reg_1 00 00 00 0f
-check_i2c_reg_2 00 00 00 00
-check_i2c_reg_3 00 00 00 00
-check_i2c_reg_4 00 00 00 0a
-check_i2c_reg_5 00 00 00 08
-check_i2c_reg_6 00 00 00 00
-check_i2c_reg_7 00 00 00 02
-check_i2c_reg_8 00 00 00 00
-check_i2c_reg_9 00 00 00 01
-
+uart_send_data 10
+run_simulation_for 00 00 f0 00
