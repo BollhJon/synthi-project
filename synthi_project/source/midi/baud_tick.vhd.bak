@@ -43,7 +43,7 @@ ARCHITECTURE rtl OF baud_tick IS
 -- Signals & Constants Declaration
 -------------------------------------------
 CONSTANT max_val: 			unsigned(width-1 downto 0):= to_unsigned(4,width); -- convert integer value 4 to unsigned with 4bits
-CONSTANT clock_freq		: positive := 6_250_000; -- Clock/Hz
+CONSTANT clock_freq		: positive := 12_500_000; -- Clock/Hz
 CONSTANT	baud_rate		: positive := 115_200; -- Baude Rate/Hz
 CONSTANT	count_width		: positive := 10; -- FreqClock/FreqBaudRate=50000000/115200 = 434 so need 10 bits
 CONSTANT	one_period		: unsigned(count_width - 1 downto 0) := to_unsigned(clock_freq / baud_rate, count_width);
