@@ -107,7 +107,7 @@ architecture str of synthi_top is
   signal step_o_sig       : std_logic;
   signal ws_o_sig         : std_logic;
   signal note_sig         : std_logic_vector(6 downto 0);
-  signal velocity_sig     : std_logic_vector(7 downto 0);
+  signal velocity_sig     : std_logic_vector(6 downto 0);
   signal config_sig       : std_logic_vector(23 downto 0);
   signal note_on_sig      : std_logic;
   
