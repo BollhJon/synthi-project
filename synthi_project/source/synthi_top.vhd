@@ -6,7 +6,7 @@
 -- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-04-16
+-- Last update: 2021-04-26
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -107,10 +107,11 @@ architecture str of synthi_top is
   signal step_o_sig       : std_logic;
   signal ws_o_sig         : std_logic;
   signal note_sig         : std_logic_vector(6 downto 0);
-  signal velocity_sig     : std_logic_vector(7 downto 0);
+  signal velocity_sig     : std_logic_vector(6 downto 0);
   signal codec_rst_n_sig  : std_logic;
   signal check_rst_n_sig  : std_logic;
   signal config_sig       : std_logic_vector(23 downto 0);
+  signal note_on_sig      : std_logic;
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -199,7 +200,7 @@ architecture str of synthi_top is
       tone_on_i         : in std_logic;
       note_i            : in std_logic_vector(6 downto 0);
       step_i            : in std_logic;
-      velocity_i        : in std_logic_vector(7 downto 0);
+      velocity_i        : in std_logic_vector(6 downto 0);
       dds_l_o           : out std_logic_vector(15 downto 0);
       dds_r_o           : out std_logic_vector(15 downto 0));
   end component tone_gen;
@@ -220,6 +221,17 @@ architecture str of synthi_top is
       config_o : out std_logic_vector(23 downto 0));
   end component reg_controller;
 
+  component midi_controller_fsm is
+    port (
+      clk12_m         : in  std_logic;
+      reset_n         : in  std_logic;
+      rx_data         : in  std_logic_vector(7 downto 0);
+      rx_data_rdy     : in  std_logic;
+      note_on         : out std_logic;
+      note_simple     : out std_logic_vector(6 downto 0);
+      velocity_simple : out std_logic_vector(6 downto 0));
+  end component midi_controller_fsm;
+
 
   
 begin  -- architecture str
@@ -237,12 +249,13 @@ begin  -- architecture str
       rx_data_rdy => usb_data_rdy_sig,
       rx_data     => usb_data_sig,
       seg0_o      => HEX0,
-      seg1_o      => HEX1);
+      seg1_o      => HEX1
+      );
 
   -- instance "uart_top_2"
   uart_top_2: uart_top
     port map (
-      clk         => clk_12m_sig,
+      clk         => clk_6m_sig,
       reset_n     => reset_n_sig,
       ser_data_i  => bt_txd_sync_sig,
       rx_data_rdy => bt_data_rdy_sig,
@@ -332,12 +345,12 @@ begin  -- architecture str
       step_i	=> step_o_sig,
       note_i	=> note_sig,
       velocity_i=> velocity_sig,
-      tone_on_i	=> config_sig(8),
+      tone_on_i	=> note_on_sig,
       dds_l_o	=> dds_l_i_sig,
       dds_r_o	=> dds_r_i_sig);
 	
-  note_sig <= config_sig(13 downto 12) & "00000";
-  velocity_sig <= config_sig(11 downto 9) & "00000";
+ -- note_sig <= config_sig(13 downto 12) & "00000";
+ -- velocity_sig <= config_sig(11 downto 9) & "00000";
 
   -- instance "vector_check_1"
   vector_check_1: vector_check
@@ -358,7 +371,19 @@ begin  -- architecture str
       config_o => config_sig);
   
   LEDR_9 <= config_sig(0);
-  
+
+  -- instance "midi_controller_fsm_1"
+  midi_controller_fsm_1: midi_controller_fsm
+    port map (
+      clk12_m         => clk_6m_sig,
+      reset_n         => reset_n_sig,
+      rx_data         => usb_data_sig,
+      rx_data_rdy     => usb_data_rdy_sig,
+      note_on         => note_on_sig,
+      note_simple     => note_sig,
+      velocity_simple => velocity_sig
+      );
+  LEDR_8 <= note_on_sig;
 end architecture str;
 
 -------------------------------------------------------------------------------
