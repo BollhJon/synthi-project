@@ -1,9 +1,23 @@
--------------------------------------------
--- Block code:  tone_gen.vhd
--- History:     31.Mar.2021 - 1st version (bollhjon)
---              <date> - <changes>  (<author>)
--- Function:    
--------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : tone generator
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : tone_gen.vhd
+-- Author     : Bollhalder Jonas
+-- Company    : 
+-- Created    : 2021-03-31
+-- Last update: 2021-04-26
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: generates the tone for Synthi-Project
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author                Description
+-- 2021-03-31  1.0      Bollhalder Jonas	    Created
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------
@@ -21,7 +35,7 @@ entity tone_gen is
        tone_on_i         : in std_logic;
        note_i            : in std_logic_vector(6 downto 0);
        step_i            : in std_logic;
-       velocity_i        : in std_logic_vector(7 downto 0);
+       velocity_i        : in std_logic_vector(6 downto 0);
        dds_l_o           : out std_logic_vector(15 downto 0);
        dds_r_o           : out std_logic_vector(15 downto 0)
        );
@@ -60,7 +74,7 @@ begin
         phi_incr_i => LUT_midi2dds(to_integer(unsigned(note_i))),
         step_i     => step_i,
         tone_on_i  => tone_on_i,
-        attenu_i   => velocity_i(7 downto 5),
+        attenu_i   => velocity_i(6 downto 4),
         dds_o      => dds_o_sig);
 
   dds_l_o <= dds_o_sig;

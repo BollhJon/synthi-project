@@ -1,21 +1,26 @@
---------------------------------------------------------------------
---
--- Project     : Audio_Synth
---
--- File Name   : codec_controller.vhd
--- Description : Controller to define Audio Codec Configuration via I2C
---                                      
--- Features:    Der Baustein wartet bis das reset_n signal inaktiv wird.
+-------------------------------------------------------------------------------
+-- Title      : codec controller
+-- Project    : Synthi Project
+-------------------------------------------------------------------------------
+-- File       : codec_controller.vhd
+-- Author     : gelk
+-- Company    : 
+-- Created    : 2019-03-06
+-- Last update: 2021-03-14
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: Der Baustein wartet bis das reset_n signal inaktiv wird.
 --              Danach sendet dieser Codec Konfigurierungsdaten an
 --              den Baustein i2c_Master
---                              
---------------------------------------------------------------------
--- Change History
--- Date     |Name      |Modification
-------------|----------|--------------------------------------------
--- 6.03.19 | gelk     | Prepared template for students
---------------------------------------------------------------------
-
+-------------------------------------------------------------------------------
+-- Copyright (c) 2019 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  			Description
+-- 2019-03-06  1.0      gelk    			Created
+-- 2021-03-14  1.1		Bollhalder Jonas	changes for Synthi Project
+-------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

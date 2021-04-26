@@ -6,7 +6,7 @@
 -- Author     : 
 -- Company    : 
 -- Created    : 2021-04-19
--- Last update: 
+-- Last update: 2021-04-26
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -123,9 +123,9 @@ begin  -- architecture str
   
 	begin
   
-		if status_reg(4) = '0' then
+		if status_reg(4) = '1' then
 			note_on <= '1'; -- turns note on
-		elsif status_reg(4) = '1' then
+		elsif status_reg(4) = '0' then
 			note_on <= '0'; -- turns note off
 		end if;
 		  
