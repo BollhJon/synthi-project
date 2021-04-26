@@ -2,35 +2,17 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /synthi_top_tb/CLOCK_50
 add wave -noupdate /synthi_top_tb/KEY_0
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/dacdat_pr_i
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/dacdat_pl_i
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/adcdat_s_i
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/clk_6m
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/rst_n
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/dacdat_s_o
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/step_o
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/ws_o
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/adcdat_pl_o
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/adcdat_pr_o
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/load_sig
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/shift_l_sig
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/shift_r_sig
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/ws_sig
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/ser_out_l_sig
-add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/ser_out_r_sig
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/dds_l_i
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/dds_r_i
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/adcdat_pl_i
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/adcdat_pr_i
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/dacdat_pl_o
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/dacdat_pr_o
-add wave -noupdate /synthi_top_tb/DUT/path_control_1/sw
-add wave -noupdate -format Analog-Step -height 74 -max 3920.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/dds_1/dds_o
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/dds_1/count
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/dds_1/step_i
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/dds_r_o
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/dds_l_o
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/dds_1/lut_val
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/mode
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/write_done_i
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/ack_error_i
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/clk
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/reset_n
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/write_o
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/write_data_o
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/State
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/next_State
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/count
+add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/next_count
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {2356070 ns} 0}
 quietly wave cursor active 1

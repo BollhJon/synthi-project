@@ -1,5 +1,5 @@
 -------------------------------------------
--- Block code:  fsm_template.vhd
+-- Block code:  uart_controller_fsm.vhd
 -- History:     15.Jan.2017 - 1st version (dqtm)
 --              19.Jan.2017 - further reduction for SEP HS17
 --                 <date> - <changes>  (<author>)

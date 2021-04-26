@@ -30,7 +30,7 @@ entity codec_controller is
     write_done_i : in  std_logic;       -- Input from i2c register write_done
     ack_error_i  : in  std_logic;       -- Inputs to check the transmission
     clk          : in  std_logic;
-	 reset_n      : in  std_logic;
+    reset_n      : in  std_logic;
     write_o      : out std_logic;       -- Output to i2c to start transmission 
     write_data_o : out std_logic_vector(15 downto 0)  -- Data_Output
     );
@@ -46,8 +46,18 @@ type State_type is (idle, wait_write, state_end);
 signal State, next_State : State_type;
 
 signal count, next_count : unsigned(6 downto 0) := (others =>'0');
+signal vector_change : std_logic;
 -- Begin Architecture
 -------------------------------------------
+
+  component vector_check is
+    generic (
+      width : positive);
+    port (
+      vector_i : in  std_logic_vector(width-1 downto 0);
+      clk_i    : in  std_logic;
+      signal_o : out std_logic);
+  end component vector_check;
 begin
 
   --------------------------------------------------
@@ -55,22 +65,21 @@ begin
   --------------------------------------------------
   flip_flops : process(all)
   begin
-    if reset_n = '0' then
+    if reset_n = '0'or vector_change = '1' then
       State <= idle;
-	  count <= (others =>'0');
-
+      count <= (others =>'0');
     elsif rising_edge(clk) then
       State <= next_State;
-	  count <= next_count;
+      count <= next_count;
     end if;
   end process flip_flops;
 
 ----(codec control automat block)----
 
-	codec_control_automat : PROCESS(all)
-	begin
+codec_control_automat : PROCESS(all)
+begin
 	
-		-- default statements	
+-- default statements	
 		next_State <= State;
 		next_count <= count;
 		write_o <= '0'; 
@@ -139,5 +148,15 @@ write_data_o (15 downto 9) <= std_logic_vector(count);
 	
 	
 -- End Architecture 
-------------------------------------------- 
+-------------------------------------------
+
+  -- instance "vector_check_1"
+  vector_check_1: vector_check
+     generic map (
+        width => 3)
+     port map (
+        vector_i => mode,
+        clk_i    => clk,
+        signal_o => vector_change);
+                
 end rtl;
