@@ -214,13 +214,13 @@ architecture str of synthi_top is
 
   component midi_controller_fsm is
     port (
-      clk12_m         : in  std_logic;
-      reset_n         : in  std_logic;
-      rx_data         : in  std_logic_vector(7 downto 0);
-      rx_data_rdy     : in  std_logic;
-      note_on         : out std_logic;
-      note_simple     : out std_logic_vector(6 downto 0);
-      velocity_simple : out std_logic_vector(6 downto 0));
+      clk_6m      : in  std_logic;
+      reset_n     : in  std_logic;
+      rx_data     : in  std_logic_vector(7 downto 0);
+      rx_data_rdy : in  std_logic;
+      note_on     : out std_logic_vector(9 downto 0);
+      note_o        : out t_tone_array;
+      velocity    : out t_tone_array);
   end component midi_controller_fsm;
 
 
@@ -357,13 +357,26 @@ begin  -- architecture str
   -- instance "midi_controller_fsm_1"
   midi_controller_fsm_1: midi_controller_fsm
     port map (
-      clk12_m         => clk_6m_sig,
-      reset_n         => reset_n_sig,
-      rx_data         => usb_data_sig,
-      rx_data_rdy     => usb_data_rdy_sig,
-      note_on         => note_on_sig,
-      note_simple     => note_sig,
-      velocity_simple => velocity_sig
+      clk_6m     => clk_6m_sig,
+      reset_n     => reset_n_sig,
+      rx_data     => usb_data_sig,
+      rx_data_rdy => usb_data_rdy_sig,
+      note_on     => note_on_sig,
+      note_o        => note_sig,
+      velocity    => velocity_sig
+      );
+
+  -- instance "tone_gen_1"
+  tone_gen_1: tone_gen
+    port map (
+      clk_6m     => clk_6m_sig,
+      reset_n    => reset_n_sig,
+      tone_on_i  => note_on_sig,
+      note_i     => note_sig,
+      step_i     => step_o_sig,
+      velocity_i => velocity_sig,
+      dds_l_o    => dds_l_i_sig,
+      dds_r_o    => dds_r_i_sig
       );
   LEDR_8 <= note_on_sig;
 end architecture str;
