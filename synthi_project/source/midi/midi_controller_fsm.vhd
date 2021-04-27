@@ -22,15 +22,15 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+library work;
 use work.tone_gen_pkg.all;
 -------------------------------------------------------------------------------
 
 entity midi_controller_fsm is
-
-  port(clk12_m          : in  std_logic;
+  port(clk_6m           : in  std_logic;
        reset_n          : in  std_logic;
        rx_data          : in  std_logic_vector(7 downto 0);
-       rx_data_rdy      : in  std_logic;   
+       rx_data_rdy      : in  std_logic;
        note_on		      : out std_logic_vector(9 downto 0);
        note_o           : out t_tone_array;
        velocity         : out t_tone_array
@@ -128,6 +128,7 @@ begin  -- architecture str
     variable note_written : std_logic := '0';
   begin
 
+
     next_reg_note_on  <= reg_note_on;
     next_reg_note     <= reg_note;
     next_reg_velocity <= reg_velocity;
@@ -139,7 +140,7 @@ begin  -- architecture str
       -- CHECK IF NOTE IS ALREADY ENTERED IN MIDI ARRAY
       ------------------------------------------------------
       for i in 0 to 9 loop
-        if reg_note(i) = data1_reg and reg_note_on(i) = '1' then -- 
+        if reg_note(i) = data1_reg and reg_note_on(i) = '1' then -- Found a matching note
           note_available := '1';
           if status_reg(4) = '0' then -- note off
             next_reg_note_on(i) <= '0'; -- turn off note
@@ -186,8 +187,7 @@ begin  -- architecture str
       reg_note     <= (others => (others => '0'));
       reg_velocity <= (others => (others => '0'));
 
-
-    elsif rising_edge(clk12_m) then
+    elsif rising_edge(clk_6m) then
       midi_state   <= next_midi_state;
       status_reg   <= next_status_reg;
       data_flag    <= new_data_flag;
@@ -196,7 +196,7 @@ begin  -- architecture str
       reg_note_on  <= next_reg_note_on;
       reg_note     <= next_reg_note;
       reg_velocity <= next_reg_velocity;
-    end if;       
+    end if;
   end process ff;
 
   -- Internal signal assignments

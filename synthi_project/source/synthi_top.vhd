@@ -6,7 +6,7 @@
 -- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-04-19
+-- Last update: 2021-04-26
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -106,10 +106,11 @@ architecture str of synthi_top is
   signal dacdat_pr_o_sig  : std_logic_vector(15 downto 0);
   signal step_o_sig       : std_logic;
   signal ws_o_sig         : std_logic;
-  signal note_sig         : std_logic_vector(6 downto 0);
-  signal velocity_sig     : std_logic_vector(6 downto 0);
   signal config_sig       : std_logic_vector(23 downto 0);
-  signal note_on_sig      : std_logic;
+  signal note_on_sig      : std_logic_vector(9 downto 0);   
+  signal note_sig         : t_tone_array;
+  signal velocity_sig     : t_tone_array;
+
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -190,18 +191,6 @@ architecture str of synthi_top is
       dacdat_pr_o : out std_logic_vector(15 downto 0);
       sw          : in  std_logic);
   end component path_control;
-  
-  component tone_gen is
-    port(
-      clk_6m            : in  std_logic;
-      reset_n           : in  std_logic;
-      tone_on_i         : in std_logic;
-      note_i            : in std_logic_vector(6 downto 0);
-      step_i            : in std_logic;
-      velocity_i        : in std_logic_vector(6 downto 0);
-      dds_l_o           : out std_logic_vector(15 downto 0);
-      dds_r_o           : out std_logic_vector(15 downto 0));
-  end component tone_gen;
 
   component reg_controller is
     port (
@@ -222,6 +211,19 @@ architecture str of synthi_top is
       note_o        : out t_tone_array;
       velocity    : out t_tone_array);
   end component midi_controller_fsm;
+
+  component tone_gen is
+    port (
+      clk_6m     : in  std_logic;
+      reset_n    : in  std_logic;
+      tone_on_i  : in  std_logic_vector(9 downto 0);
+      note_i     : in  t_tone_array;
+      step_i     : in  std_logic;
+      velocity_i : in  t_tone_array;
+      dds_l_o    : out std_logic_vector(15 downto 0);
+      dds_r_o    : out std_logic_vector(15 downto 0));
+  end component tone_gen;
+
 
 
   
@@ -327,21 +329,6 @@ begin  -- architecture str
   AUD_DACLRCK <= ws_o_sig;
   AUD_ADCLRCK <= ws_o_sig;
   
-  -- instance "tone_gen_1
-  
-  tone_gen_1: tone_gen
-    port map (
-      clk_6m    => clk_6m_sig,
-      reset_n   => reset_n_sig,
-      step_i	=> step_o_sig,
-      note_i	=> note_sig,
-      velocity_i=> velocity_sig,
-      tone_on_i	=> note_on_sig,
-      dds_l_o	=> dds_l_i_sig,
-      dds_r_o	=> dds_r_i_sig);
-	
- -- note_sig <= config_sig(13 downto 12) & "00000";
- -- velocity_sig <= config_sig(11 downto 9) & "00000";
 
   -- instance "reg_controller_1"
   reg_controller_1: reg_controller
@@ -378,7 +365,6 @@ begin  -- architecture str
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );
-  LEDR_8 <= note_on_sig;
 end architecture str;
 
 -------------------------------------------------------------------------------
