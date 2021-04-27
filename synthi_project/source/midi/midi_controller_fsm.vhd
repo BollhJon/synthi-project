@@ -3,7 +3,7 @@
 -- Project    : 
 -------------------------------------------------------------------------------
 -- File       : midi_controller_fsm.vhd
--- Author     : 
+-- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-04-19
 -- Last update: 2021-04-26
@@ -30,10 +30,10 @@ entity midi_controller_fsm is
   port(clk_6m           : in  std_logic;
        reset_n          : in  std_logic;
        rx_data          : in  std_logic_vector(7 downto 0);
-       rx_data_rdy      : in  std_logic;   
-       note_on		: out std_logic_vector(9 downto 0);
-       note         	: out t_tone_array;
-       velocity        : out t_tone_array
+       rx_data_rdy      : in  std_logic;
+       note_on		      : out std_logic_vector(9 downto 0);
+       note_o           : out t_tone_array;
+       velocity         : out t_tone_array
        );
 
 end entity midi_controller_fsm;
@@ -57,9 +57,6 @@ architecture str of midi_controller_fsm is
   signal reg_note_on, next_reg_note_on : std_logic_vector(9 downto 0);
   signal reg_note, next_reg_note         : t_tone_array;
   signal reg_velocity, next_reg_velocity : t_tone_array;
-  signal note_available : std_logic;
-  signal note_written : std_logic;
-
 
   -----------------------------------------------------------------------------
   -- Component declarations
@@ -105,9 +102,9 @@ begin  -- architecture str
         end if;
 
 
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
       --wait data two
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
       when wait_data2 =>
         if rx_data_rdy = '1' then
           next_data2_reg  <= rx_data(6 downto 0);
@@ -116,34 +113,35 @@ begin  -- architecture str
         else
           next_midi_state <= wait_data2;
         end if;
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
         --others
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
       when others => next_midi_state <= midi_state;
     end case;
   end process midi_fsm;
 
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
   midi_reg : process(all)
+    variable note_available : std_logic := '0';
+    variable note_written : std_logic := '0';
   begin
-    --
-    note_available <= '0';
-    note_written <= '0';
 
-    next_reg_note_on <= reg_note_on;
-    next_reg_note <= reg_note;
+
+    next_reg_note_on  <= reg_note_on;
+    next_reg_note     <= reg_note;
     next_reg_velocity <= reg_velocity;
-      
+    note_available := '0';
+    note_written := '0';  
     
-    if data_flag then
+    if data_flag = '1' then
       -----------------------------------------------------
       -- CHECK IF NOTE IS ALREADY ENTERED IN MIDI ARRAY
       ------------------------------------------------------
       for i in 0 to 9 loop
         if reg_note(i) = data1_reg and reg_note_on(i) = '1' then -- Found a matching note
-          note_available <= '1';
+          note_available := '1';
           if status_reg(4) = '0' then -- note off
             next_reg_note_on(i) <= '0'; -- turn off note
           elsif status_reg(4) = '1' and data2_reg = "0000000" then
@@ -163,25 +161,18 @@ begin  -- architecture str
           if note_written = '0' then -- if the note already written, ignore the remaining loop runs
             -- If a free space is found (reg_note_on(i) = '0') enter the note number and velocity
             -- or if until the end of the loop no space is found (i=9) overwrite last entry
-            IF (reg_note_on(i) = '0' OR i = 9) AND status_reg(4) = '1' THEN --bit 7 is note_on bit
+            if (reg_note_on(i) = '0' or i = 9) and status_reg(4) = '1' then --bit 7 is note_on bit 
               next_reg_note(i) <= data1_reg;
               next_reg_velocity(i) <= data2_reg;
               next_reg_note_on(i) <= '1'; -- And set the note_1_register to valid.
-              note_written <= '1'; -- flag that note is written to supress remaining loop runs
-            END IF;
+              note_written := '1'; -- flag that note is written to supress remaining loop runs
+            end if;
           end if;
-        end loop;  -- i
+        end loop;
       end if;
     end if;
 	  
   end process midi_reg;
-
-  midi_out: process (all) is
-  begin  -- process midi_out
-    note_on <= reg_note_on;
-    note <= reg_note;
-    velocity <= reg_velocity;
-  end process midi_out; 
 
   --FF midi_state
   ff : process(all)
@@ -193,10 +184,8 @@ begin  -- architecture str
       data1_reg    <= (others => '0');
       data2_reg    <= (others => '0');
       reg_note_on  <= (others => '0');
-      for i in 0 to 9 loop
-        reg_note(i) <= (others => '0');
-        reg_velocity(i) <= (others => '0');
-      end loop;  -- i
+      reg_note     <= (others => (others => '0'));
+      reg_velocity <= (others => (others => '0'));
 
     elsif rising_edge(clk_6m) then
       midi_state   <= next_midi_state;
@@ -212,7 +201,9 @@ begin  -- architecture str
 
   -- Internal signal assignments
 -----------------------------------------------------------------------------
-
+  note_on <= reg_note_on;
+  note_o <= reg_note;
+  velocity <= reg_velocity;
 
 -------------------------------------------------------------------------------
 

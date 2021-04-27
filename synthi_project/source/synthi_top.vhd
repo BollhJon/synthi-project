@@ -208,7 +208,7 @@ architecture str of synthi_top is
       rx_data     : in  std_logic_vector(7 downto 0);
       rx_data_rdy : in  std_logic;
       note_on     : out std_logic_vector(9 downto 0);
-      note        : out t_tone_array;
+      note_o        : out t_tone_array;
       velocity    : out t_tone_array);
   end component midi_controller_fsm;
 
@@ -349,7 +349,7 @@ begin  -- architecture str
       rx_data     => usb_data_sig,
       rx_data_rdy => usb_data_rdy_sig,
       note_on     => note_on_sig,
-      note        => note_sig,
+      note_o        => note_sig,
       velocity    => velocity_sig
       );
 

@@ -785,6 +785,9 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to USB_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_RST_N
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_FILE ../source/i2c/reg_table_pkg.vhd
 set_global_assignment -name VHDL_FILE ../source/midi/midi_controller_fsm.vhd
 set_global_assignment -name VHDL_FILE ../source/synthi_control/reg_controller.vhd
@@ -797,7 +800,6 @@ set_global_assignment -name VHDL_FILE ../source/i2c/i2s_frame_generator.vhd
 set_global_assignment -name VHDL_FILE ../source/i2c/i2s_master.vhd
 set_global_assignment -name VHDL_FILE ../source/i2c/path_control.vhd
 set_global_assignment -name VHDL_FILE ../source/i2c/i2c_master.vhd
-set_global_assignment -name VHDL_FILE ../source/reg_table_pkg.vhd
 set_global_assignment -name VHDL_FILE ../source/infrastructure/modulo_divider.vhd
 set_global_assignment -name VHDL_FILE ../source/i2c/codec_controller.vhd
 set_global_assignment -name VHDL_FILE ../source/infrastructure/signal_checker.vhd

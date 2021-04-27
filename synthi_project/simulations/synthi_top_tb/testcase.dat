@@ -17,12 +17,63 @@
 #-- 2021-04-19  1.0      Bollhalder Jonas Created
 #-------------------------------------------------------------------------------
 
-reset_target 20
+reset_target 10
+#turn on 71, 61, 51, 41
 uart_send_data 90
-run_simulation_for 00 00 f0 00
+run_simulation_for 00 00 04 00
 
-uart_send_data 5A
-run_simulation_for 00 00 f0 00
+uart_send_data 71
+run_simulation_for 00 00 04 00
 
-uart_send_data 10
-run_simulation_for 00 00 f0 00
+uart_send_data 72
+run_simulation_for 00 00 04 00
+
+uart_send_data 61
+run_simulation_for 00 00 04 00
+
+uart_send_data 62
+run_simulation_for 00 00 04 00
+
+uart_send_data 51
+run_simulation_for 00 00 04 00
+
+uart_send_data 52
+run_simulation_for 00 00 04 00
+
+uart_send_data 41
+run_simulation_for 00 00 04 00
+
+uart_send_data 42
+run_simulation_for 00 00 04 00
+
+#trun of by velocity 71 and 51
+uart_send_data 71
+run_simulation_for 00 00 04 00
+
+uart_send_data 00
+run_simulation_for 00 00 04 00
+
+uart_send_data 51
+run_simulation_for 00 00 04 00
+
+uart_send_data 00
+run_simulation_for 00 00 04 00
+
+#turn of by status 61 and 41
+uart_send_data 80
+run_simulation_for 00 00 04 00
+
+uart_send_data 61
+run_simulation_for 00 00 04 00
+
+uart_send_data 62
+run_simulation_for 00 00 04 00
+
+uart_send_data 80
+run_simulation_for 00 00 04 00
+
+uart_send_data 41
+run_simulation_for 00 00 04 00
+
+uart_send_data 42
+run_simulation_for 00 00 04 00
