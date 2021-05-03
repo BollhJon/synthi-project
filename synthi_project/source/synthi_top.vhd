@@ -1,22 +1,23 @@
 -------------------------------------------------------------------------------
 -- Title      : synthi_top
--- Project    : 
+-- Project    : Synthi-Project
 -------------------------------------------------------------------------------
 -- File       : synthi_top.vhd
--- Author     :   <domin@DESKTOP-PQBL6RE>
+-- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-04-16
+-- Last update: 2021-04-26
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
--- Description: 
+-- Description: Top level file for Synthi-Project
 -------------------------------------------------------------------------------
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2021-03-01  1.0      domin	Created
+-- Date        Version  Author            Description
+-- 2021-03-01  1.0      Boehi Dominik	    Created
+-- 2021-04-16  1.1      Bollhalder Jonas  Modifications
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -24,13 +25,11 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.reg_table_pkg.all;
 use work.tone_gen_pkg.all;
+use work.reg_controller_pkg.all;
 
 -------------------------------------------------------------------------------
 
 entity synthi_top is
-
- -- generic (
- --    );
 
   port (
         CLOCK_50 : in std_logic;            -- DE2 clock from xtal 50MHz
@@ -95,7 +94,7 @@ architecture str of synthi_top is
   signal bt_txd_sync_sig  : std_logic;
   signal write_done_sig	  : std_logic;
   signal ack_error_sig	  : std_logic;
-  signal write_sig	  : std_logic;
+  signal write_sig	      : std_logic;
   signal write_data_sig	  : std_logic_vector(15 downto 0);
   signal dds_l_i_sig      : std_logic_vector(15 downto 0);
   signal dds_r_i_sig      : std_logic_vector(15 downto 0);
@@ -105,11 +104,11 @@ architecture str of synthi_top is
   signal dacdat_pr_o_sig  : std_logic_vector(15 downto 0);
   signal step_o_sig       : std_logic;
   signal ws_o_sig         : std_logic;
-  signal note_sig         : std_logic_vector(6 downto 0);
-  signal velocity_sig     : std_logic_vector(7 downto 0);
-  signal codec_rst_n_sig  : std_logic;
-  signal check_rst_n_sig  : std_logic;
-  signal config_sig       : std_logic_vector(23 downto 0);
+  signal config_sig       : t_reg_array;
+  signal note_on_sig      : std_logic_vector(9 downto 0);   
+  signal note_sig         : t_tone_array;
+  signal velocity_sig     : t_tone_array;
+
   
  -----------------------------------------------------------------------------
   -- Component declarations
@@ -190,34 +189,40 @@ architecture str of synthi_top is
       dacdat_pr_o : out std_logic_vector(15 downto 0);
       sw          : in  std_logic);
   end component path_control;
-  
-  component tone_gen is
-    port(
-      clk_6m            : in  std_logic;
-      reset_n           : in  std_logic;
-      tone_on_i         : in std_logic;
-      note_i            : in std_logic_vector(6 downto 0);
-      step_i            : in std_logic;
-      velocity_i        : in std_logic_vector(7 downto 0);
-      dds_l_o           : out std_logic_vector(15 downto 0);
-      dds_r_o           : out std_logic_vector(15 downto 0));
-  end component tone_gen;
-
-  component vector_check is
-    port (
-      vector_i : in  std_logic_vector(2 downto 0);
-      clk_i    : in  std_logic;
-      signal_o : out std_logic);
-  end component vector_check;
 
   component reg_controller is
     port (
+      clk_6m   : in  std_logic;
       rst_n    : in  std_logic;
       data_i   : in  std_logic_vector(7 downto 0);
       data_rdy : in  std_logic;
-      config_i : in  std_logic_vector(23 downto 0);
-      config_o : out std_logic_vector(23 downto 0));
+      config_i : in  t_reg_array;
+      config_o : out t_reg_array);
   end component reg_controller;
+
+  component midi_controller_fsm is
+    port (
+      clk_6m      : in  std_logic;
+      reset_n     : in  std_logic;
+      rx_data     : in  std_logic_vector(7 downto 0);
+      rx_data_rdy : in  std_logic;
+      note_on     : out std_logic_vector(9 downto 0);
+      note_o      : out t_tone_array;
+      velocity    : out t_tone_array);
+  end component midi_controller_fsm;
+
+  component tone_gen is
+    port (
+      clk_6m     : in  std_logic;
+      reset_n    : in  std_logic;
+      tone_on_i  : in  std_logic_vector(9 downto 0);
+      note_i     : in  t_tone_array;
+      step_i     : in  std_logic;
+      velocity_i : in  t_tone_array;
+      dds_l_o    : out std_logic_vector(15 downto 0);
+      dds_r_o    : out std_logic_vector(15 downto 0));
+  end component tone_gen;
+
 
 
   
@@ -236,12 +241,13 @@ begin  -- architecture str
       rx_data_rdy => usb_data_rdy_sig,
       rx_data     => usb_data_sig,
       seg0_o      => HEX0,
-      seg1_o      => HEX1);
+      seg1_o      => HEX1
+      );
 
   -- instance "uart_top_2"
   uart_top_2: uart_top
     port map (
-      clk         => clk_12m_sig,
+      clk         => clk_6m_sig,
       reset_n     => reset_n_sig,
       ser_data_i  => bt_txd_sync_sig,
       rx_data_rdy => bt_data_rdy_sig,
@@ -272,11 +278,11 @@ begin  -- architecture str
   -- instance "codec_controller_1"
   codec_controller_1: codec_controller
     port map (
-      mode         => config_sig(6 downto 4),
+      mode         => config_sig(1)(2 downto 0),
       write_done_i => write_done_sig,
       ack_error_i  => ack_error_sig,
       clk          => clk_6m_sig,
-      reset_n      => codec_rst_n_sig,
+      reset_n      => reset_n_sig,
       write_o      => write_sig,
       write_data_o => write_data_sig);
 
@@ -315,49 +321,50 @@ begin  -- architecture str
       adcdat_pr_i => adcdat_pr_i_sig,
       dacdat_pl_o => dacdat_pl_o_sig,
       dacdat_pr_o => dacdat_pr_o_sig,
-      sw          => config_sig(7));
+      sw          => config_sig(1)(3));
 
   AUD_XCK <= clk_12m_sig;
   AUD_BCLK <= not clk_6m_sig;
   AUD_DACLRCK <= ws_o_sig;
   AUD_ADCLRCK <= ws_o_sig;
   
-  -- instance "tone_gen_1
-  
-  tone_gen_1: tone_gen
-    port map (
-      clk_6m    => clk_6m_sig,
-      reset_n   => reset_n_sig,
-      step_i	=> step_o_sig,
-      note_i	=> note_sig,
-      velocity_i=> velocity_sig,
-      tone_on_i	=> config_sig(8),
-      dds_l_o	=> dds_l_i_sig,
-      dds_r_o	=> dds_r_i_sig);
-	
-  note_sig <= config_sig(13 downto 12) & "00000";
-  velocity_sig <= config_sig(11 downto 9) & "00000";
-
-  -- instance "vector_check_1"
-  vector_check_1: vector_check
-    port map (
-      vector_i => config_sig(6 downto 4),
-      clk_i    => clk_6m_sig,
-      signal_o => check_rst_n_sig);
-
-  codec_rst_n_sig <= (not check_rst_n_sig) and reset_n_sig;
 
   -- instance "reg_controller_1"
   reg_controller_1: reg_controller
     port map (
+      clk_6m   => clk_6m_sig,
       rst_n    => reset_n_sig,
       data_i   => bt_data_sig,
       data_rdy => bt_data_rdy_sig,
-      config_i => "0000"&"0000"&("00"&SW(9 downto 8))&SW(7 downto 4)&SW(3 downto 0)&"0000",
+      config_i => ("0000",SW(3 downto 0),SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000"),
       config_o => config_sig);
   
-  LEDR_9 <= config_sig(0);
-  
+  LEDR_9 <= config_sig(0)(0);
+
+  -- instance "midi_controller_fsm_1"
+  midi_controller_fsm_1: midi_controller_fsm
+    port map (
+      clk_6m     => clk_6m_sig,
+      reset_n     => reset_n_sig,
+      rx_data     => usb_data_sig,
+      rx_data_rdy => usb_data_rdy_sig,
+      note_on     => note_on_sig,
+      note_o        => note_sig,
+      velocity    => velocity_sig
+      );
+
+  -- instance "tone_gen_1"
+  tone_gen_1: tone_gen
+    port map (
+      clk_6m     => clk_6m_sig,
+      reset_n    => reset_n_sig,
+      tone_on_i  => note_on_sig,
+      note_i     => note_sig,
+      step_i     => step_o_sig,
+      velocity_i => velocity_sig,
+      dds_l_o    => dds_l_i_sig,
+      dds_r_o    => dds_r_i_sig
+      );
 end architecture str;
 
 -------------------------------------------------------------------------------
