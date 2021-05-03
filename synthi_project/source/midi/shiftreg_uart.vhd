@@ -1,14 +1,33 @@
--------------------------------------------
--- Block code:  shiftreg_uart.vhd
--- History:     12.Nov.2013 - 1st version (dqtm)
---              27.9.2019 - universal (gelk)
--- Function: shift-register working as a serial to parallel converter.
---                      The block has a shift_enable( or freeze_n) control input, plus a serial data input.
---                      If shift_enable is high the data is shifted, the serial data is taken in the MSB, 
---                      and the further bits are shifted towards the LSB.
---                      The parallel output contains the 4 q-outputs of the D-FFs in the shiftregister.  
---                      Can be used as S2P in a serial interface, but need extra signal to identify when shifting is done (data_ready).
--------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : shift register uart
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : shiftreg_uart.vhd
+-- Author     : Boehi Dominik
+-- Company    : 
+-- Created    : 2013-11-12
+-- Last update: 2020-11-23
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: shift-register working as a serial to parallel converter.
+--              The block has a shift_enable( or freeze_n) control input, plus 
+--              a serial data input. If shift_enable is high the data is 
+--              shifted, the serial data is taken in the MSB, and the further 
+--              bits are shifted towards the LSB. The parallel output contains 
+--              the 4 q-outputs of the D-FFs in the shiftregister. Can be used 
+--              as S2P in a serial interface, but need extra signal to identify 
+--              when shifting is done (data_ready).
+-------------------------------------------------------------------------------
+-- Copyright (c) 2013 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author            Description
+-- 2013-11-12  1.0      dqtm        	    Created
+-- 2020-11-23  1.1      Boehi Dominik     adapted for lab 09
+-- 2020-11-24  1.2      Boehi Dominik     adapted for lab 10
+-- 2020-12-07  1.3      Boehi Dominik     adapted for miniprojekt
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------

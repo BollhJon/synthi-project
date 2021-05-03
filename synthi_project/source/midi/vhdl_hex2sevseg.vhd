@@ -1,20 +1,26 @@
---
--- Project     : DT
---
--- File Name   : vhdl_template
--- Description : Template for DT lessons
---
--- Features:     
---
---------------------------------------------------------------------
--- Change History
--- Date     |Name      |Modification
-------------|----------|--------------------------------------------
--- 15.10.14 |  dqtm    | file created
--- 15.10.14 |  rosn    | small changes, comments
--- 11.10.19 |  gelk    | adapted for 2025
-
---------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : vhdl hex to sevensegment
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : vhdl_hex2sevenseg.vhd
+-- Author     : dqtm
+-- Company    : 
+-- Created    : 2014-10-15
+-- Last update: 2020-10-14
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: 
+-------------------------------------------------------------------------------
+-- Copyright (c) 2018 - 2021
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  		Description
+-- 2014-10-15  1.0      dqtm    		Created
+-- 2014-10-15  1.1      rosn    		small changes, comments
+-- 2019-10-11  1.2		gelk			adapted for 2025
+-- 2020-10-13  1.3		Boehi Dominik	adapted for sevensegment display
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 library ieee;

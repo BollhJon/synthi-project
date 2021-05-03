@@ -1,0 +1,24 @@
+#-------------------------------------------------------------------------------
+#-- Title      : Testcases MS2
+#-- Project    : Synthi-Project
+#-------------------------------------------------------------------------------
+#-- File       : testcase_ms1.dat
+#-- Author     : Boehi Dominik
+#-- Company    : 
+#-- Created    : 2021-03-17
+#-- Last update: 2021-03-17
+#-- Platform   : 
+#-- Standard   : VHDL'08
+#-------------------------------------------------------------------------------
+#-- Description: Testcases for Milestone 2 of Synthi-Project
+#-------------------------------------------------------------------------------
+#-- Revisions  :
+#-- Date        Version  Author          Description
+#-- 2021-03-17  1.0      Boehi Dominik   Created
+#-------------------------------------------------------------------------------
+
+# testcases for i2s
+reset_target 20
+set_switches 00 00 00 08
+send_i2s 11 22 33 44
+check_i2s 11 22 33 44

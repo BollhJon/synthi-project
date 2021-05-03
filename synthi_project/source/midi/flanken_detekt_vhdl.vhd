@@ -1,11 +1,24 @@
--------------------------------------------
--- Block code:  flankenDetekt_v2.vhd
--- History: 	14.Oct.2013 - 1st version (dqtm)
---                 <date> - <changes>  (<author>)
--- Function: template to be edited by students in order 
---           to describe edge detector with rise & fall outputs. 
---             
--------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : Bit counter
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : bit_counter.vhd
+-- Author     : Boehi Dominik
+-- Company    : 
+-- Created    : 2020-10-12
+-- Last update: 2020-10-12
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: detects the rising and falling edges of a clock signal
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author            Description
+-- 2020-10-12  1.0      Boehi Dominik	  Created
+-------------------------------------------------------------------------------
+
 
 -- Library & Use Statements
 LIBRARY ieee;

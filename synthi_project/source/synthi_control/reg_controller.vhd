@@ -1,21 +1,25 @@
---------------------------------------------------------------------
---
--- Project     : Synthi_Project
---
--- File Name   : reg_controller.vhd
--- Description : controller for Registers
---                                      
--- Features:    Die eingegangenen Byte-Nachrichten werden ausgewertet
---              und in die entsprechnenden Register gespeichert.
---              Gemäss den Einstellungen in den Registern werden die
---              Schalter überschrieben.
---                              
---------------------------------------------------------------------
--- Change History
--- Date       |Name      |Modification
---------------|----------|------------------------------------------
--- 15.04.2021 | bollhjon | created file
---------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : register controller
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : reg_controller.vhd
+-- Author     : Bollhalder Jonas
+-- Company    : 
+-- Created    : 2021-04-15
+-- Last update: 2021-04-15
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: The received byte messages are evaluated and stored in the 
+--              corresponding registers. According to the settings in the 
+--              registers the switches are overwritten.
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author            Description
+-- 2021-04-15  1.0      Bollhalder Jonas  Created
+-------------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;

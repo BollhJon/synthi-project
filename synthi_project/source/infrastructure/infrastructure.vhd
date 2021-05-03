@@ -1,22 +1,22 @@
 -------------------------------------------------------------------------------
 -- Title      : infrastructure
--- Project    : 
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : infrastructure.vhd
--- Author     :   <domin@DESKTOP-PQBL6RE>
+-- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
 -- Last update: 2021-04-15
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
--- Description: project synthi
+-- Description:
 -------------------------------------------------------------------------------
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2021-03-01  1.0      domin	Created
+-- Date        Version  Author          Description
+-- 2021-03-01  1.0      Boehi Dominik	  Created
 -------------------------------------------------------------------------------
 
 library ieee;

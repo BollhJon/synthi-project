@@ -1,9 +1,23 @@
--------------------------------------------
--- Block code:  dds.vhd
--- History:     31.Mar.2021 - 1st version (bollhjon)
---              <date> - <changes>  (<author>)
--- Function:    
--------------------------------------------
+-------------------------------------------------------------------------------
+-- Title      : dds
+-- Project    : Synthi-Project
+-------------------------------------------------------------------------------
+-- File       : dds.vhd
+-- Author     : Bollhalder Jonas
+-- Company    : 
+-- Created    : 2021-03-31
+-- Last update: 2021-03-31
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: dds for Synthi-Project
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author                Description
+-- 2021-03-31  1.0      Bollhalder Jonas	    Created
+-------------------------------------------------------------------------------
 
 -- Library & Use Statements
 -------------------------------------------
@@ -96,13 +110,13 @@ begin
 
     case atte is
       when 0 => dds_o <= std_logic_vector(lut_val);
-      when 1 => dds_o <= std_logic_vector(shift_left(lut_val,1));
-      when 2 => dds_o <= std_logic_vector(shift_left(lut_val,2));
-      when 3 => dds_o <= std_logic_vector(shift_left(lut_val,3));
-      when 4 => dds_o <= std_logic_vector(shift_left(lut_val,4));
-      when 5 => dds_o <= std_logic_vector(shift_left(lut_val,5));
-      when 6 => dds_o <= std_logic_vector(shift_left(lut_val,6));
-      when 7 => dds_o <= std_logic_vector(shift_left(lut_val,7));
+      when 1 => dds_o <= std_logic_vector(shift_right(lut_val,1));
+      when 2 => dds_o <= std_logic_vector(shift_right(lut_val,2));
+      when 3 => dds_o <= std_logic_vector(shift_right(lut_val,3));
+      when 4 => dds_o <= std_logic_vector(shift_right(lut_val,4));
+      when 5 => dds_o <= std_logic_vector(shift_right(lut_val,5));
+      when 6 => dds_o <= std_logic_vector(shift_right(lut_val,6));
+      when 7 => dds_o <= std_logic_vector(shift_right(lut_val,7));
       when others => dds_o <= std_logic_vector(lut_val);
     end case;
   end process attenuator;
