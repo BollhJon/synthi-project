@@ -74,20 +74,20 @@ begin
 
 -- End Architecture 
 -------------------------------------------
-  fm_dds_inst_gen: for i in 0 to 9 generate
-    inst_fm_dds: fm_dds
+  dds_inst_gen: for i in 0 to 9 generate
+    fm_dds_1: fm_dds
     port map (
       clk_6m        => clk_6m,
       reset_n       => reset_n,
-      phi_incr_fsig => LUT_midi2dds(to_integer(unsigned(note_i(i)))),
+      phi_incr_fsig => LUT_midi2dds(to_integer(note_i(i))),
       tone_on_i     => tone_on_i(i),
       fm_ratio      => fm_ratio,
       fm_depth      => fm_depth,
       step_i        => step_i,
-      attenu_i      => "011",
+      attenu_i      => "111",
       fm_dds_o      => dds_o_array(i)
       );
-  end generate fm_dds_inst_gen;
+  end generate dds_inst_gen;
   
   comb_sum_output : process(all)
     variable var_sum : signed(N_AUDIO-1 downto 0);

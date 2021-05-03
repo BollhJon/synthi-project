@@ -6,7 +6,7 @@
 -- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-04-26
+-- Last update: 2021-05-03
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -219,6 +219,8 @@ architecture str of synthi_top is
       note_i     : in  t_tone_array;
       step_i     : in  std_logic;
       velocity_i : in  t_tone_array;
+      fm_ratio : in std_logic_vector(3 downto 0);
+      fm_depth : in std_logic_vector(2 downto 0);
       dds_l_o    : out std_logic_vector(15 downto 0);
       dds_r_o    : out std_logic_vector(15 downto 0));
   end component tone_gen;
@@ -362,6 +364,8 @@ begin  -- architecture str
       note_i     => note_sig,
       step_i     => step_o_sig,
       velocity_i => velocity_sig,
+      fm_ratio   => config_sig(2),
+      fm_depth   => config_sig(3)(2 downto 0),
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );

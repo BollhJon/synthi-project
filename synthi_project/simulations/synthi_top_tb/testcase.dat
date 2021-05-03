@@ -18,62 +18,22 @@
 #-------------------------------------------------------------------------------
 
 reset_target 10
+set_switches 00 00 00 00
 #turn on 71, 61, 51, 41
 uart_send_data 90
 run_simulation_for 00 00 04 00
 
-uart_send_data 71
+uart_send_data 50
 run_simulation_for 00 00 04 00
 
 uart_send_data 72
 run_simulation_for 00 00 04 00
 
-uart_send_data 61
+uart_send_data 49
 run_simulation_for 00 00 04 00
 
-uart_send_data 62
-run_simulation_for 00 00 04 00
+uart_send_data 72
+run_simulation_for 00 10 00 00
 
-uart_send_data 51
-run_simulation_for 00 00 04 00
-
-uart_send_data 52
-run_simulation_for 00 00 04 00
-
-uart_send_data 41
-run_simulation_for 00 00 04 00
-
-uart_send_data 42
-run_simulation_for 00 00 04 00
-
-#trun of by velocity 71 and 51
-uart_send_data 71
-run_simulation_for 00 00 04 00
-
-uart_send_data 00
-run_simulation_for 00 00 04 00
-
-uart_send_data 51
-run_simulation_for 00 00 04 00
-
-uart_send_data 00
-run_simulation_for 00 00 04 00
-
-#turn of by status 61 and 41
-uart_send_data 80
-run_simulation_for 00 00 04 00
-
-uart_send_data 61
-run_simulation_for 00 00 04 00
-
-uart_send_data 62
-run_simulation_for 00 00 04 00
-
-uart_send_data 80
-run_simulation_for 00 00 04 00
-
-uart_send_data 41
-run_simulation_for 00 00 04 00
-
-uart_send_data 42
-run_simulation_for 00 00 04 00
+set_switches 00 00 03 40
+run_simulation_for 00 10 00 00
