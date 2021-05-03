@@ -25,13 +25,11 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.reg_table_pkg.all;
 use work.tone_gen_pkg.all;
+use work.reg_controller_pkg.all;
 
 -------------------------------------------------------------------------------
 
 entity synthi_top is
-
- -- generic (
- --    );
 
   port (
         CLOCK_50 : in std_logic;            -- DE2 clock from xtal 50MHz
@@ -96,7 +94,7 @@ architecture str of synthi_top is
   signal bt_txd_sync_sig  : std_logic;
   signal write_done_sig	  : std_logic;
   signal ack_error_sig	  : std_logic;
-  signal write_sig	  : std_logic;
+  signal write_sig	      : std_logic;
   signal write_data_sig	  : std_logic_vector(15 downto 0);
   signal dds_l_i_sig      : std_logic_vector(15 downto 0);
   signal dds_r_i_sig      : std_logic_vector(15 downto 0);
@@ -106,7 +104,7 @@ architecture str of synthi_top is
   signal dacdat_pr_o_sig  : std_logic_vector(15 downto 0);
   signal step_o_sig       : std_logic;
   signal ws_o_sig         : std_logic;
-  signal config_sig       : std_logic_vector(23 downto 0);
+  signal config_sig       : t_reg_array;
   signal note_on_sig      : std_logic_vector(9 downto 0);   
   signal note_sig         : t_tone_array;
   signal velocity_sig     : t_tone_array;
@@ -194,11 +192,12 @@ architecture str of synthi_top is
 
   component reg_controller is
     port (
+      clk_6m   : in  std_logic;
       rst_n    : in  std_logic;
       data_i   : in  std_logic_vector(7 downto 0);
       data_rdy : in  std_logic;
-      config_i : in  std_logic_vector(23 downto 0);
-      config_o : out std_logic_vector(23 downto 0));
+      config_i : in  t_reg_array;
+      config_o : out t_reg_array);
   end component reg_controller;
 
   component midi_controller_fsm is
@@ -208,7 +207,7 @@ architecture str of synthi_top is
       rx_data     : in  std_logic_vector(7 downto 0);
       rx_data_rdy : in  std_logic;
       note_on     : out std_logic_vector(9 downto 0);
-      note_o        : out t_tone_array;
+      note_o      : out t_tone_array;
       velocity    : out t_tone_array);
   end component midi_controller_fsm;
 
@@ -279,7 +278,7 @@ begin  -- architecture str
   -- instance "codec_controller_1"
   codec_controller_1: codec_controller
     port map (
-      mode         => config_sig(6 downto 4),
+      mode         => config_sig(1)(2 downto 0),
       write_done_i => write_done_sig,
       ack_error_i  => ack_error_sig,
       clk          => clk_6m_sig,
@@ -322,7 +321,7 @@ begin  -- architecture str
       adcdat_pr_i => adcdat_pr_i_sig,
       dacdat_pl_o => dacdat_pl_o_sig,
       dacdat_pr_o => dacdat_pr_o_sig,
-      sw          => config_sig(7));
+      sw          => config_sig(1)(3));
 
   AUD_XCK <= clk_12m_sig;
   AUD_BCLK <= not clk_6m_sig;
@@ -333,13 +332,14 @@ begin  -- architecture str
   -- instance "reg_controller_1"
   reg_controller_1: reg_controller
     port map (
+      clk_6m   => clk_6m_sig,
       rst_n    => reset_n_sig,
       data_i   => bt_data_sig,
       data_rdy => bt_data_rdy_sig,
-      config_i => "0000"&"0000"&("00"&SW(9 downto 8))&SW(7 downto 4)&SW(3 downto 0)&"0000",
+      config_i => ("0000",SW(3 downto 0),SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000"),
       config_o => config_sig);
   
-  LEDR_9 <= config_sig(0);
+  LEDR_9 <= config_sig(0)(0);
 
   -- instance "midi_controller_fsm_1"
   midi_controller_fsm_1: midi_controller_fsm
