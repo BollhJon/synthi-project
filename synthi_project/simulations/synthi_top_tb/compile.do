@@ -6,6 +6,7 @@ vcom -2008 -explicit -work work ../../support/simulation_pkg.vhd
 vcom -2008 -explicit -work work ../../support/standard_driver_pkg.vhd
 vcom -2008 -explicit -work work ../../support/user_driver_pkg.vhd
 vcom -2008 -explicit -work work ../../../source/tone_gen/tone_gen_pkg.vhd
+vcom -2008 -explicit -work work ../../../source/synthi_control/reg_controller_pkg.vhd
 
 # vcom -2008 -explicit -work work ../../../source/file.vhd
 vcom -2008 -explicit -work work ../../../source/infrastructure/modulo_divider.vhd
@@ -37,6 +38,7 @@ vcom -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd
 vcom -2008 -explicit -work work ../../../source/synthi_control/reg_controller.vhd
 
 vcom -2008 -explicit -work work ../../../source/tone_gen/dds.vhd
+vcom -2008 -explicit -work work ../../../source/tone_gen/fm_dds.vhd
 vcom -2008 -explicit -work work ../../../source/tone_gen/tone_gen.vhd
 
 vcom -2008 -explicit -work work ../../../source/synthi_top.vhd
