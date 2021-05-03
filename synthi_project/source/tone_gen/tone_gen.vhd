@@ -6,7 +6,7 @@
 -- Author     : Bollhalder Jonas
 -- Company    : 
 -- Created    : 2021-03-31
--- Last update: 2021-04-26
+-- Last update: 2021-05-03
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -36,6 +36,8 @@ entity tone_gen is
        note_i            : in t_tone_array;
        step_i            : in std_logic;
        velocity_i        : in t_tone_array;
+       fm_ratio          : in  std_logic_vector(3 downto 0);
+       fm_depth          : in  std_logic_vector(2 downto 0);
        dds_l_o           : out std_logic_vector(15 downto 0);
        dds_r_o           : out std_logic_vector(15 downto 0)
        );
@@ -54,37 +56,38 @@ architecture rtl of tone_gen is
 -- Begin Architecture
 -------------------------------------------
 
-  component dds is
+  component fm_dds is
     port (
-      clk_6m     : in  std_logic;
-      reset_n    : in  std_logic;
-      phi_incr_i : in  std_logic_vector(N_CUM-1 downto 0);
-      step_i     : in  std_logic;
-      tone_on_i  : in  std_logic;
-      attenu_i   : in  std_logic_vector(2 downto 0);
-      dds_o      : out std_logic_vector(N_AUDIO-1 downto 0)
-      );
-  end component dds;
+      clk_6m        : in  std_logic;
+      reset_n       : in  std_logic;
+      phi_incr_fsig : in  std_logic_vector(N_CUM-1 downto 0);
+      tone_on_i     : in  std_logic;
+      fm_ratio      : in  std_logic_vector(3 downto 0);
+      fm_depth      : in  std_logic_vector(2 downto 0);
+      step_i        : in  std_logic;
+      attenu_i      : in  std_logic_vector(2 downto 0);
+      fm_dds_o      : out std_logic_vector(N_AUDIO -1 downto 0));
+  end component fm_dds;
+
+
 begin
 
 -- End Architecture 
 -------------------------------------------
-
-  -- instance dds
   dds_inst_gen: for i in 0 to 9 generate
-    inst_dds: dds
-      port map (
-        clk_6m     => clk_6m,
-        reset_n    => reset_n,
-        phi_incr_i => LUT_midi2dds(to_integer(unsigned(note_i(i)))),
-        step_i     => step_i,
-        tone_on_i  => tone_on_i(i),
-        attenu_i   => "111",
-        dds_o      => dds_o_array(i)
-        );
+    fm_dds_1: fm_dds
+    port map (
+      clk_6m        => clk_6m,
+      reset_n       => reset_n,
+      phi_incr_fsig => LUT_midi2dds(to_integer(note_i(i))),
+      tone_on_i     => tone_on_i(i),
+      fm_ratio      => fm_ratio,
+      fm_depth      => fm_depth,
+      step_i        => step_i,
+      attenu_i      => "111",
+      fm_dds_o      => dds_o_array(i)
+      );
   end generate dds_inst_gen;
-
-
   
   comb_sum_output : process(all)
     variable var_sum : signed(N_AUDIO-1 downto 0);
@@ -111,6 +114,8 @@ begin
 
   dds_l_o <= std_logic_vector(sum_reg);
   dds_r_o <= std_logic_vector(sum_reg);
+
+  -- instance "fm_dds_1"
   
 end rtl;
 
