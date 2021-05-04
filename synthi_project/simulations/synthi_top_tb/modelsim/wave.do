@@ -8,9 +8,13 @@ add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/data2_reg
 add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/midi_state
 add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/next_midi_state
 add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/data_flag
+add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/new_data_flag
 add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/midi_reg/note_available
 add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/midi_reg/note_written
-add wave -noupdate -expand /synthi_top_tb/DUT/midi_controller_fsm_1/reg_note_on
+add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/reg_note_on
+add wave -noupdate /synthi_top_tb/DUT/midi_controller_fsm_1/next_reg_note_on
+add wave -noupdate -format Analog-Step -height 74 -max 4095.0 -min -4096.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/fm_dds_o
+add wave -noupdate -format Analog-Step -height 74 -max 4095.0 -min -4096.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod/dds_o
 add wave -noupdate -format Analog-Step -height 74 -max 4095.0 -min -4096.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/dds_l_o
 add wave -noupdate /synthi_top_tb/SW
 add wave -noupdate -radix decimal /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod/lut_sel
