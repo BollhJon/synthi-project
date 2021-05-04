@@ -37,6 +37,7 @@ vcom -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd
 
 vcom -2008 -explicit -work work ../../../source/synthi_control/reg_controller.vhd
 
+vcom -2008 -explicit -work work ../../../source/tone_gen/attenu.vhd
 vcom -2008 -explicit -work work ../../../source/tone_gen/dds.vhd
 vcom -2008 -explicit -work work ../../../source/tone_gen/fm_dds.vhd
 vcom -2008 -explicit -work work ../../../source/tone_gen/tone_gen.vhd

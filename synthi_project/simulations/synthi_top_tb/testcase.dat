@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases MS4
+#-- Title      : Testcases MS5
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
@@ -10,7 +10,7 @@
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for Milestone 4 of Synthi-Project
+#-- Description: Testcases for Milestone 5 of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
@@ -23,17 +23,64 @@ set_switches 00 00 00 00
 uart_send_data 90
 run_simulation_for 00 00 04 00
 
-uart_send_data 50
+uart_send_data 70
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 71
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
 run_simulation_for 00 00 04 00
 
 uart_send_data 72
 run_simulation_for 00 00 04 00
 
-uart_send_data 49
+uart_send_data 01
 run_simulation_for 00 00 04 00
 
-uart_send_data 72
-run_simulation_for 00 10 00 00
+uart_send_data 73
+run_simulation_for 00 00 04 00
 
-set_switches 00 00 03 40
-run_simulation_for 00 10 00 00
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 74
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 75
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 76
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 78
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 79
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+uart_send_data 69
+run_simulation_for 00 00 04 00
+
+uart_send_data 01
+run_simulation_for 00 00 04 00
+
+
