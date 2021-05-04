@@ -38,6 +38,7 @@ entity tone_gen is
        velocity_i        : in t_tone_array;
        fm_ratio          : in  std_logic_vector(3 downto 0);
        fm_depth          : in  std_logic_vector(2 downto 0);
+		 lut_sel				 : in  std_logic_vector(3 downto 0);
        dds_l_o           : out std_logic_vector(15 downto 0);
        dds_r_o           : out std_logic_vector(15 downto 0)
        );
@@ -66,6 +67,7 @@ architecture rtl of tone_gen is
       fm_depth      : in  std_logic_vector(2 downto 0);
       step_i        : in  std_logic;
       attenu_i      : in  std_logic_vector(2 downto 0);
+		lut_sel		  : in  std_logic_vector(3 downto 0);
       fm_dds_o      : out std_logic_vector(N_AUDIO -1 downto 0));
   end component fm_dds;
 
@@ -84,7 +86,8 @@ begin
       fm_ratio      => fm_ratio,
       fm_depth      => fm_depth,
       step_i        => step_i,
-      attenu_i      => "011",
+      attenu_i      => "000",
+		lut_sel		  => lut_sel,
       fm_dds_o      => dds_o_array(i)
       );
   end generate fm_dds_inst_gen;

@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author          Description
--- 2021-05-03  1.0      muellpav	Created
+-- 2021-05-03  1.0      muellpav			 Created
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -38,6 +38,7 @@ entity fm_dds is
     fm_depth : in std_logic_vector(2 downto 0);
     step_i   : in std_logic;
     attenu_i : in std_logic_vector(2 downto 0);
+	 lut_sel  : in std_logic_vector(3 downto 0);
     fm_dds_o : out std_logic_vector(N_AUDIO -1 downto 0)
     );
 end fm_dds;
@@ -56,6 +57,7 @@ architecture rtl of fm_dds is
       step_i     : in  std_logic;
       tone_on_i  : in  std_logic;
       attenu_i   : in  std_logic_vector(2 downto 0);
+		lut_sel	  : in  std_logic_vector(3 downto 0);
       dds_o      : out std_logic_vector(N_AUDIO-1 downto 0));
   end component dds;
 
@@ -70,6 +72,7 @@ begin  -- architecture rtl
       step_i     => step_i,
       tone_on_i  => tone_on_i,
       attenu_i   => fm_depth,
+		lut_sel	  => lut_sel,
       dds_o      => dds_o_mod_sig
       );
 
@@ -82,6 +85,7 @@ begin  -- architecture rtl
       step_i     => step_i,
       tone_on_i  => tone_on_i,
       attenu_i   => attenu_i,
+		lut_sel	  => lut_sel,
       dds_o      => fm_dds_o
       );
 

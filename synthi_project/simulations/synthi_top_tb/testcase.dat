@@ -1,12 +1,12 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases MS4
+#-- Title      : Testcases LUT
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
 #-- Author     : Bollhalder Jonas
 #-- Company    : 
-#-- Created    : 2021-04-19
-#-- Last update: 2021-04-19
+#-- Created    : 2021-05-04
+#-- Last update: 2021-05-05
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
@@ -14,7 +14,7 @@
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-04-19  1.0      Bollhalder Jonas Created
+#-- 2021-05-04  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
 
 reset_target 10
@@ -35,5 +35,5 @@ run_simulation_for 00 00 04 00
 uart_send_data 72
 run_simulation_for 00 10 00 00
 
-set_switches 00 00 03 40
+set_switches 00 00 20 00
 run_simulation_for 00 10 00 00

@@ -221,6 +221,7 @@ architecture str of synthi_top is
       velocity_i : in  t_tone_array;
       fm_ratio : in std_logic_vector(3 downto 0);
       fm_depth : in std_logic_vector(2 downto 0);
+		lut_sel : in  std_logic_vector(3 downto 0);
       dds_l_o    : out std_logic_vector(15 downto 0);
       dds_r_o    : out std_logic_vector(15 downto 0));
   end component tone_gen;
@@ -366,6 +367,7 @@ begin  -- architecture str
       velocity_i => velocity_sig,
       fm_ratio   => config_sig(2),
       fm_depth   => config_sig(3)(2 downto 0),
+		lut_sel    => config_sig(4),
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );
