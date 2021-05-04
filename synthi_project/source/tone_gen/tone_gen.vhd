@@ -6,7 +6,7 @@
 -- Author     : Bollhalder Jonas
 -- Company    : 
 -- Created    : 2021-03-31
--- Last update: 2021-05-03
+-- Last update: 2021-05-04
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -53,6 +53,7 @@ architecture rtl of tone_gen is
   signal dds_o_array : t_dds_o_array;
   signal sum_reg : signed(N_AUDIO-1 downto 0);
   signal next_sum_reg : signed(N_AUDIO-1 downto 0);
+  signal attenu_sig : std_logic_vector(2 downto 0);
 
 -- Begin Architecture
 -------------------------------------------
@@ -71,6 +72,14 @@ architecture rtl of tone_gen is
       fm_dds_o      : out std_logic_vector(N_AUDIO -1 downto 0));
   end component fm_dds;
 
+  component attenu is
+    port (
+      clk_6m    : in  std_logic;
+      reset_n   : in  std_logic;
+      tone_on_i : in  std_logic_vector(9 downto 0);
+      attenu_o  : out std_logic_vector(2 downto 0));
+  end component attenu;
+
 
 begin
 
@@ -86,8 +95,7 @@ begin
       fm_ratio      => fm_ratio,
       fm_depth      => fm_depth,
       step_i        => step_i,
-      attenu_i      => "000",
-		lut_sel		  => lut_sel,
+      attenu_i      => attenu_sig,
       fm_dds_o      => dds_o_array(i)
       );
   end generate fm_dds_inst_gen;
@@ -119,6 +127,14 @@ begin
   dds_r_o <= std_logic_vector(sum_reg);
 
   -- instance "fm_dds_1"
+
+  -- instance "attenu_1"
+  attenu_1: attenu
+    port map (
+      clk_6m    => clk_6m,
+      reset_n   => reset_n,
+      tone_on_i => tone_on_i,
+      attenu_o  => attenu_sig);
   
 end rtl;
 
