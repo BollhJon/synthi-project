@@ -1,0 +1,208 @@
+-------------------------------------------------------------------------------
+-- Title      : midi_controller_fsm
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : midi_controller_fsm.vhd
+-- Author     : <manli@MICHI-STUDIUM-P>
+-- Company    : 
+-- Created    : 2020-04-20
+-- Last update: 2020-06-08
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: 
+-------------------------------------------------------------------------------
+-- Copyright (c) 2020 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author  Description
+-- 2020-04-20  1.0      manli   Created
+-- 2020-05-25  1.1      manli   Misstakes with new_data_flag solved.
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.tone_gen_pkg.all;
+-------------------------------------------------------------------------------
+
+entity midi_controller_fsm is
+
+  port(clk12_m          : in  std_logic;
+       reset_n          : in  std_logic;
+       rx_data          : in  std_logic_vector(7 downto 0);
+       rx_data_rdy      : in  std_logic;
+       reg_note_on_out  : out std_logic_vector(9 downto 0);
+       reg_note_out     : out t_tone_array;
+       reg_velocity_out : out t_tone_array
+       );
+
+end entity midi_controller_fsm;
+
+-------------------------------------------------------------------------------
+
+architecture str of midi_controller_fsm is
+
+  -----------------------------------------------------------------------------
+  -- Internal signal declarations
+  -----------------------------------------------------------------------------
+  --Signals & Constants
+  type midi_type is (wait_status, wait_data_1, wait_data_2);
+  signal midi_state, next_midi_state : midi_type;
+
+  signal data_flag, new_data_flag    : std_logic;
+  signal data1_reg, next_data1_reg   : std_logic_vector(6 downto 0);
+  signal data2_reg, next_data2_reg   : std_logic_vector(6 downto 0);
+  signal status_reg, next_status_reg : std_logic_vector(6 downto 0);
+
+  signal reg_note, next_reg_note         : t_tone_array;
+  signal reg_velocity, next_reg_velocity : t_tone_array;
+  signal reg_note_on, next_reg_note_on   : std_logic_vector(9 downto 0) := "0000000000";
+
+
+  -----------------------------------------------------------------------------
+  -- Component declarations
+  -----------------------------------------------------------------------------
+
+begin  -- architecture str
+
+  midi_fsm : process(all)
+  begin
+    --default
+    next_midi_state <= midi_state;
+    next_status_reg <= status_reg;
+    new_data_flag   <= '0';
+    next_data1_reg  <= data1_reg;
+    next_data2_reg  <= data2_reg;
+
+
+    case midi_state is
+
+-------------------------------------------------------------------------------
+      --wait state
+-------------------------------------------------------------------------------
+      when wait_status =>
+        if rx_data_rdy = '1' then
+          if rx_data(7) = '1' then
+            next_status_reg <= rx_data(6 downto 0);
+            next_midi_state <= wait_data_1;
+          else
+            next_data1_reg  <= rx_data(6 downto 0);
+            next_midi_state <= wait_data_2;
+          end if;
+        end if;
+
+-------------------------------------------------------------------------------
+      --wait data one
+-------------------------------------------------------------------------------
+      when wait_data_1 =>
+        if rx_data_rdy = '1' then
+          next_data1_reg  <= rx_data(6 downto 0);
+          next_midi_state <= wait_data_2;
+        else
+          next_midi_state <= wait_data_1;
+        end if;
+
+
+------------------------------------------------------------------------------
+      --wait data two
+------------------------------------------------------------------------------
+      when wait_data_2 =>
+        if rx_data_rdy = '1' then
+          next_data2_reg  <= rx_data(6 downto 0);
+          new_data_flag   <= '1';
+          next_midi_state <= wait_status;
+        else
+          next_midi_state <= wait_data_2;
+        end if;
+------------------------------------------------------------------------------
+        --others
+------------------------------------------------------------------------------
+
+      when others => next_midi_state <= midi_state;
+    end case;
+  end process midi_fsm;
+
+
+  midi_out : process(all)
+    --variable
+    variable note_available : std_logic := '0';
+    variable note_written   : std_logic := '0';
+
+  begin
+
+    --defaults
+    next_reg_note     <= reg_note;
+    next_reg_note_on  <= reg_note_on;
+    next_reg_velocity <= reg_velocity;
+
+    --Delete Note
+    if data_flag = '1' then
+      note_available := '0';
+      for i in 0 to 9 loop
+        if reg_note(i) = data1_reg and reg_note_on(i) = '1' then
+          note_available := '1';         --Found a matching note
+          if status_reg(4) = '0' then    --bit 4 is note_on bit(note is off)
+            next_reg_note_on(i) <= '0';  --turns note  off
+          elsif status_reg(4) = '1' and data2_reg = "0000000" then
+            next_reg_note_on(i) <= '0';  --turns note off if velocity is 0
+          end if;
+        end if;
+      end loop;
+
+      --Set Note
+      if note_available = '0' then
+        note_written := '0';
+        for i in 0 to 9 loop
+          if note_written = '0' then
+            if (reg_note_on(i) = '0' or i = 9) and status_reg(4) = '1' then  --bit 4 is note_on bit(note is on)
+              next_reg_note(i)     <= data1_reg;
+              next_reg_velocity(i) <= data2_reg;
+              next_reg_note_on(i)  <= '1';  -- And set the note_1_register to valid.
+              note_written         := '1';  -- flag that note is written to supress remaining loop runs
+            end if;
+          end if;
+        end loop;
+      end if;
+    end if;
+  end process midi_out;
+
+  --FF midi_state
+  ff : process(all)
+  begin
+    if reset_n = '0' then
+      midi_state   <= wait_status;
+      status_reg   <= (others => '0');
+      data_flag    <= '0';
+      data1_reg    <= (others => '0');
+      data2_reg    <= (others => '0');
+      reg_note     <= (others => (others => '0'));
+      reg_note_on  <= (others => '0');
+      reg_velocity <= (others => (others => '0'));
+
+
+    elsif rising_edge(clk12_m) then
+      midi_state   <= next_midi_state;
+      status_reg   <= next_status_reg;
+      data_flag    <= new_data_flag;
+      data1_reg    <= next_data1_reg;
+      data2_reg    <= next_data2_reg;
+      reg_note     <= next_reg_note;
+      reg_note_on  <= next_reg_note_on;
+      reg_velocity <= next_reg_velocity;
+    end if;
+  end process ff;
+
+  -- Internal signal assignments
+-----------------------------------------------------------------------------
+  reg_note_on_out  <= reg_note_on;
+  reg_note_out     <= reg_note;
+  reg_velocity_out <= reg_velocity;
+
+  --midi_out_array <= reg_note;
+
+-------------------------------------------------------------------------------
+
+end architecture str;
+
+
