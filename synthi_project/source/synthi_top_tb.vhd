@@ -211,38 +211,40 @@ begin  -- architecture struct
         rst_sim(tv, key_0);
       elsif cmd.all = "run_simulation_for" then
         run_sim(tv);
-      elsif cmd.all = "uart_send_data" then
+      elsif cmd.all = "usb_uart_send_data" then
         uar_sim(tv, usb_txd);
+      elsif cmd.all = "bt_uart_send_data" then
+        uar_sim(tv, bt_txd);
       elsif cmd.all = "check_display_hex0" then
         hex_chk(tv, hex0);
       elsif cmd.all = "check_display_hex1" then
         hex_chk(tv, hex1);
       elsif cmd.all = string'("set_switches") then
         gpi_sim(tv,gpi_signals);
-	  elsif cmd.all = string'("check_i2c_reg_0") then
-		gpo_chk(tv, reg_data0);
-	  elsif cmd.all = string'("check_i2c_reg_1") then
-		gpo_chk(tv, reg_data1);
-	  elsif cmd.all = string'("check_i2c_reg_2") then
-		gpo_chk(tv, reg_data2);
-	  elsif cmd.all = string'("check_i2c_reg_3") then
-		gpo_chk(tv, reg_data3);
-	  elsif cmd.all = string'("check_i2c_reg_4") then
-		gpo_chk(tv, reg_data4);
-	  elsif cmd.all = string'("check_i2c_reg_5") then
-		gpo_chk(tv, reg_data5);
-	  elsif cmd.all = string'("check_i2c_reg_6") then
-		gpo_chk(tv, reg_data6);
-	  elsif cmd.all = string'("check_i2c_reg_7") then
-		gpo_chk(tv, reg_data7);
-	  elsif cmd.all = string'("check_i2c_reg_8") then
-		gpo_chk(tv, reg_data8);
-	  elsif cmd.all = string'("check_i2c_reg_9") then
-		gpo_chk(tv, reg_data9);
-	  elsif cmd.all = "send_i2s" then
-		i2s_sim(tv, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT);
-	  elsif cmd.all = "check_i2s" then
-		i2s_chk(tv, AUD_DACLRCK, AUD_BCLK, AUD_DACDAT,dacdat_check);
+	    elsif cmd.all = string'("check_i2c_reg_0") then
+		    gpo_chk(tv, reg_data0);
+	    elsif cmd.all = string'("check_i2c_reg_1") then
+		    gpo_chk(tv, reg_data1);
+	    elsif cmd.all = string'("check_i2c_reg_2") then
+		    gpo_chk(tv, reg_data2);
+	    elsif cmd.all = string'("check_i2c_reg_3") then
+		    gpo_chk(tv, reg_data3);
+	    elsif cmd.all = string'("check_i2c_reg_4") then
+		    gpo_chk(tv, reg_data4);
+	    elsif cmd.all = string'("check_i2c_reg_5") then
+		    gpo_chk(tv, reg_data5);
+	    elsif cmd.all = string'("check_i2c_reg_6") then
+		    gpo_chk(tv, reg_data6);
+	    elsif cmd.all = string'("check_i2c_reg_7") then
+		    gpo_chk(tv, reg_data7);
+	    elsif cmd.all = string'("check_i2c_reg_8") then
+		    gpo_chk(tv, reg_data8);
+	    elsif cmd.all = string'("check_i2c_reg_9") then
+		    gpo_chk(tv, reg_data9);
+	    elsif cmd.all = "send_i2s" then
+		    i2s_sim(tv, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT);
+	    elsif cmd.all = "check_i2s" then
+		    i2s_chk(tv, AUD_DACLRCK, AUD_BCLK, AUD_DACDAT,dacdat_check);
 		
         -- add further test commands below here
 
