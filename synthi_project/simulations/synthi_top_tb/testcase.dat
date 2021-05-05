@@ -1,86 +1,40 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases MS5
+#-- Title      : Testcases LUT
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
 #-- Author     : Bollhalder Jonas
 #-- Company    : 
-#-- Created    : 2021-04-19
-#-- Last update: 2021-04-19
+#-- Created    : 2021-05-04
+#-- Last update: 2021-05-05
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for Milestone 5 of Synthi-Project
+#-- Description: Testcases for custom LUT of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-04-19  1.0      Bollhalder Jonas Created
+#-- 2021-05-04  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
 
 reset_target 10
 set_switches 00 00 00 00
 #turn on 71, 61, 51, 41
-uart_send_data 90
+usb_uart_send_data 90
 run_simulation_for 00 00 04 00
 
-uart_send_data 70
+usb_uart_send_data 50
 run_simulation_for 00 00 04 00
 
-uart_send_data 01
+usb_uart_send_data 72
 run_simulation_for 00 00 04 00
 
-uart_send_data 71
+usb_uart_send_data 49
 run_simulation_for 00 00 04 00
 
-uart_send_data 01
-run_simulation_for 00 00 04 00
+usb_uart_send_data 72
+run_simulation_for 00 10 00 00
 
-uart_send_data 72
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 73
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 74
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 75
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 76
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 78
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 79
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-uart_send_data 69
-run_simulation_for 00 00 04 00
-
-uart_send_data 01
-run_simulation_for 00 00 04 00
-
-
+bt_uart_send_data 01
+bt_uart_send_data 41
+run_simulation_for 00 10 00 00

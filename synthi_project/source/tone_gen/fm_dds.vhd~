@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+-- Title      : fm-dds
+-- Project    : 
+-------------------------------------------------------------------------------
+-- File       : fm_dds.vhd
+-- Author     : muellpav
+-- Company    : 
+-- Created    : 2021-05-03
+-- Last update: 2021-05-03
+-- Platform   : 
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: fm-dds
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author          Description
+-- 2021-05-03  1.0      muellpav	Created
+-------------------------------------------------------------------------------
+
+-- Library & Use Statements
+-------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library work;
+use work.tone_gen_pkg.all;
+
+entity fm_dds is
+  
+  port (
+    clk_6m : in std_logic;
+    rst_n : in std_logic;
+    phi_incr_fsig : in std_logic_vector(N_CUM-1 downto 0);
+    tone_on_i : in std_logic;
+    fm_ratio : in std_logic_vector(3 downto 0);
+    fm_depth : in std_logic_vector(3 downto 0);
+    step_i   : in std_logic;
+    attenu_i : in std_logic_vector(2 downto 0);
+    fm_dds_o : out std_logic_vector(N_AUDIO -1 downto 0)
+    );
+end fm_dds;
+
+

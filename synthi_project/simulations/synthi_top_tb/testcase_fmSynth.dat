@@ -1,20 +1,20 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases MS4
+#-- Title      : Testcases fm-Synthese
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
 #-- Author     : Bollhalder Jonas
 #-- Company    : 
-#-- Created    : 2021-04-19
-#-- Last update: 2021-04-19
+#-- Created    : 2021-05-01
+#-- Last update: 2021-05-01
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for Milestone 4 of Synthi-Project
+#-- Description: Testcases for fm-Synthese of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-04-19  1.0      Bollhalder Jonas Created
+#-- 2021-05-01  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
 
 reset_target 10
