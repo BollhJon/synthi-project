@@ -86,8 +86,8 @@ begin
       fm_ratio      => fm_ratio,
       fm_depth      => fm_depth,
       step_i        => step_i,
-      attenu_i      => "000",
-		  lut_sel		  => lut_sel,
+      attenu_i      => "010",
+		  lut_sel		    => lut_sel,
       fm_dds_o      => dds_o_array(i)
       );
   end generate fm_dds_inst_gen;
