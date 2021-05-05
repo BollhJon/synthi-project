@@ -19,7 +19,8 @@
 #-------------------------------------------------------------------------------
 
 reset_target 10
-set_switches 00 00 00 00
+bt_uart_send_data 01
+bt_uart_send_data 23
 #turn on 71, 61, 51, 41
 usb_uart_send_data 90
 run_simulation_for 00 00 04 00
@@ -36,7 +37,6 @@ run_simulation_for 00 00 04 00
 usb_uart_send_data 72
 run_simulation_for 00 07 00 00
 
-bt_uart_send_data 01
 bt_uart_send_data 41
 run_simulation_for 00 07 00 00
 
