@@ -34,11 +34,14 @@ usb_uart_send_data 49
 run_simulation_for 00 00 04 00
 
 usb_uart_send_data 72
-run_simulation_for 00 05 00 00
+run_simulation_for 00 07 00 00
 
 bt_uart_send_data 01
 bt_uart_send_data 41
-run_simulation_for 00 05 00 00
+run_simulation_for 00 07 00 00
 
 bt_uart_send_data 42
-run_simulation_for 00 05 00 00
+run_simulation_for 00 07 00 00
+
+bt_uart_send_data 43
+run_simulation_for 00 07 00 00
