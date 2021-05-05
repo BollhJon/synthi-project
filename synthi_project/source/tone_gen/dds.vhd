@@ -19,6 +19,7 @@
 -- 2021-03-31  1.0      Bollhalder Jonas      Created
 -- 2021-05-04  1.1      Mueller Pavel         modifications for custom LUT
 -- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano and Orgel
+-- 2021-05-05  1.3      Mueller Pavel         added LUT for guitar
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -104,6 +105,7 @@ begin
       when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
       when 1 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
       when 2 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
+      when 3 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
       when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
     end case;
         
