@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Title      : evelop logic
--- Project    : 
+-- Project    : Synthi-Project
 -------------------------------------------------------------------------------
 -- File       : envelope_logic.vhd
 -- Author     : Mueller Pavel
@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author          Description
--- 2021-05-06  1.0      Mueller Pavel	Created
+-- 2021-05-06  1.0      Mueller Pavel	  Created
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -41,8 +41,8 @@ end envelope_logic;
    
 architecture rtl of envelope_logic is  -- architecture rtl
 
-  signal count,next_count : unsigned(N_CUM-1 downto 0);
-  signal lut_addr, next_lut_addr : unsigned(7 downto 0);
+  signal count,next_count : unsigned(N_CUM-1 downto 0) := to_unsigned(0, N_CUM);
+  signal lut_addr, next_lut_addr : unsigned(7 downto 0) := to_unsigned(0,8);
 
 begin
   
@@ -55,7 +55,7 @@ begin
       count <= next_count;
       lut_addr <= next_lut_addr;
     end if;
-   end process counter_register;
+  end process counter_register;
 
   counter_logic: process (all) is
   begin  -- process counter_logic
@@ -69,14 +69,14 @@ begin
       next_lut_addr <= to_unsigned(0, 8);
     end if;
 
-    if count <= 117188 then
+    if count > to_unsigned(117188, N_CUM) then
       case to_integer(unsigned(lut_sel)) is
         when 1|3 =>
-          if lut_addr /= 255 then
+          if lut_addr < 255 then
             next_lut_addr <= lut_addr + to_unsigned(1,8);
           end if;
         when 2 =>
-            if lut_addr /= 255 then
+            if lut_addr < 255 then
               next_lut_addr <= lut_addr + to_unsigned(1,8);
             else
               next_lut_addr <= to_unsigned(1,8);

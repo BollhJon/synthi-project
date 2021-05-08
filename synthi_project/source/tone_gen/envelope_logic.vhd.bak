@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 -- Title      : evelop logic
--- Project    : 
+-- Project    : Synthi-Project
 -------------------------------------------------------------------------------
 -- File       : envelope_logic.vhd
 -- Author     : Mueller Pavel
@@ -16,7 +16,7 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author          Description
--- 2021-05-06  1.0      Mueller Pavel	Created
+-- 2021-05-06  1.0      Mueller Pavel	  Created
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -41,8 +41,8 @@ end envelope_logic;
    
 architecture rtl of envelope_logic is  -- architecture rtl
 
-  signal count,next_count : unsigned(N_CUM-1 downto 0);
-  signal lut_addr, next_lut_addr : unsigned(7 downto 0);
+  signal count,next_count : unsigned(N_CUM-1 downto 0) := to_unsigned(0, N_CUM);
+  signal lut_addr, next_lut_addr : unsigned(7 downto 0) := to_unsigned(0,8);
 
 begin
   
@@ -80,6 +80,7 @@ begin
               next_lut_addr <= lut_addr + to_unsigned(1,8);
             else
               next_lut_addr <= to_unsigned(1,8);
+				 end if;
         when others => null;
       end case;
       next_count <= to_unsigned(0,N_CUM);
@@ -89,13 +90,12 @@ begin
 
   output_logic: process (all) is
   begin  -- process output_logic
-    attenu_o  <= LUT_h_piano(to_integer(lut_addr));
 
     case to_integer(unsigned(lut_sel)) is
-      when 1 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(lut_addr),4));
+      when 1 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(to_integer(lut_addr)),4));
       --when 2 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_orgel(lut_addr),4));
       --when 3 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_guitar(lut_addr),4));
-      when others => attenu_o  <= std_logic_vector(to_unsinged(11, 4));
+      when others => attenu_o  <= std_logic_vector(to_unsigned(11, 4));
     end case;
   end process output_logic;
       

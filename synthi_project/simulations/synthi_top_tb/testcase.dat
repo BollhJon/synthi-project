@@ -19,29 +19,20 @@
 #-------------------------------------------------------------------------------
 
 reset_target 10
+
+#Turn bt controll on
 bt_uart_send_data 01
-bt_uart_send_data 23
-#turn on 71, 61, 51, 41
+
+# set instrument to piano
+bt_uart_send_data 41
+
+#bt_uart_send_data 23
+
 usb_uart_send_data 90
 run_simulation_for 00 00 04 00
 
-usb_uart_send_data 50
-run_simulation_for 00 00 04 00
-
 usb_uart_send_data 72
 run_simulation_for 00 00 04 00
 
-usb_uart_send_data 49
-run_simulation_for 00 00 04 00
-
-usb_uart_send_data 72
-run_simulation_for 00 07 00 00
-
-bt_uart_send_data 41
-run_simulation_for 00 07 00 00
-
-bt_uart_send_data 42
-run_simulation_for 00 07 00 00
-
-bt_uart_send_data 43
-run_simulation_for 00 07 00 00
+usb_uart_send_data 7F
+run_simulation_for 00 10 00 00
