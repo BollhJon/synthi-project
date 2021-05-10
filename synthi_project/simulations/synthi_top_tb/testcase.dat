@@ -1,38 +1,43 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases LUT
-#-- Project    : Synthi-Project
+#-- Title      : Template for testcases
+#-- Project    : DTP2
 #-------------------------------------------------------------------------------
-#-- File       : testcase_ms1.dat
-#-- Author     : Bollhalder Jonas
+#-- File       : testcase.dat
+#-- Author     : Hans-Joachim Gelke
 #-- Company    : 
-#-- Created    : 2021-05-04
-#-- Last update: 2021-05-05
+#-- Created    : 2018-10-21
+#-- Last update: 2019-2-13
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for custom LUT of Synthi-Project
+#-- Description: For students as template
+#-------------------------------------------------------------------------------
+#-- Copyright (c) 2018 - 2019
 #-------------------------------------------------------------------------------
 #-- Revisions  :
-#-- Date        Version  Author           Description
-#-- 2021-05-04  1.0      Mueller Pavel    Created
-#-- 2021-05-05  1.2      Mueller Pavel    Added comands for orgel LUT
+#-- Date        Version  Author  Description
+#-- 2019-02-13  1.0      Hans-Joachim    Created
 #-------------------------------------------------------------------------------
+#Test midi uart
+reset_target 20
+#--- FILL ARRAY 1--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
 
-reset_target 10
+# Sende Note
+usb_uart_send_data 50 
+run_simulation_for 00 00 00 60
+check_display_hex0 01
+check_display_hex1 00
+run_simulation_for 00 00 00 ff
 
-#Turn bt controll on
-bt_uart_send_data 01
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 4f ff ff
 
-# set instrument to piano
-bt_uart_send_data 41
-
-#bt_uart_send_data 23
-
-usb_uart_send_data 90
-run_simulation_for 00 00 04 00
-
-usb_uart_send_data 72
-run_simulation_for 00 00 04 00
-
-usb_uart_send_data 7F
-run_simulation_for 00 10 00 00

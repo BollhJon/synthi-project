@@ -69,7 +69,7 @@ begin
       next_lut_addr <= to_unsigned(0, 8);
     end if;
 
-    if count > to_unsigned(117188, N_CUM) then
+    if count > to_unsigned(117188, N_CUM) then --
       case to_integer(unsigned(lut_sel)) is
         when 1|3 =>
           if lut_addr < 255 then
@@ -95,7 +95,7 @@ begin
       when 1 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(to_integer(lut_addr)),4));
       --when 2 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_orgel(lut_addr),4));
       --when 3 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_guitar(lut_addr),4));
-      when others => attenu_o  <= std_logic_vector(to_unsigned(11, 4));
+      when others => attenu_o  <= std_logic_vector(to_unsigned(15, 4));
     end case;
   end process output_logic;
       

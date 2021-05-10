@@ -24,8 +24,12 @@ add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/envelope_logic_
 add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic/lut_addr
 add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic/tone_on_i
 add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/tone_on_i
+add wave -noupdate -radix decimal /synthi_top_tb/DUT/i2s_master_1/adcdat_pr_o
+add wave -noupdate /synthi_top_tb/DUT/i2s_master_1/ser_out_l_sig
+add wave -noupdate -format Analog-Step -height 74 -max 4095.0 -min -4096.0 -radix decimal /synthi_top_tb/DUT/path_control_1/dacdat_pl_o
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car/phi_incr_i
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {564623 ns} 0}
+WaveRestoreCursors {{Cursor 1} {3462766 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 507
 configure wave -valuecolwidth 125
@@ -41,4 +45,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {720778 ns} {722160 ns}
+WaveRestoreZoom {0 ns} {52500 us}
