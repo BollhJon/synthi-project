@@ -87,7 +87,7 @@ architecture str of uni_shiftreg is
   --------------------------------------------------
   -- take LSB of shiftreg as serial output
   par_out <= shiftreg;
-  ser_out <= shiftreg(0);
+  ser_out <= shiftreg(15);
 
 end architecture str;
 
