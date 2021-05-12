@@ -64,7 +64,7 @@ architecture str of uni_shiftreg is
     if load = '1' then
       next_shiftreg <= par_in;
     elsif enable = '1' then
-      next_shiftreg <= ser_in & shiftreg(width-1 downto 1);
+      next_shiftreg <= shiftreg(width-2 downto 0) & ser_in; --ser_in & shiftreg(width-1 downto 1);
     else
       next_shiftreg <= shiftreg;
     end if;
