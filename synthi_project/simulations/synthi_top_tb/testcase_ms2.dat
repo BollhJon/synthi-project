@@ -22,3 +22,6 @@ reset_target 20
 set_switches 00 00 00 08
 send_i2s 11 22 33 44
 check_i2s 11 22 33 44
+
+send_i2s  55 66 77 88
+check_i2s 55 66 77 88
