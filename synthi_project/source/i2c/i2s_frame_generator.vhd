@@ -45,8 +45,8 @@ architecture str of i2s_frame_generator is
   -----------------------------------------------------------------------------
   -- Internal signal declarations
   -----------------------------------------------------------------------------
-  signal count : unsigned(6 downto 0);
-  signal next_count : unsigned(6 downto 0);
+  signal count : natural;
+  signal next_count : natural;
   signal bckl : std_logic;                       -- inverted clk_6m
 
 begin  -- architecture str
@@ -62,7 +62,7 @@ begin  -- architecture str
   flip_flops: process (all) is
   begin  -- process flip_flops
     if rst_n = '0' then                   -- asynchronous reset (active low)
-      count <= to_unsigned(0,7);				-- convert integer value 0 to unsigned
+      count <= natural(0);				-- convert integer value 0 to unsigned
 														-- with 4 bits
     elsif falling_edge(bckl) then         -- falling inverted clock edge
       count <= next_count;
@@ -80,7 +80,7 @@ begin  -- architecture str
     if count >= 0 and count <= 127 then
       next_count <= count +1;
     else
-      next_count <= to_unsigned(0,7);            
+      next_count <= natural(0);            
     end if;
   end process counter;
 
@@ -105,13 +105,29 @@ begin  -- architecture str
     shift_l <= '0';
     shift_r <= '0';
     -- decoder for load, shift_l, shift_r
-    if count = 0 then
-      load <= '1';
-    elsif count >= 1 and count <= 16 then
-      shift_l <= '1';
-    elsif count >=65 and count <= 80 then
-      shift_r <= '1';
-    end if;
+    
+    case count is
+      when 0 =>
+        load    <= '1';
+      when 1 to 16 =>
+        shift_l <= '1';
+      when 64 =>
+        shift_r <= '1';
+		when others =>
+		  shift_r <= '0';
+		  shift_l <= '0';
+		  load	 <= '0';
+    end case;
+
+
+   -- Wurde durch das case Statement oben ersetzt 
+   -- if count = 0 then
+   --   load <= '1';
+   -- elsif count >= 1 and count <= 16 then
+   --   shift_l <= '1';
+   -- elsif count >=65 and count <= 80 then
+   --   shift_r <= '1';
+   -- end if;
 	 
   
   end process i2s_decoder;
