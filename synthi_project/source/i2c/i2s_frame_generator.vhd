@@ -77,7 +77,7 @@ begin  -- architecture str
 
   counter: process (all) is
   begin  -- process counter
-    if count >= 0 and count <= 127 then
+    if count < 127 then
       next_count <= count +1;
     else
       next_count <= natural(0);            
@@ -111,7 +111,7 @@ begin  -- architecture str
         load    <= '1';
       when 1 to 16 =>
         shift_l <= '1';
-      when 64 =>
+      when 65 to 80 =>
         shift_r <= '1';
 		when others =>
 		  shift_r <= '0';
