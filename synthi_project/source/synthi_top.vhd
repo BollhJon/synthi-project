@@ -340,7 +340,7 @@ begin  -- architecture str
       rst_n    => reset_n_sig,
       data_i   => bt_data_sig,
       data_rdy => bt_data_rdy_sig,
-      config_i => ("0000",SW(3 downto 0),SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000"),
+      config_i => ("0000",SW(3 downto 0),"0000",SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000","0000","0000","0000","0000","0000","0000","0000","0000","0000"),
       config_o => config_sig);
   
   LEDR_9 <= config_sig(0)(0);
