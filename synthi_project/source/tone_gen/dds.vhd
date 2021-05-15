@@ -118,7 +118,7 @@ begin
   begin 
 
     case to_integer(unsigned(attenu_i)) is
-      when 0 => dds_o <= std_logic_vector(shift_right(lut_val,4));                                                                        -- 1/16
+      when 0 => dds_o <= (others => '0');                                                                                                 -- 0
       when 1 => dds_o <= std_logic_vector(shift_right(lut_val,3));                                                                        -- 2/16
       when 2 => dds_o <= std_logic_vector(shift_right(lut_val,3)+shift_right(lut_val,4));                                                 -- 3/16
       when 3 => dds_o <= std_logic_vector(shift_right(lut_val,2));                                                                        -- 4/16
