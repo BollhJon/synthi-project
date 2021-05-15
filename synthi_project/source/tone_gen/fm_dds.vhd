@@ -93,15 +93,23 @@ ratio: process (all) is
 begin  -- process fm_ratio
 
   case to_integer(unsigned(fm_ratio)) is
-    when 0 => phi_incr_mod_sig <= to_unsigned(0,N_CUM) ;
-    when 1 => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),3); 
-    when 2 => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),2);
-    when 3 => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),1);
-    when 4 => phi_incr_mod_sig <= unsigned(phi_incr_fsig);
-    when 5 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),1);
-    when 6 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),2);
-    when 7 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),3);
-    when others => phi_incr_mod_sig <= to_unsigned(0,N_CUM);
+    when 0  => phi_incr_mod_sig <= to_unsigned(0,N_CUM) ;                                                                                                     -- 0
+    when 1  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),3)                                                                                     -- 1/8
+    when 2  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),2);                                                                                    -- 2/8 = 1/4
+    when 3  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),2) + shift_right(unsigned(phi_incr_fsig),3);                                           -- 3/8
+    when 4  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),1);                                                                                    -- 4/8 = 1/2
+    when 5  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),1) + shift_right(unsigned(phi_incr_fsig),3);                                           -- 5/8
+    when 6  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),1) + shift_right(unsigned(phi_incr_fsig),2);                                           -- 6/8 = 3/4
+    when 7  => phi_incr_mod_sig <= shift_right(unsigned(phi_incr_fsig),1) + shift_right(unsigned(phi_incr_fsig),2) + shift_right(unsigned(phi_incr_fsig),3);  -- 7/8 
+    when 8  => phi_incr_mod_sig <= unsigned(phi_incr_fsig);                                                                                                   -- 8/8 = 1/1
+    when 9  => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),1) + shift_left(unsigned(phi_incr_fsig),) + shift_left(unsigned(phi_incr_fsig),3);      -- 8/7
+    when 10 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),1) + shift_left(unsigned(phi_incr_fsig),2);                                             -- 8/6 = 4/3
+    when 11 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),1) + shift_left(unsigned(phi_incr_fsig),3);                                             -- 8/5
+    when 12 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),1);                                                                                     -- 8/4 = 2/1
+    when 13 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),2) + shift_left(unsigned(phi_incr_fsig),3);                                             -- 8/3
+    when 14 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),2);                                                                                     -- 8/2 = 4/1
+    when 15 => phi_incr_mod_sig <= shift_left(unsigned(phi_incr_fsig),3);                                                                                     -- 8/1
+    when others => phi_incr_mod_sig <= to_unsigned(0,N_CUM);                                                                                                  -- 0
   end case;
   
 end process ratio;
