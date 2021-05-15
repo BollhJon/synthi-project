@@ -138,6 +138,8 @@ begin  -- architecture str
     note_written := '0';  
     
     if data_flag = '1' then
+      note_available := '0';
+      note_written := '0';  
       -----------------------------------------------------
       -- CHECK IF NOTE IS ALREADY ENTERED IN MIDI ARRAY
       ------------------------------------------------------
