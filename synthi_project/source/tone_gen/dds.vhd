@@ -6,7 +6,7 @@
 -- Author     : Bollhalder Jonas
 -- Company    : 
 -- Created    : 2021-03-31
--- Last update: 2021-03-31
+-- Last update: 2021-05-04
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -16,7 +16,10 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author                Description
--- 2021-03-31  1.0      Bollhalder Jonas	    Created
+-- 2021-03-31  1.0      Bollhalder Jonas      Created
+-- 2021-05-04  1.1      Mueller Pavel         modifications for custom LUT
+-- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano and Orgel
+-- 2021-05-05  1.3      Mueller Pavel         added LUT for guitar
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -35,7 +38,8 @@ entity dds is
        phi_incr_i        : in std_logic_vector(N_CUM-1 downto 0);
        step_i            : in std_logic;
        tone_on_i         : in std_logic;
-       attenu_i          : in std_logic_vector(2 downto 0);
+       attenu_i          : in std_logic_vector(3 downto 0);
+       lut_sel	         : in std_logic_vector(3 downto 0);
        dds_o             : out std_logic_vector(N_AUDIO-1 downto 0)	 
        );
 end dds;
@@ -50,7 +54,6 @@ architecture rtl of dds is
   signal next_count : unsigned(N_CUM-1 downto 0);
   signal lut_val : signed(N_AUDIO-1 downto 0);
   signal lut_addr : integer range 0 to L-1;
-  signal atte : integer;
 
 -- Begin Architecture
 -------------------------------------------
@@ -95,9 +98,16 @@ begin
   --------------------------------------------------
   lut_logic : process (all)
   begin
-       
     lut_addr <= to_integer(count(N_CUM-1 downto N_CUM - N_LUT));
-    lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);    
+	 
+    case to_integer(unsigned(lut_sel)) is
+      when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
+      when 1 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
+      when 2 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
+      when 3 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
+      when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
+    end case;
+        
     
   end process lut_logic;
 
@@ -126,6 +136,7 @@ begin
       when 15 => dds_o <= std_logic_vector(lut_val);                                                                                      -- 16/16
       when others => dds_o <= (others => '0');
     end case;
+
   end process attenuator;
 
 

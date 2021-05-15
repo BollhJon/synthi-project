@@ -18,6 +18,7 @@
 -- Date        Version  Author            Description
 -- 2021-03-01  1.0      Boehi Dominik	    Created
 -- 2021-04-16  1.1      Bollhalder Jonas  Modifications
+-- 2021-05-04  1.2      Mueller Pavel     Changes for custom LUT
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -219,8 +220,9 @@ architecture str of synthi_top is
       note_i     : in  t_tone_array;
       step_i     : in  std_logic;
       velocity_i : in  t_tone_array;
-      fm_ratio : in std_logic_vector(3 downto 0);
-      fm_depth : in std_logic_vector(2 downto 0);
+      fm_ratio   : in std_logic_vector(3 downto 0);
+      fm_depth   : in std_logic_vector(3 downto 0);
+		  lut_sel    : in  std_logic_vector(3 downto 0);
       dds_l_o    : out std_logic_vector(15 downto 0);
       dds_r_o    : out std_logic_vector(15 downto 0));
   end component tone_gen;
@@ -338,7 +340,7 @@ begin  -- architecture str
       rst_n    => reset_n_sig,
       data_i   => bt_data_sig,
       data_rdy => bt_data_rdy_sig,
-      config_i => ("0000",SW(3 downto 0),SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000"),
+      config_i => ("0000",SW(3 downto 0),"0000",SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000","0000","0000","0000","0000","0000","0000","0000","0000","0000"),
       config_o => config_sig);
   
   LEDR_9 <= config_sig(0)(0);
@@ -351,9 +353,10 @@ begin  -- architecture str
       rx_data     => usb_data_sig,
       rx_data_rdy => usb_data_rdy_sig,
       note_on     => note_on_sig,
-      note_o        => note_sig,
+      note_o      => note_sig,
       velocity    => velocity_sig
       );
+
 
   -- instance "tone_gen_1"
   tone_gen_1: tone_gen
@@ -365,7 +368,8 @@ begin  -- architecture str
       step_i     => step_o_sig,
       velocity_i => velocity_sig,
       fm_ratio   => config_sig(2),
-      fm_depth   => config_sig(3)(2 downto 0),
+      fm_depth   => config_sig(3),
+		  lut_sel    => config_sig(4),
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );

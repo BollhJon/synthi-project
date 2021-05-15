@@ -1,0 +1,41 @@
+#-------------------------------------------------------------------------------
+#-- Title      : Testcases LUT
+#-- Project    : Synthi-Project
+#-------------------------------------------------------------------------------
+#-- File       : testcase_ms1.dat
+#-- Author     : Bollhalder Jonas
+#-- Company    : 
+#-- Created    : 2021-05-04
+#-- Last update: 2021-05-05
+#-- Platform   : 
+#-- Standard   : VHDL'08
+#-------------------------------------------------------------------------------
+#-- Description: Testcases for custom LUT of Synthi-Project
+#-------------------------------------------------------------------------------
+#-- Revisions  :
+#-- Date        Version  Author           Description
+#-- 2021-05-04  1.0      Mueller Pavel    Created
+#-- 2021-05-05  1.1      Mueller Pavel    Added comands for orgel LUT
+#-------------------------------------------------------------------------------
+
+reset_target 10
+
+#Turn bt controll on
+#bt_uart_send_data 01
+
+# set instrument to piano
+#bt_uart_send_data 41
+
+#bt_uart_send_data 23
+#bt_uart_send_data 33
+
+#set_switches 00 00 03 40
+
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+
+usb_uart_send_data 60
+run_simulation_for 00 00 04 00
+
+usb_uart_send_data 7F
+run_simulation_for 00 20 00 00

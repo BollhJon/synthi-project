@@ -15,8 +15,10 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2021-04-19  1.0      boehidom   Created
+-- Date        Version  Author            Description
+-- 2021-04-19  1.0      Böhi dominik      Created
+-- 2021-04-27  1.1      Bollhalder Jonas  Edits for poly DDS
+-- 2021-05-15  1.2      Müller Pavel      Bugfix for octave change on Piano
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -144,9 +146,9 @@ begin  -- architecture str
       for i in 0 to 9 loop
         if reg_note(i) = data1_reg and reg_note_on(i) = '1' then -- Found a matching note
           note_available := '1';
-          if status_reg(4) = '0' then -- note off
+          if status_reg(6 downto 4) = "000" then -- note off
             next_reg_note_on(i) <= '0'; -- turn off note
-          elsif status_reg(4) = '1' and data2_reg = "0000000" then
+          elsif status_reg(6 downto 4) = "001" and data2_reg = "0000000" then
             next_reg_note_on(i) <= '0'; -- turn off note if velocity is 0
           end if;
         end if;
@@ -163,7 +165,7 @@ begin  -- architecture str
           if note_written = '0' then -- if the note already written, ignore the remaining loop runs
             -- If a free space is found (reg_note_on(i) = '0') enter the note number and velocity
             -- or if until the end of the loop no space is found (i=9) overwrite last entry
-            if (reg_note_on(i) = '0' or i = 9) and status_reg(4) = '1' then --bit 7 is note_on bit 
+            if (reg_note_on(i) = '0' or i = 9) and status_reg(6 downto 4) = "001" then --bit 7 is note_on bit 
               next_reg_note(i) <= data1_reg;
               next_reg_velocity(i) <= data2_reg;
               next_reg_note_on(i) <= '1'; -- And set the note_1_register to valid.
