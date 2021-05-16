@@ -105,6 +105,8 @@ begin
       when 1 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
       when 2 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
       when 3 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
+      when 4 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);
+      when 5 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);
       when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
     end case;
         
