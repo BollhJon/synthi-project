@@ -379,7 +379,7 @@ begin  -- architecture str
       fm_depth   => config_sig(4),
       lut_sel_car => config_sig(5),
       lut_sel_mod => config_sig(6),
-      lut_sel_env => config_sig(7),
+      lut_sel_env => config_sig(7)
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );

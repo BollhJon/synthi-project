@@ -158,7 +158,7 @@ write_data_o (15 downto 9) <= std_logic_vector(count);
         if(ctr_i = '1' and (count = 2 or count = 3)) then
            	write_data_o(8 downto 0) <= C_W8731_VOLUME(to_integer(unsigned(volume_i)));
         elsif(ctr_i = '1' and count = 5) then
-		    write_data_o(8 downto 0) <= "000000" & emphasis_i & "0";
+		    write_data_o(8 downto 0) <= "000000" & emphasis_i & "1";
 		end if;
                   
 		
