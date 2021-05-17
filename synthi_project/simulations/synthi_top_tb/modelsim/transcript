@@ -1,7 +1,7 @@
 do ../compile.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:45 on May 17,2021
+# Start time: 21:40:08 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../support/simulation_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -11,10 +11,10 @@ do ../compile.do
 # -- Compiling package simulation_pkg
 # -- Compiling package body simulation_pkg
 # -- Loading package simulation_pkg
-# End time: 16:22:45 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:08 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:45 on May 17,2021
+# Start time: 21:40:08 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../support/standard_driver_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -25,10 +25,10 @@ do ../compile.do
 # -- Compiling package standard_driver_pkg
 # -- Compiling package body standard_driver_pkg
 # -- Loading package standard_driver_pkg
-# End time: 16:22:45 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:08 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:45 on May 17,2021
+# Start time: 21:40:08 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../support/user_driver_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -39,30 +39,30 @@ do ../compile.do
 # -- Compiling package user_driver_pkg
 # -- Compiling package body user_driver_pkg
 # -- Loading package user_driver_pkg
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:01
+# End time: 21:40:08 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/tone_gen_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling package tone_gen_pkg
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_control/reg_controller_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling package reg_controller_pkg
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/modulo_divider.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -71,20 +71,20 @@ do ../compile.do
 # -- Compiling entity modulo_divider
 # -- Compiling architecture rtl of modulo_divider
 # ** Warning: ../../../source/infrastructure/modulo_divider.vhd(46): (vcom-1013) Subtype of "ieee.NUMERIC_STD.UNSIGNED" depends on value of signal "width".
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/clock_sync.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity clock_sync
 # -- Compiling architecture rtl of clock_sync
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/signal_checker.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -92,10 +92,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity signal_checker
 # -- Compiling architecture rtl of signal_checker
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/infrastructure.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -103,10 +103,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity infrastructure
 # -- Compiling architecture str of infrastructure
-# End time: 16:22:46 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:46 on May 17,2021
+# Start time: 21:40:09 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/vector_check.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -114,10 +114,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity vector_check
 # -- Compiling architecture rtl of vector_check
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:01
+# End time: 21:40:09 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/baud_tick.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -125,10 +125,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity baud_tick
 # -- Compiling architecture rtl of baud_tick
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/bit_counter.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -136,20 +136,20 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity bit_counter
 # -- Compiling architecture rtl of bit_counter
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/flanken_detekt_vhdl.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity flanken_detekt_vhdl
 # -- Compiling architecture rtl of flanken_detekt_vhdl
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/output_register.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -157,20 +157,20 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity output_register
 # -- Compiling architecture rtl of output_register
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/shiftreg_uart.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity shiftreg_uart
 # -- Compiling architecture rtl of shiftreg_uart
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/uart_controller_fsm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -178,30 +178,30 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity uart_controller_fsm
 # -- Compiling architecture rtl of uart_controller_fsm
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:10 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/uart_top.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity uart_top
 # -- Compiling architecture bdf_type of uart_top
-# End time: 16:22:47 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:10 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:47 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/vhdl_hex2sevseg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity vhdl_hex2sevseg
 # -- Compiling architecture comb of vhdl_hex2sevseg
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:01
+# End time: 21:40:11 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/midi_controller_fsm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -210,19 +210,19 @@ do ../compile.do
 # -- Loading package tone_gen_pkg
 # -- Compiling entity midi_controller_fsm
 # -- Compiling architecture str of midi_controller_fsm
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:11 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/reg_table_pkg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling package reg_table_pkg
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:11 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/codec_controller.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -231,10 +231,10 @@ do ../compile.do
 # -- Loading package reg_table_pkg
 # -- Compiling entity codec_controller
 # -- Compiling architecture rtl of codec_controller
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:11 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2c_master.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -242,10 +242,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity i2c_master
 # -- Compiling architecture rtl of i2c_master
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:11 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2c_slave_bfm.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -253,10 +253,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity i2c_slave_bfm
 # -- Compiling architecture bfm of i2c_slave_bfm
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:11 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:11 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2s_master.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -264,10 +264,10 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity i2s_master
 # -- Compiling architecture str of i2s_master
-# End time: 16:22:48 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:48 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2s_frame_generator.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -275,30 +275,30 @@ do ../compile.do
 # -- Loading package NUMERIC_STD
 # -- Compiling entity i2s_frame_generator
 # -- Compiling architecture str of i2s_frame_generator
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:01
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/path_control.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity path_control
 # -- Compiling architecture str of path_control
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity uni_shiftreg
 # -- Compiling architecture str of uni_shiftreg
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_control/reg_controller.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -307,10 +307,10 @@ do ../compile.do
 # -- Loading package reg_controller_pkg
 # -- Compiling entity reg_controller
 # -- Compiling architecture rtl of reg_controller
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/dds.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -319,10 +319,10 @@ do ../compile.do
 # -- Loading package tone_gen_pkg
 # -- Compiling entity dds
 # -- Compiling architecture rtl of dds
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/fm_dds.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -331,10 +331,10 @@ do ../compile.do
 # -- Loading package tone_gen_pkg
 # -- Compiling entity fm_dds
 # -- Compiling architecture rtl of fm_dds
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:12 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:12 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/tone_gen.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -343,10 +343,10 @@ do ../compile.do
 # -- Loading package tone_gen_pkg
 # -- Compiling entity tone_gen
 # -- Compiling architecture rtl of tone_gen
-# End time: 16:22:49 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:13 on May 17,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:49 on May 17,2021
+# Start time: 21:40:13 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/envelope_logic.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -355,10 +355,10 @@ do ../compile.do
 # -- Loading package tone_gen_pkg
 # -- Compiling entity envelope_logic
 # -- Compiling architecture rtl of envelope_logic
-# End time: 16:22:50 on May 17,2021, Elapsed time: 0:00:01
+# End time: 21:40:13 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:50 on May 17,2021
+# Start time: 21:40:13 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_top.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -369,10 +369,10 @@ do ../compile.do
 # -- Loading package reg_controller_pkg
 # -- Compiling entity synthi_top
 # -- Compiling architecture str of synthi_top
-# End time: 16:22:50 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:13 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:22:50 on May 17,2021
+# Start time: 21:40:13 on May 17,2021
 # vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_top_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -385,10 +385,10 @@ do ../compile.do
 # -- Compiling entity synthi_top_tb
 # -- Compiling architecture struct of synthi_top_tb
 # ** Warning: ../../../source/synthi_top_tb.vhd(281): (vcom-1049) Actual for generic "verbose" depends on value of signal "verbose".
-# End time: 16:22:50 on May 17,2021, Elapsed time: 0:00:00
+# End time: 21:40:13 on May 17,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vsim -voptargs="+acc" -t 1ns -lib work work.synthi_top_tb 
-# Start time: 16:22:50 on May 17,2021
+# Start time: 21:40:13 on May 17,2021
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -430,485 +430,15 @@ do ../compile.do
 # Loading work.i2c_slave_bfm(bfm)
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Bollhalder Jonas  Hostname: DESKTOP-97F4AJ3  ProcessID: 12356
-#           Attempting to use alternate WLF file "./wlftdnt8hc".
+#           Attempting to use alternate WLF file "./wlftn17zig".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdnt8hc
-# ** Warning: (vsim-7) Failed to open VHDL file "../testcase.dat" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb
-# ** Fatal: (vsim-7) Failed to open VHDL file "../testcase.dat" in rb mode.
-# No such file or directory. (errno = ENOENT)
-#    Time: 0 ns  Iteration: 0  Process: /synthi_top_tb/readcmd File: ../../../source/synthi_top_tb.vhd
-# Fatal error in Process readcmd at ../../../source/synthi_top_tb.vhd line 187
-# 
-# HDL call sequence:
-# Stopped at ../../../source/synthi_top_tb.vhd 187 Process readcmd
-# 
-do ../compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:35 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../support/simulation_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Compiling package simulation_pkg
-# -- Compiling package body simulation_pkg
-# -- Loading package simulation_pkg
-# End time: 16:24:35 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:35 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../support/standard_driver_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Loading package simulation_pkg
-# -- Compiling package standard_driver_pkg
-# -- Compiling package body standard_driver_pkg
-# -- Loading package standard_driver_pkg
-# End time: 16:24:35 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:35 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../support/user_driver_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Loading package simulation_pkg
-# -- Compiling package user_driver_pkg
-# -- Compiling package body user_driver_pkg
-# -- Loading package user_driver_pkg
-# End time: 16:24:35 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:35 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/tone_gen_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling package tone_gen_pkg
-# End time: 16:24:35 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:35 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_control/reg_controller_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling package reg_controller_pkg
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/modulo_divider.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity modulo_divider
-# -- Compiling architecture rtl of modulo_divider
-# ** Warning: ../../../source/infrastructure/modulo_divider.vhd(46): (vcom-1013) Subtype of "ieee.NUMERIC_STD.UNSIGNED" depends on value of signal "width".
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/clock_sync.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clock_sync
-# -- Compiling architecture rtl of clock_sync
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/signal_checker.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity signal_checker
-# -- Compiling architecture rtl of signal_checker
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/infrastructure.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity infrastructure
-# -- Compiling architecture str of infrastructure
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/vector_check.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity vector_check
-# -- Compiling architecture rtl of vector_check
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/baud_tick.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity baud_tick
-# -- Compiling architecture rtl of baud_tick
-# End time: 16:24:36 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:36 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/bit_counter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity bit_counter
-# -- Compiling architecture rtl of bit_counter
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/flanken_detekt_vhdl.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity flanken_detekt_vhdl
-# -- Compiling architecture rtl of flanken_detekt_vhdl
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/output_register.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity output_register
-# -- Compiling architecture rtl of output_register
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/shiftreg_uart.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity shiftreg_uart
-# -- Compiling architecture rtl of shiftreg_uart
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/uart_controller_fsm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity uart_controller_fsm
-# -- Compiling architecture rtl of uart_controller_fsm
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/uart_top.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity uart_top
-# -- Compiling architecture bdf_type of uart_top
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/vhdl_hex2sevseg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity vhdl_hex2sevseg
-# -- Compiling architecture comb of vhdl_hex2sevseg
-# End time: 16:24:37 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:37 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/midi_controller_fsm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity midi_controller_fsm
-# -- Compiling architecture str of midi_controller_fsm
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/reg_table_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package reg_table_pkg
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/codec_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package reg_table_pkg
-# -- Compiling entity codec_controller
-# -- Compiling architecture rtl of codec_controller
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2c_master.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_master
-# -- Compiling architecture rtl of i2c_master
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2c_slave_bfm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_slave_bfm
-# -- Compiling architecture bfm of i2c_slave_bfm
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2s_master.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2s_master
-# -- Compiling architecture str of i2s_master
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2s_frame_generator.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2s_frame_generator
-# -- Compiling architecture str of i2s_frame_generator
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:38 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/path_control.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity path_control
-# -- Compiling architecture str of path_control
-# End time: 16:24:38 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:39 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity uni_shiftreg
-# -- Compiling architecture str of uni_shiftreg
-# End time: 16:24:39 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:39 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_control/reg_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package reg_controller_pkg
-# -- Compiling entity reg_controller
-# -- Compiling architecture rtl of reg_controller
-# End time: 16:24:39 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:39 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/dds.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity dds
-# -- Compiling architecture rtl of dds
-# End time: 16:24:39 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:39 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/fm_dds.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity fm_dds
-# -- Compiling architecture rtl of fm_dds
-# End time: 16:24:39 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:39 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/tone_gen.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity tone_gen
-# -- Compiling architecture rtl of tone_gen
-# End time: 16:24:39 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:39 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/envelope_logic.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity envelope_logic
-# -- Compiling architecture rtl of envelope_logic
-# End time: 16:24:39 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:40 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_top.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package reg_table_pkg
-# -- Loading package tone_gen_pkg
-# -- Loading package reg_controller_pkg
-# -- Compiling entity synthi_top
-# -- Compiling architecture str of synthi_top
-# End time: 16:24:40 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:24:40 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_top_tb.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Loading package simulation_pkg
-# -- Loading package standard_driver_pkg
-# -- Loading package user_driver_pkg
-# -- Compiling entity synthi_top_tb
-# -- Compiling architecture struct of synthi_top_tb
-# ** Warning: ../../../source/synthi_top_tb.vhd(281): (vcom-1049) Actual for generic "verbose" depends on value of signal "verbose".
-# End time: 16:24:40 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# End time: 16:24:42 on May 17,2021, Elapsed time: 0:01:52
-# Errors: 1, Warnings: 4
-# vsim -voptargs="+acc" -t 1ns -lib work work.synthi_top_tb 
-# Start time: 16:24:42 on May 17,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading std.env(body)
-# Loading work.simulation_pkg(body)
-# Loading work.standard_driver_pkg(body)
-# Loading work.user_driver_pkg(body)
-# Loading work.synthi_top_tb(struct)
-# Loading work.reg_table_pkg
-# Loading work.tone_gen_pkg
-# Loading work.reg_controller_pkg
-# Loading work.synthi_top(str)
-# Loading work.uart_top(bdf_type)
-# Loading work.baud_tick(rtl)
-# Loading work.flanken_detekt_vhdl(rtl)
-# Loading work.vhdl_hex2sevseg(comb)
-# Loading work.uart_controller_fsm(rtl)
-# Loading work.bit_counter(rtl)
-# Loading work.shiftreg_uart(rtl)
-# Loading work.output_register(rtl)
-# Loading work.infrastructure(str)
-# Loading work.modulo_divider(rtl)
-# Loading work.signal_checker(rtl)
-# Loading work.clock_sync(rtl)
-# Loading work.codec_controller(rtl)
-# Loading work.vector_check(rtl)
-# Loading work.i2c_master(rtl)
-# Loading work.i2s_master(str)
-# Loading work.i2s_frame_generator(str)
-# Loading work.uni_shiftreg(str)
-# Loading work.path_control(str)
-# Loading work.reg_controller(rtl)
-# Loading work.midi_controller_fsm(str)
-# Loading work.tone_gen(rtl)
-# Loading work.fm_dds(rtl)
-# Loading work.dds(rtl)
-# Loading work.envelope_logic(rtl)
-# Loading work.i2c_slave_bfm(bfm)
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Bollhalder Jonas  Hostname: DESKTOP-97F4AJ3  ProcessID: 12356
-#           Attempting to use alternate WLF file "./wlfttswv8z".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfttswv8z
+#           Using alternate file: ./wlftn17zig
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(9)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(8)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(7)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(6)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(5)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(4)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(3)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(2)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(1)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -924,10 +454,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
@@ -941,10 +467,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -960,10 +482,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
@@ -977,10 +495,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -996,10 +510,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
@@ -1013,10 +523,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1032,10 +538,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
@@ -1050,10 +552,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
@@ -1067,10 +565,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1106,45 +600,25 @@ do ../compile.do
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(1)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(2)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(3)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(4)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(5)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(6)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(7)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(8)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(9)/inst_envelope_logic
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
@@ -1153,26 +627,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst5
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod
 # LOGIC HAS BEEN RESET FOR 640 ns
 # HEX VALUE 00000000 APPLIED to DUT
 # 01 SENT TO DUT
@@ -1198,471 +652,14 @@ do ../compile.do
 # SIMULATED FOR 00050000 CLOCKS
 #  CONGRATULATIONS ALL TESTS PASS 
 # Break in Subprogram end_simulation at ../../support/simulation_pkg.vhd line 86
-do ../compile.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:29 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../support/simulation_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Compiling package simulation_pkg
-# -- Compiling package body simulation_pkg
-# -- Loading package simulation_pkg
-# End time: 16:28:29 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:29 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../support/standard_driver_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Loading package simulation_pkg
-# -- Compiling package standard_driver_pkg
-# -- Compiling package body standard_driver_pkg
-# -- Loading package standard_driver_pkg
-# End time: 16:28:29 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:29 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../support/user_driver_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Loading package simulation_pkg
-# -- Compiling package user_driver_pkg
-# -- Compiling package body user_driver_pkg
-# -- Loading package user_driver_pkg
-# End time: 16:28:29 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:29 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/tone_gen_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling package tone_gen_pkg
-# End time: 16:28:29 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:29 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_control/reg_controller_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling package reg_controller_pkg
-# End time: 16:28:29 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:29 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/modulo_divider.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity modulo_divider
-# -- Compiling architecture rtl of modulo_divider
-# ** Warning: ../../../source/infrastructure/modulo_divider.vhd(46): (vcom-1013) Subtype of "ieee.NUMERIC_STD.UNSIGNED" depends on value of signal "width".
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/clock_sync.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity clock_sync
-# -- Compiling architecture rtl of clock_sync
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/signal_checker.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity signal_checker
-# -- Compiling architecture rtl of signal_checker
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/infrastructure.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity infrastructure
-# -- Compiling architecture str of infrastructure
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/infrastructure/vector_check.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity vector_check
-# -- Compiling architecture rtl of vector_check
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/baud_tick.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity baud_tick
-# -- Compiling architecture rtl of baud_tick
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/bit_counter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity bit_counter
-# -- Compiling architecture rtl of bit_counter
-# End time: 16:28:30 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:30 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/flanken_detekt_vhdl.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity flanken_detekt_vhdl
-# -- Compiling architecture rtl of flanken_detekt_vhdl
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/output_register.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity output_register
-# -- Compiling architecture rtl of output_register
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/shiftreg_uart.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity shiftreg_uart
-# -- Compiling architecture rtl of shiftreg_uart
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/uart_controller_fsm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity uart_controller_fsm
-# -- Compiling architecture rtl of uart_controller_fsm
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/uart_top.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity uart_top
-# -- Compiling architecture bdf_type of uart_top
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/vhdl_hex2sevseg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity vhdl_hex2sevseg
-# -- Compiling architecture comb of vhdl_hex2sevseg
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/midi/midi_controller_fsm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity midi_controller_fsm
-# -- Compiling architecture str of midi_controller_fsm
-# End time: 16:28:31 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:31 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/reg_table_pkg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling package reg_table_pkg
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:32 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/codec_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package reg_table_pkg
-# -- Compiling entity codec_controller
-# -- Compiling architecture rtl of codec_controller
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:32 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2c_master.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_master
-# -- Compiling architecture rtl of i2c_master
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:32 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2c_slave_bfm.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_slave_bfm
-# -- Compiling architecture bfm of i2c_slave_bfm
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:32 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2s_master.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2s_master
-# -- Compiling architecture str of i2s_master
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:32 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/i2s_frame_generator.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2s_frame_generator
-# -- Compiling architecture str of i2s_frame_generator
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:32 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/path_control.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity path_control
-# -- Compiling architecture str of path_control
-# End time: 16:28:32 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/i2c/uni_shiftreg.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity uni_shiftreg
-# -- Compiling architecture str of uni_shiftreg
-# End time: 16:28:33 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_control/reg_controller.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package reg_controller_pkg
-# -- Compiling entity reg_controller
-# -- Compiling architecture rtl of reg_controller
-# End time: 16:28:33 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/dds.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity dds
-# -- Compiling architecture rtl of dds
-# End time: 16:28:33 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/fm_dds.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity fm_dds
-# -- Compiling architecture rtl of fm_dds
-# End time: 16:28:33 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/tone_gen.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity tone_gen
-# -- Compiling architecture rtl of tone_gen
-# End time: 16:28:33 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/tone_gen/envelope_logic.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package tone_gen_pkg
-# -- Compiling entity envelope_logic
-# -- Compiling architecture rtl of envelope_logic
-# End time: 16:28:33 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:33 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_top.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package reg_table_pkg
-# -- Loading package tone_gen_pkg
-# -- Loading package reg_controller_pkg
-# -- Compiling entity synthi_top
-# -- Compiling architecture str of synthi_top
-# End time: 16:28:34 on May 17,2021, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:28:34 on May 17,2021
-# vcom -reportprogress 300 -2008 -explicit -work work ../../../source/synthi_top_tb.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ENV
-# -- Loading package simulation_pkg
-# -- Loading package standard_driver_pkg
-# -- Loading package user_driver_pkg
-# -- Compiling entity synthi_top_tb
-# -- Compiling architecture struct of synthi_top_tb
-# ** Warning: ../../../source/synthi_top_tb.vhd(281): (vcom-1049) Actual for generic "verbose" depends on value of signal "verbose".
-# End time: 16:28:34 on May 17,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# End time: 16:28:36 on May 17,2021, Elapsed time: 0:03:54
-# Errors: 0, Warnings: 149
-# vsim -voptargs="+acc" -t 1ns -lib work work.synthi_top_tb 
-# Start time: 16:28:36 on May 17,2021
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading std.env(body)
-# Loading work.simulation_pkg(body)
-# Loading work.standard_driver_pkg(body)
-# Loading work.user_driver_pkg(body)
-# Loading work.synthi_top_tb(struct)
-# Loading work.reg_table_pkg
-# Loading work.tone_gen_pkg
-# Loading work.reg_controller_pkg
-# Loading work.synthi_top(str)
-# Loading work.uart_top(bdf_type)
-# Loading work.baud_tick(rtl)
-# Loading work.flanken_detekt_vhdl(rtl)
-# Loading work.vhdl_hex2sevseg(comb)
-# Loading work.uart_controller_fsm(rtl)
-# Loading work.bit_counter(rtl)
-# Loading work.shiftreg_uart(rtl)
-# Loading work.output_register(rtl)
-# Loading work.infrastructure(str)
-# Loading work.modulo_divider(rtl)
-# Loading work.signal_checker(rtl)
-# Loading work.clock_sync(rtl)
-# Loading work.codec_controller(rtl)
-# Loading work.vector_check(rtl)
-# Loading work.i2c_master(rtl)
-# Loading work.i2s_master(str)
-# Loading work.i2s_frame_generator(str)
-# Loading work.uni_shiftreg(str)
-# Loading work.path_control(str)
-# Loading work.reg_controller(rtl)
-# Loading work.midi_controller_fsm(str)
-# Loading work.tone_gen(rtl)
-# Loading work.fm_dds(rtl)
-# Loading work.dds(rtl)
-# Loading work.envelope_logic(rtl)
-# Loading work.i2c_slave_bfm(bfm)
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: Bollhalder Jonas  Hostname: DESKTOP-97F4AJ3  ProcessID: 12356
-#           Attempting to use alternate WLF file "./wlftm2qhy4".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftm2qhy4
+do ../restart.do
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(9)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(8)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(7)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(6)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(5)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(4)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(3)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(2)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(1)/inst_envelope_logic
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1678,10 +675,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
@@ -1695,10 +688,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1714,10 +703,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
@@ -1731,10 +716,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1750,10 +731,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
@@ -1767,10 +744,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1786,10 +759,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
@@ -1804,10 +773,6 @@ do ../compile.do
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
@@ -1821,10 +786,6 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -1860,45 +821,25 @@ do ../compile.do
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(1)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(2)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(3)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(4)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(5)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(6)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(7)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_mod
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(8)/inst_envelope_logic
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(9)/inst_envelope_logic
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
@@ -1907,29 +848,7 @@ do ../compile.do
 #    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
 # ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst5
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_mod
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 2  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod
 # LOGIC HAS BEEN RESET FOR 640 ns
-# HEX VALUE 00000000 APPLIED to DUT
-# 01 SENT TO DUT
 # 90 SENT TO DUT
 # DISPLAY OUTPUT O.K., received 0x00
 # DISPLAY OUTPUT O.K., received 0x09
@@ -1944,11 +863,223 @@ do ../compile.do
 # DISPLAY OUTPUT O.K., received 0x00
 # DISPLAY OUTPUT O.K., received 0x07
 # SIMULATED FOR 00050000 CLOCKS
-# 21 SENT TO DUT
+# 01 SENT TO DUT
 # SIMULATED FOR 00050000 CLOCKS
-# 22 SENT TO DUT
+#  CONGRATULATIONS ALL TESTS PASS 
+# Break in Subprogram end_simulation at ../../support/simulation_pkg.vhd line 86
+do ../restart.do
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(9)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(8)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(7)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(6)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(5)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(4)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(3)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(2)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(1)
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_mod
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Region: /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/infrastructure_1/signal_checker_2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/infrastructure_1/signal_checker_2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/infrastructure_1/signal_checker_2
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/infrastructure_1/signal_checker_1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/infrastructure_1/signal_checker_1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/infrastructure_1/signal_checker_1
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst5
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst5
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(0)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(1)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(2)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(3)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(4)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(5)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(6)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(7)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(8)/inst_envelope_logic
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/tone_gen_1/envelope_logic_inst_gen(9)/inst_envelope_logic
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_2/b2v_inst5
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /synthi_top_tb/DUT/uart_top_1/b2v_inst5
+# LOGIC HAS BEEN RESET FOR 640 ns
+# HEX VALUE 00000000 APPLIED to DUT
+# 90 SENT TO DUT
+# DISPLAY OUTPUT O.K., received 0x00
+# DISPLAY OUTPUT O.K., received 0x09
+# SIMULATED FOR 00000060 CLOCKS
+# 50 SENT TO DUT
+# SIMULATED FOR 00000060 CLOCKS
+# DISPLAY OUTPUT O.K., received 0x00
+# DISPLAY OUTPUT O.K., received 0x05
+# SIMULATED FOR 000000FF CLOCKS
+# 70 SENT TO DUT
+# SIMULATED FOR 00000060 CLOCKS
+# DISPLAY OUTPUT O.K., received 0x00
+# DISPLAY OUTPUT O.K., received 0x07
 # SIMULATED FOR 00050000 CLOCKS
-# 23 SENT TO DUT
+# 01 SENT TO DUT
 # SIMULATED FOR 00050000 CLOCKS
 #  CONGRATULATIONS ALL TESTS PASS 
 # Break in Subprogram end_simulation at ../../support/simulation_pkg.vhd line 86

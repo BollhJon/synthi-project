@@ -22,10 +22,6 @@
 reset_target 20
 set_switches 00 00 00 00
 
-# activate bluetooth control
-bt_uart_send_data 01
-
-
 #--- FILL ARRAY 1--
 # Send status 0x9 = Note On
 usb_uart_send_data 90 
@@ -47,15 +43,6 @@ check_display_hex0 00
 check_display_hex1 07
 run_simulation_for 00 05 00 00
 
-# Filter 1
-bt_uart_send_data 21
+# activate bluetooth control
+bt_uart_send_data 01
 run_simulation_for 00 05 00 00
-
-# Filter 2
-bt_uart_send_data 22
-run_simulation_for 00 05 00 00
-
-# Filter 3
-bt_uart_send_data 23
-run_simulation_for 00 05 00 00
-
