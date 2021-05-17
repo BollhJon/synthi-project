@@ -30,6 +30,8 @@ package reg_table_pkg is
 -------------------------------------------------------------------------------
   type t_codec_register_array is array(0 to 9) of std_logic_vector(8 downto 0);
 
+  type t_codec_volume_array is array(0 to 15) of std_logic_vector(8 downto 0);
+
   type i2c_data is record
     reg0, reg1, reg2, reg3, reg4 : std_logic_vector(8 downto 0);
     reg5, reg6, reg7, reg8, reg9 : std_logic_vector(8 downto 0);
@@ -64,7 +66,15 @@ package reg_table_pkg is
   constant C_HP_OUT_HPVOL_0DB   : std_logic_vector(8 downto 0) := "001111001";  -- Headphone volume 0dB
   constant C_HP_OUT_HPVOL_M2DB  : std_logic_vector(8 downto 0) := "001110111";  -- Headphone volume -2dB
   constant C_HP_OUT_HPVOL_M4DB  : std_logic_vector(8 downto 0) := "001110101";  -- Headphone volume -4dB
-  constant C_HP_OUT_HPVOL_M12DB : std_logic_vector(8 downto 0) := "001101101";  -- Headphone volume -12db.
+  constant C_HP_OUT_HPVOL_M6DB  : std_logic_vector(8 downto 0) := "001110011";  -- Headphone volume -6dB
+  constant C_HP_OUT_HPVOL_M8DB  : std_logic_vector(8 downto 0) := "001110001";  -- Headphone volume -8dB
+  constant C_HP_OUT_HPVOL_M10DB : std_logic_vector(8 downto 0) := "001101111";  -- Headphone volume -10dB
+  constant C_HP_OUT_HPVOL_M12DB : std_logic_vector(8 downto 0) := "001101101";  -- Headphone volume -12db
+  constant C_HP_OUT_HPVOL_M14DB : std_logic_vector(8 downto 0) := "001101011";  -- Headphone volume -14dB
+  constant C_HP_OUT_HPVOL_M16DB : std_logic_vector(8 downto 0) := "001101001";  -- Headphone volume -16dB
+  constant C_HP_OUT_HPVOL_M18DB : std_logic_vector(8 downto 0) := "001100111";  -- Headphone volume -18dB
+  constant C_HP_OUT_HPVOL_M20DB : std_logic_vector(8 downto 0) := "001100101";  -- Headphone volume -20dB
+  constant C_HP_OUT_HPVOL_M22DB : std_logic_vector(8 downto 0) := "001100011";  -- Headphone volume -22dB
   constant C_HP_OUT_HPVOL_MUTE  : std_logic_vector(8 downto 0) := "000000000";  -- Headphone volume MUTE
 
 --  C_ADDR_ANALOG_AP
@@ -190,5 +200,24 @@ package reg_table_pkg is
     8 => "000000000",                   -- 48kHz with mclk=12.288MHz
     9 => "000000000" or C_DIGITAL_ACTIVATE_ACTIVE);
 
+-- C_W8731_VOLUME =====================================================
+-- Volume Array for codec controller
 
+    constant C_W8731_VOLUME : t_codec_volume_array := (
+    0 => "000000000"  or C_HP_OUT_HPVOL_P6DB,
+    1 => "000000000"  or C_HP_OUT_HPVOL_P4DB,
+    2 => "000000000"  or C_HP_OUT_HPVOL_P2DB,
+    3 => "000000000"  or C_HP_OUT_HPVOL_0DB,
+    4 => "000000000"  or C_HP_OUT_HPVOL_M2DB,
+    5 => "000000000"  or C_HP_OUT_HPVOL_M4DB,
+    6 => "000000000"  or C_HP_OUT_HPVOL_M6DB,
+    7 => "000000000"  or C_HP_OUT_HPVOL_M8DB,
+    8 => "000000000"  or C_HP_OUT_HPVOL_M10DB,               
+    9 => "000000000"  or C_HP_OUT_HPVOL_M12DB,
+    10 => "000000000" or C_HP_OUT_HPVOL_M14DB,
+    11 => "000000000" or C_HP_OUT_HPVOL_M16DB,
+    12 => "000000000" or C_HP_OUT_HPVOL_M18DB,
+    13 => "000000000" or C_HP_OUT_HPVOL_M20DB,
+    14 => "000000000" or C_HP_OUT_HPVOL_M22DB,
+    15 => "000000000" or C_HP_OUT_HPVOL_MUTE);
 end package;

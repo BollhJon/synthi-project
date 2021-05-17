@@ -1,44 +1,46 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases LUT
+#-- Title      : Testcases fm-Synthese
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
 #-- Author     : Bollhalder Jonas
 #-- Company    : 
-#-- Created    : 2021-05-04
-#-- Last update: 2021-05-05
+#-- Created    : 2021-05-01
+#-- Last update: 2021-05-01
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for custom LUT of Synthi-Project
+#-- Description: Testcases for fm-Synthese of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-05-04  1.0      Mueller Pavel    Created
-#-- 2021-05-05  1.1      Mueller Pavel    Added comands for orgel LUT
+#-- 2021-05-01  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
 
 reset_target 10
 
-#Turn bt controll on
-bt_uart_send_data 01
-
-# set wave to sawtooth with falling shape
-bt_uart_send_data 51
-
+# send note on signal
 usb_uart_send_data 90
 run_simulation_for 00 00 04 00
 
-usb_uart_send_data 60
+usb_uart_send_data 50
 run_simulation_for 00 00 04 00
 
-usb_uart_send_data 7F
+usb_uart_send_data 72
+run_simulation_for 00 00 04 00
+
+
+bt_uart_send_data 01
+bt_uart_send_data 31
+bt_uart_send_data 48
 run_simulation_for 00 05 00 00
 
-# set wave to sawtooth with rising shape
-bt_uart_send_data 52
+bt_uart_send_data 01
+bt_uart_send_data 38
+bt_uart_send_data 4C
 run_simulation_for 00 05 00 00
 
-# set wave to triangle
-bt_uart_send_data 53
+bt_uart_send_data 01
+bt_uart_send_data 3F
+bt_uart_send_data 4F
 run_simulation_for 00 05 00 00

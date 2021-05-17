@@ -6,7 +6,7 @@
 -- Author     : gelk
 -- Company    : 
 -- Created    : 2019-03-06
--- Last update: 2021-03-14
+-- Last update: 2021-05-17
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -36,8 +36,12 @@ entity codec_controller is
     ack_error_i  : in  std_logic;       -- Inputs to check the transmission
     clk          : in  std_logic;
     reset_n      : in  std_logic;
+    ctr_i        : in  std_logic;
+    volume_i     : in  std_logic_vector(3 downto 0);
+	emphasis_i   : in  std_logic_vector(1 downto 0);
     write_o      : out std_logic;       -- Output to i2c to start transmission 
     write_data_o : out std_logic_vector(15 downto 0)  -- Data_Output
+    
     );
 end codec_controller;
 
@@ -51,7 +55,7 @@ type State_type is (idle, wait_write, state_end);
 signal State, next_State : State_type;
 
 signal count, next_count : unsigned(6 downto 0) := (others =>'0');
-signal vector_change : std_logic;
+signal mode_change, volume_change : std_logic;
 -- Begin Architecture
 -------------------------------------------
 
@@ -63,6 +67,7 @@ signal vector_change : std_logic;
       clk_i    : in  std_logic;
       signal_o : out std_logic);
   end component vector_check;
+
 begin
 
   --------------------------------------------------
@@ -70,7 +75,7 @@ begin
   --------------------------------------------------
   flip_flops : process(all)
   begin
-    if reset_n = '0'or vector_change = '1' then
+    if reset_n = '0'or mode_change = '1' or volume_change = '1'  then
       State <= idle;
       count <= (others =>'0');
     elsif rising_edge(clk) then
@@ -134,21 +139,29 @@ write_data_o (15 downto 9) <= std_logic_vector(count);
 		write_data_o(8 downto 0) <= "000000000"; -- tbd: default
 
 		if(mode(0) = '0') then
-		write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(to_integer(count)); --tbd: array_pointer
+                  write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(to_integer(count)); --tbd: array_pointer
 		
 		elsif(mode(1) = '0' and mode(2) = '0') then
-		write_data_o(8 downto 0) <= C_W8731_ANALOG_BYPASS(to_integer(count)); --tbd: array_pointer
+                  write_data_o(8 downto 0) <= C_W8731_ANALOG_BYPASS(to_integer(count)); --tbd: array_pointer
 		
 		elsif(mode(1) = '0' and mode(2) = '1') then
-	   write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_LEFT(to_integer(count)); --tbd: array_pointer
+                  write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_LEFT(to_integer(count)); --tbd: array_pointer
 		
 		elsif(mode(1) = '1' and mode(2) = '0') then
-		write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(to_integer(count)); --tbd: array_pointer
+                  write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(to_integer(count)); --tbd: array_pointer
 		
 		elsif(mode(1) = '1' and mode(2) = '1') then
-		write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(to_integer(count)); --tbd: array_pointer
+                  write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(to_integer(count)); --tbd: array_pointer
 		
 		end if;
+
+        if(ctr_i = '1' and (count = 2 or count = 3)) then
+           	write_data_o(8 downto 0) <= C_W8731_VOLUME(to_integer(unsigned(volume_i)));
+        elsif(ctr_i = '1' and count = 5) then
+		    write_data_o(8 downto 0) <= "000000" & emphasis_i & "0";
+		end if;
+                  
+		
 	end PROCESS mode_mux_logic;
 	
 	
@@ -162,6 +175,19 @@ write_data_o (15 downto 9) <= std_logic_vector(count);
      port map (
         vector_i => mode,
         clk_i    => clk,
-        signal_o => vector_change);
+        signal_o => mode_change
+        );
+
+    -- instance "vector_check_2"
+  vector_check_2: vector_check
+     generic map (
+        width => 7)
+     port map (
+        vector_i => volume_i & ctr_i & emphasis_i,
+        clk_i    => clk,
+        signal_o => volume_change
+        );
+
+
                 
 end rtl;
