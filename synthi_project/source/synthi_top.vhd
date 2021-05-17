@@ -6,7 +6,7 @@
 -- Author     : Boehi Dominik
 -- Company    : 
 -- Created    : 2021-03-01
--- Last update: 2021-05-03
+-- Last update: 2021-05-17
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -150,6 +150,9 @@ architecture str of synthi_top is
       ack_error_i  : in  std_logic;
       clk          : in  std_logic;
       reset_n      : in  std_logic;
+      ctr_i        : in  std_logic;
+      volume_i     : in  std_logic_vector(3 downto 0);
+      emphasis_i   : in  std_logic_vector(1 downto 0);
       write_o      : out std_logic;
       write_data_o : out std_logic_vector(15 downto 0));
   end component codec_controller;
@@ -287,6 +290,9 @@ begin  -- architecture str
       ack_error_i  => ack_error_sig,
       clk          => clk_6m_sig,
       reset_n      => reset_n_sig,
+      ctr_i        => config_sig(0)(0),
+      volume_i     => config_sig(6),
+      emphasis_i   => config_sig(2)(1 downto 0),
       write_o      => write_sig,
       write_data_o => write_data_sig);
 
@@ -337,7 +343,7 @@ begin  -- architecture str
   reg_controller_1: reg_controller
     port map (
       clk_6m   => clk_6m_sig,
-      rst_n    => reset_n_sig,
+      rst_n    => reset_bt_n_sig,
       data_i   => bt_data_sig,
       data_rdy => bt_data_rdy_sig,
       config_i => ("0000",SW(3 downto 0),"0000",SW(7 downto 4),("00"&SW(9 downto 8)),"0000","0000","0000","0000","0000","0000","0000","0000","0000","0000","0000"),
@@ -367,9 +373,9 @@ begin  -- architecture str
       note_i     => note_sig,
       step_i     => step_o_sig,
       velocity_i => velocity_sig,
-      fm_ratio   => config_sig(2),
-      fm_depth   => config_sig(3),
-		  lut_sel    => config_sig(4),
+      fm_ratio   => config_sig(3),
+      fm_depth   => config_sig(4),
+      lut_sel    => config_sig(5),
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );
