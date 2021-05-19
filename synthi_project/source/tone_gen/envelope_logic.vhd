@@ -33,9 +33,9 @@ entity envelope_logic is
     clk_6m       : in  std_logic;
     reset_n    : in  std_logic;
     tone_on_i  : in  std_logic;
-    velocity_i : in  std_logic_vector(6 downto 0);
+    -- velocity_i : in  std_logic_vector(6 downto 0); wurde noch nicht implementiert
     lut_sel    : in  std_logic_vector(3 downto 0);
-    attenu_o   : out std_logic_vector(3 downto 0)
+    attenu_o   : out std_logic_vector(4 downto 0)
     );
 end envelope_logic;
    
@@ -69,13 +69,13 @@ begin
       next_lut_addr <= to_unsigned(0, 8);
     end if;
 
-    if count > to_unsigned(117188, N_CUM) then --
+    if count > to_unsigned(100000, N_CUM) then --
       case to_integer(unsigned(lut_sel)) is
-        when 1|3 =>
+        when 8|10 =>
           if lut_addr < 255 then
             next_lut_addr <= lut_addr + to_unsigned(1,8);
           end if;
-        when 2 =>
+        when 9 =>
             if lut_addr < 255 then
               next_lut_addr <= lut_addr + to_unsigned(1,8);
             else
@@ -92,10 +92,10 @@ begin
   begin  -- process output_logic
 
     case to_integer(unsigned(lut_sel)) is
-      when 1 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(to_integer(lut_addr)),4));
-      when 2 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_orgel(to_integer(lut_addr)),4));
-      when 3 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_guitar(to_integer(lut_addr)),4));
-      when others => attenu_o  <= std_logic_vector(to_unsigned(15, 4));
+      when 8  => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(to_integer(lut_addr)),5));
+      when 9  => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_orgel(to_integer(lut_addr)),5));
+      when 10 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_guitar(to_integer(lut_addr)),5));
+      when others => attenu_o  <= std_logic_vector(to_unsigned(31, 5));
     end case;
   end process output_logic;
       

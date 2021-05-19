@@ -38,7 +38,7 @@ entity dds is
        phi_incr_i        : in std_logic_vector(N_CUM-1 downto 0);
        step_i            : in std_logic;
        tone_on_i         : in std_logic;
-       attenu_i          : in std_logic_vector(3 downto 0);
+       attenu_i          : in std_logic_vector(4 downto 0);
        lut_sel	         : in std_logic_vector(3 downto 0);
        dds_o             : out std_logic_vector(N_AUDIO-1 downto 0)	 
        );
@@ -53,8 +53,7 @@ architecture rtl of dds is
   signal count : unsigned(N_CUM-1 downto 0);
   signal next_count : unsigned(N_CUM-1 downto 0);
   signal lut_val : signed(N_AUDIO-1 downto 0);
-  signal lut_addr : integer range 0 to L-1;
-
+  
 -- Begin Architecture
 -------------------------------------------
 begin
@@ -97,16 +96,18 @@ begin
   -- PROCESS FOR LUT Logic
   --------------------------------------------------
   lut_logic : process (all)
+  variable lut_addr : integer range 0 to L-1;
+
   begin
-    lut_addr <= to_integer(count(N_CUM-1 downto N_CUM - N_LUT));
+    lut_addr := to_integer(count(N_CUM-1 downto N_CUM - N_LUT));
 	 
     case to_integer(unsigned(lut_sel)) is
       --when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
-      when 1 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
-      when 2 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
-      when 3 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
-      when 4 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);
-      when 5 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);
+      when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);
+      when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);
+      when 8 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
+      when 9 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
+      when 10 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
       when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
     end case;
         
@@ -121,9 +122,9 @@ begin
     
     begin
       shift_var := (others => '0');  
-      for i in 0 to 3 loop
+      for i in 0 to 4 loop
         if attenu_i(i) = '1' then
-          shift_var := shift_var + shift_right(lut_val,(4-i));
+          shift_var := shift_var + shift_right(lut_val,(5-i));
         end if;
       end loop ; 
 
