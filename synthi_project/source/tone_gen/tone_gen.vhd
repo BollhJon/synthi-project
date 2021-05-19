@@ -52,7 +52,7 @@ architecture rtl of tone_gen is
 -- Signals & Constants Declaration
 -------------------------------------------
   type t_dds_o_array is array (0 to 9) of std_logic_vector(N_AUDIO-1 downto 0);
-  type t_attenu_array is array (0 to 9) of std_logic_vector(3 downto 0);
+  type t_attenu_array is array (0 to 9) of std_logic_vector(4 downto 0);
   signal dds_o_array : t_dds_o_array;
   signal sum_reg : signed(N_AUDIO-1 downto 0);
   signal next_sum_reg : signed(N_AUDIO-1 downto 0);
@@ -71,9 +71,9 @@ architecture rtl of tone_gen is
       fm_ratio      : in  std_logic_vector(3 downto 0);
       fm_depth      : in  std_logic_vector(3 downto 0);
       step_i        : in  std_logic;
-      attenu_i      : in  std_logic_vector(3 downto 0);
-		lut_sel_car   : in  std_logic_vector(3 downto 0);
-		lut_sel_mod   : in  std_logic_vector(3 downto 0);
+      attenu_i      : in  std_logic_vector(4 downto 0);
+		  lut_sel_car   : in  std_logic_vector(3 downto 0);
+		  lut_sel_mod   : in  std_logic_vector(3 downto 0);
       fm_dds_o      : out std_logic_vector(N_AUDIO -1 downto 0));
   end component fm_dds;
 
@@ -82,9 +82,9 @@ architecture rtl of tone_gen is
       clk_6m      : in  std_logic;
       reset_n     : in  std_logic;
       tone_on_i   : in  std_logic;
-      velocity_i  : in  std_logic_vector(6 downto 0);
+      --velocity_i  : in  std_logic_vector(6 downto 0);
       lut_sel 		: in  std_logic_vector(3 downto 0);
-      attenu_o    : out std_logic_vector(3 downto 0));
+      attenu_o    : out std_logic_vector(4 downto 0));
   end component envelope_logic;
 
 
@@ -117,7 +117,7 @@ begin
         clk_6m     => clk_6m,
         reset_n    => reset_n,
         tone_on_i  => tone_on_i(i),
-        velocity_i => velocity_i(i),
+        --velocity_i => velocity_i(i), wurde noch nicht implementiert
         lut_sel    => lut_sel_env_sig,
         attenu_o   => attenu_array(i)
         );

@@ -30,17 +30,17 @@ use work.tone_gen_pkg.all;
 entity fm_dds is
   
   port (
-    clk_6m : in std_logic;
-    reset_n : in std_logic;
+    clk_6m        : in std_logic;
+    reset_n       : in std_logic;
     phi_incr_fsig : in std_logic_vector(N_CUM-1 downto 0);
-    tone_on_i : in std_logic;
-    fm_ratio : in std_logic_vector(3 downto 0);
-    fm_depth : in std_logic_vector(3 downto 0);
-    step_i   : in std_logic;
-    attenu_i : in std_logic_vector(3 downto 0);
-	  lut_sel_car  : in std_logic_vector(3 downto 0);
-    lut_sel_mod  : in std_logic_vector(3 downto 0);
-    fm_dds_o : out std_logic_vector(N_AUDIO -1 downto 0)
+    tone_on_i     : in std_logic;
+    fm_ratio      : in std_logic_vector(3 downto 0);
+    fm_depth      : in std_logic_vector(3 downto 0);
+    step_i        : in std_logic;
+    attenu_i      : in std_logic_vector(4 downto 0);
+	  lut_sel_car   : in std_logic_vector(3 downto 0);
+    lut_sel_mod   : in std_logic_vector(3 downto 0);
+    fm_dds_o      : out std_logic_vector(N_AUDIO -1 downto 0)
     );
 end fm_dds;
 
@@ -57,8 +57,8 @@ architecture rtl of fm_dds is
       phi_incr_i : in  std_logic_vector(N_CUM-1 downto 0);
       step_i     : in  std_logic;
       tone_on_i  : in  std_logic;
-      attenu_i   : in  std_logic_vector(3 downto 0);
-		  lut_sel	  : in  std_logic_vector(3 downto 0);
+      attenu_i   : in  std_logic_vector(4 downto 0);
+		  lut_sel	   : in  std_logic_vector(3 downto 0);
       dds_o      : out std_logic_vector(N_AUDIO-1 downto 0));
   end component dds;
 
@@ -72,7 +72,7 @@ begin  -- architecture rtl
       phi_incr_i => std_logic_vector(phi_incr_mod_sig),
       step_i     => step_i,
       tone_on_i  => tone_on_i,
-      attenu_i   => fm_depth,
+      attenu_i   => fm_depth &'0',
 		  lut_sel	   => lut_sel_mod,
       dds_o      => dds_o_mod_sig
       );
