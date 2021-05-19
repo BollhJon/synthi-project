@@ -104,7 +104,9 @@ begin
     case to_integer(unsigned(lut_sel)) is
       --when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
       when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);
+      when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);
       when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);
+      when 4 => lut_val  <= to_signed(LUT_rectangle(lut_addr), N_AUDIO);
       when 8 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
       when 9 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
       when 10 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
