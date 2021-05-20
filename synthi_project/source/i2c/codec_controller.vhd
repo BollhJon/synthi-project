@@ -139,28 +139,24 @@ write_data_o (15 downto 9) <= std_logic_vector(count);
 		write_data_o(8 downto 0) <= "000000000"; -- tbd: default
 
 		if(mode(0) = '0') then
-                  write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(to_integer(count)); --tbd: array_pointer
-		
+       write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(to_integer(count)); --tbd: array_pointer
 		elsif(mode(1) = '0' and mode(2) = '0') then
-                  write_data_o(8 downto 0) <= C_W8731_ANALOG_BYPASS(to_integer(count)); --tbd: array_pointer
-		
+      write_data_o(8 downto 0) <= C_W8731_ANALOG_BYPASS(to_integer(count)); --tbd: array_pointer
 		elsif(mode(1) = '0' and mode(2) = '1') then
-                  write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_LEFT(to_integer(count)); --tbd: array_pointer
-		
+       write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_LEFT(to_integer(count)); --tbd: array_pointer
 		elsif(mode(1) = '1' and mode(2) = '0') then
-                  write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(to_integer(count)); --tbd: array_pointer
-		
+       write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(to_integer(count)); --tbd: array_pointer
 		elsif(mode(1) = '1' and mode(2) = '1') then
-                  write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(to_integer(count)); --tbd: array_pointer
-		
+       write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(to_integer(count)); --tbd: array_pointer
 		end if;
 
-        if(ctr_i = '1' and (count = 2 or count = 3)) then
-           	write_data_o(8 downto 0) <= C_W8731_VOLUME(to_integer(unsigned(volume_i)));
-        elsif(ctr_i = '1' and count = 5) then
-		    write_data_o(8 downto 0) <= "000000" & emphasis_i & "1";
-		end if;
-                  
+    if (ctr_i = '1') then
+       if ((mode(0)='0') and (count = 2 or count = 3)) then
+         write_data_o(8 downto 0) <= C_W8731_VOLUME(to_integer(unsigned(volume_i)));
+       elsif (count = 5) then
+         write_data_o(8 downto 0) <= "000000" & emphasis_i & "1";
+       end if;
+    end if;                 
 		
 	end PROCESS mode_mux_logic;
 	

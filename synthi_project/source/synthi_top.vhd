@@ -293,7 +293,7 @@ begin  -- architecture str
       clk          => clk_6m_sig,
       reset_n      => reset_n_sig,
       ctr_i        => config_sig(0)(0),
-      volume_i     => config_sig(8),
+      volume_i     => config_sig(3),
       emphasis_i   => config_sig(2)(1 downto 0),
       write_o      => write_sig,
       write_data_o => write_data_sig);
@@ -375,11 +375,11 @@ begin  -- architecture str
       note_i     => note_sig,
       step_i     => step_o_sig,
       velocity_i => velocity_sig,
-      fm_ratio   => config_sig(3),
-      fm_depth   => config_sig(4),
-      lut_sel_car => config_sig(5),
-      lut_sel_mod => config_sig(6),
-      lut_sel_env => config_sig(7),
+      fm_ratio   => config_sig(4),
+      fm_depth   => config_sig(5),
+      lut_sel_car => config_sig(6),
+      lut_sel_mod => config_sig(7),
+      lut_sel_env => config_sig(8),
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
       );
