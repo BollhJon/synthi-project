@@ -39,7 +39,7 @@ entity fm_dds is
     step_i        : in std_logic;
     attenu_i      : in std_logic_vector(4 downto 0);
 	  lut_sel_car   : in std_logic_vector(3 downto 0);
-    lut_sel_mod   : in std_logic_vector(3 downto 0);
+    lut_sel_mod   : in std_logic_vector(2 downto 0);
     fm_dds_o      : out std_logic_vector(N_AUDIO -1 downto 0)
     );
 end fm_dds;
@@ -50,7 +50,19 @@ architecture rtl of fm_dds is
   signal phi_incr_mod_sig : unsigned(N_CUM-1 downto 0);
   signal dds_o_mod_sig : std_logic_vector(N_AUDIO -1 downto 0);
 
-  component dds is
+  component dds_mod is
+    port (
+      clk_6m     : in  std_logic;
+      reset_n    : in  std_logic;
+      phi_incr_i : in  std_logic_vector(N_CUM-1 downto 0);
+      step_i     : in  std_logic;
+      tone_on_i  : in  std_logic;
+      attenu_i   : in  std_logic_vector(4 downto 0);
+		  lut_sel	   : in  std_logic_vector(2 downto 0);
+      dds_o      : out std_logic_vector(N_AUDIO-1 downto 0));
+  end component dds_mod;
+
+  component dds_car is
     port (
       clk_6m     : in  std_logic;
       reset_n    : in  std_logic;
@@ -60,12 +72,12 @@ architecture rtl of fm_dds is
       attenu_i   : in  std_logic_vector(4 downto 0);
 		  lut_sel	   : in  std_logic_vector(3 downto 0);
       dds_o      : out std_logic_vector(N_AUDIO-1 downto 0));
-  end component dds;
+  end component dds_car;
 
 begin  -- architecture rtl
 
-  -- instance "dds_1"
-  dds_mod: dds
+  -- instance "dds_mod"
+  dds_mod_1: dds_mod
     port map (
       clk_6m     => clk_6m,
       reset_n    => reset_n,
@@ -77,8 +89,8 @@ begin  -- architecture rtl
       dds_o      => dds_o_mod_sig
       );
 
-  -- instance "dds_2"
-  dds_car: dds
+  -- instance "dds_car"
+  dds_car_1: dds_car
     port map (
       clk_6m     => clk_6m,
       reset_n    => reset_n,

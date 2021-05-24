@@ -4,10 +4,8 @@
 -------------------------------------------------------------------------------
 -- File       : synthi_top.vhd
 -- Author     : Boehi Dominik
--- Company    : 
 -- Created    : 2021-03-01
 -- Last update: 2021-05-17
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Top level file for Synthi-Project
@@ -17,8 +15,17 @@
 -- Revisions  :
 -- Date        Version  Author            Description
 -- 2021-03-01  1.0      Boehi Dominik	    Created
--- 2021-04-16  1.1      Bollhalder Jonas  Modifications
--- 2021-05-04  1.2      Mueller Pavel     Changes for custom LUT
+-- 2021-04-23  1.1      Bollhalder Jonas  MS2-integration
+-- 2021-05-12  1.2      Boehi Dominik     MS3-integration
+-- 2021-05-15  1.3      Bollhalder Jonas  Implemented Bluetooth uart_top
+-- 2021-05-16  1.4      Bollhalder Jonas  Implemented reg-controller
+-- 2021-06-03  1.5      Bollhalder Jonas  Optimized reg-controller
+-- 2021-06-03  1.6      Müller Pavel      Implemented FM-Synthesis
+-- 2021-06-06  1.7      Müller Pavel      Implemented selector for waves
+-- 2021-06-10  1.8      Müller Pavel      Implemented logic for envelopes
+-- 2021-06-17  1.9      Bollhalder Jonas  Full capacity Upgrade for reg-controller
+-- 2021-06-17  1.10     Müller Pavel      Rearranged registers in reg-controller
+-- 2021-06-17  1.11     Müller Pavel      Wave selector for envelope, carrier and modulator added
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -226,7 +233,7 @@ architecture str of synthi_top is
       fm_ratio    : in std_logic_vector(3 downto 0);
       fm_depth    : in std_logic_vector(3 downto 0);
       lut_sel_car : in  std_logic_vector(3 downto 0);
-      lut_sel_mod : in  std_logic_vector(3 downto 0);
+      lut_sel_mod : in  std_logic_vector(2 downto 0);
       lut_sel_env : in  std_logic_vector(3 downto 0);
       dds_l_o     : out std_logic_vector(15 downto 0);
       dds_r_o     : out std_logic_vector(15 downto 0));
@@ -378,7 +385,7 @@ begin  -- architecture str
       fm_ratio   => config_sig(4),
       fm_depth   => config_sig(5),
       lut_sel_car => config_sig(6),
-      lut_sel_mod => config_sig(7),
+      lut_sel_mod => config_sig(7)(2 downto 0),
       lut_sel_env => config_sig(8),
       dds_l_o    => dds_l_i_sig,
       dds_r_o    => dds_r_i_sig
