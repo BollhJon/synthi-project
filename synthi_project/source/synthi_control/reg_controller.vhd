@@ -4,10 +4,8 @@
 -------------------------------------------------------------------------------
 -- File       : reg_controller.vhd
 -- Author     : Bollhalder Jonas
--- Company    : 
 -- Created    : 2021-04-15
 -- Last update: 2021-04-15
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: The received byte messages are evaluated and stored in the 
@@ -19,6 +17,7 @@
 -- Revisions  :
 -- Date        Version  Author            Description
 -- 2021-04-15  1.0      Bollhalder Jonas  Created
+-- 2021-05-03  1.1      Bollhalder Jonas  Optimized
 -------------------------------------------------------------------------------
 
 library ieee;
