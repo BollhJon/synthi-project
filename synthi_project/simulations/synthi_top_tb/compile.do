@@ -50,4 +50,4 @@ vcom -2008 -explicit -work work ../../../source/synthi_top_tb.vhd
 # .vhdl Datei ist, sondern der Name der Testbench Entity)
 vsim -voptargs=+acc -t 1ns -lib work work.synthi_top_tb
 do ./wave.do
-run 50 ms
+run 500 ms
