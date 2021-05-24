@@ -230,7 +230,7 @@ architecture str of synthi_top is
       note_i      : in  t_tone_array;
       step_i      : in  std_logic;
       velocity_i  : in  t_tone_array;
-      fm_ratio    : in std_logic_vector(3 downto 0);
+      fm_ratio    : in std_logic_vector(4 downto 0);
       fm_depth    : in std_logic_vector(3 downto 0);
       lut_sel_car : in  std_logic_vector(3 downto 0);
       lut_sel_mod : in  std_logic_vector(2 downto 0);
@@ -382,7 +382,7 @@ begin  -- architecture str
       note_i     => note_sig,
       step_i     => step_o_sig,
       velocity_i => velocity_sig,
-      fm_ratio   => config_sig(4),
+      fm_ratio   => config_sig(4) & config_sig(9)(0),
       fm_depth   => config_sig(5),
       lut_sel_car => config_sig(6),
       lut_sel_mod => config_sig(7)(2 downto 0),
