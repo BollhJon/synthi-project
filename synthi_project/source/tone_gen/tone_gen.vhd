@@ -36,7 +36,7 @@ entity tone_gen is
        note_i            : in t_tone_array;
        step_i            : in std_logic;
        velocity_i        : in t_tone_array;
-       fm_ratio          : in  std_logic_vector(3 downto 0);
+       fm_ratio          : in  std_logic_vector(4 downto 0);
        fm_depth          : in  std_logic_vector(3 downto 0);
        lut_sel_car       : in  std_logic_vector(3 downto 0);
        lut_sel_mod       : in  std_logic_vector(2 downto 0);
@@ -68,7 +68,7 @@ architecture rtl of tone_gen is
       reset_n       : in  std_logic;
       phi_incr_fsig : in  std_logic_vector(N_CUM-1 downto 0);
       tone_on_i     : in  std_logic;
-      fm_ratio      : in  std_logic_vector(3 downto 0);
+      fm_ratio      : in  std_logic_vector(4 downto 0);
       fm_depth      : in  std_logic_vector(3 downto 0);
       step_i        : in  std_logic;
       attenu_i      : in  std_logic_vector(4 downto 0);

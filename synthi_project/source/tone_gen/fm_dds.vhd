@@ -34,7 +34,7 @@ entity fm_dds is
     reset_n       : in std_logic;
     phi_incr_fsig : in std_logic_vector(N_CUM-1 downto 0);
     tone_on_i     : in std_logic;
-    fm_ratio      : in std_logic_vector(3 downto 0);
+    fm_ratio      : in std_logic_vector(4 downto 0);
     fm_depth      : in std_logic_vector(3 downto 0);
     step_i        : in std_logic;
     attenu_i      : in std_logic_vector(4 downto 0);
@@ -108,7 +108,7 @@ begin  -- architecture rtl
 
 ratio: process (all) is
   variable shift_var : unsigned(N_CUM-1 downto 0);
-  variable fm_ratio_var : unsigned(3 downto 0);
+  variable fm_ratio_var : unsigned(4 downto 0);
   variable phi_incr_var : unsigned(N_CUM-1 downto 0);
 
 begin  -- process fm_ratio
@@ -116,20 +116,20 @@ begin  -- process fm_ratio
   fm_ratio_var := unsigned(fm_ratio)-1;
   phi_incr_var := unsigned(phi_incr_fsig);
 
-  if fm_ratio = "0000" then
+  if fm_ratio = "00000" then
     shift_var := (others => '0');
-  elsif fm_ratio = "1000" then
+  elsif fm_ratio = "10000" then
     shift_var := phi_incr_var; 
-  elsif fm_ratio(3) = '1' then
-    for i in 0 to 2 loop
+  elsif fm_ratio(4) = '1' then
+    for i in 0 to 3 loop
       if fm_ratio(i) = '1' then
-        shift_var := shift_var + shift_right(phi_incr_var,(3-i));
+        shift_var := shift_var + shift_right(phi_incr_var,(4-i));
       end if;
     end loop ;
   else
-    for i in 0 to 2 loop
+    for i in 0 to 3 loop
       if fm_ratio_var(i) = '0' then
-        shift_var := shift_var + shift_left(phi_incr_var,(3-i));
+        shift_var := shift_var + shift_left(phi_incr_var,(4-i));
       end if;
     end loop;
   end if; 
