@@ -118,12 +118,16 @@ begin
     variable shift_var : signed(N_AUDIO-1 downto 0);
     
     begin
-      shift_var := (others => '0');  
-      for i in 0 to 4 loop
-        if attenu_i(i) = '1' then
-          shift_var := shift_var + shift_right(lut_val,(5-i));
-        end if;
-      end loop ; 
+      shift_var := (others => '0');
+      if unsigned(phi_incr_i) > 0 then   
+        for i in 0 to 4 loop
+          if attenu_i(i) = '1' then
+            shift_var := shift_var + shift_right(lut_val,(5-i));
+          end if;
+        end loop;
+      else
+        shift_var := to_signed(0,N_AUDIO);
+      end if; 
 
       dds_o <= std_logic_vector(shift_var);
       
