@@ -16,12 +16,17 @@ add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/mode_change
 add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/volume_change
 add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/fm_ratio
 add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/fm_depth
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/attenu_i
+add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/attenu_i
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/attenu_sig
+add wave -noupdate -format Analog-Step -height 74 -max 3660.9999999999995 -min -3735.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/dds_l_o
+add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/attenu_array_sig
+add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/attenu_array
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/attenu_1/tone_on_i
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {9233150 ns} 0}
+WaveRestoreCursors {{Cursor 1} {3276175 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 507
-configure wave -valuecolwidth 125
+configure wave -valuecolwidth 258
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
 configure wave -snapdistance 10
@@ -34,4 +39,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {64052848 ns}
+WaveRestoreZoom {0 ns} {22270338 ns}

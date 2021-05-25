@@ -788,6 +788,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BT_RST_N
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ../source/tone_gen/attenu.vhd
 set_global_assignment -name VHDL_FILE ../source/tone_gen/dds_mod.vhd
 set_global_assignment -name VHDL_FILE ../source/tone_gen/dds_car.vhd
 set_global_assignment -name VHDL_FILE ../source/tone_gen/envelope_logic.vhd

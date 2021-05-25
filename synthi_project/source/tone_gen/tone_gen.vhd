@@ -58,6 +58,9 @@ architecture rtl of tone_gen is
   signal next_sum_reg : signed(N_AUDIO-1 downto 0);
   signal attenu_array : t_attenu_array;
   signal lut_sel_env_sig : std_logic_vector(3 downto 0) := "0000";
+  signal attenu_array_sig : t_attenu_array;
+  signal attenu_sig : std_logic_vector(4 downto 0);
+
 
 -- Begin Architecture
 -------------------------------------------
@@ -87,6 +90,13 @@ architecture rtl of tone_gen is
       attenu_o    : out std_logic_vector(4 downto 0));
   end component envelope_logic;
 
+  component attenu is
+    port (
+      clk_6m    : in  std_logic;
+      reset_n   : in  std_logic;
+      tone_on_i : in  std_logic_vector(9 downto 0);
+      attenu_o  : out std_logic_vector(4 downto 0));
+  end component attenu;
 
 begin
 
@@ -119,9 +129,18 @@ begin
         tone_on_i  => tone_on_i(i),
         --velocity_i => velocity_i(i), wurde noch nicht implementiert
         lut_sel    => lut_sel_env_sig,
-        attenu_o   => attenu_array(i)
+        attenu_o   => attenu_array_sig(i)
         );
   end generate envelope_logic_inst_gen;
+
+  attenu_1: attenu
+    port map(
+      clk_6m    => clk_6m,
+      reset_n   => reset_n,
+      tone_on_i => tone_on_i,
+      attenu_o  => attenu_sig
+      );
+
   
   comb_sum_output : process(all)
     variable var_sum : signed(N_AUDIO-1 downto 0);
@@ -157,7 +176,18 @@ begin
         end case ;
       end process lut_sel_env_logic;
   
-
+  attenu_logic: process (all) is
+    variable attenu_sig_var : unsigned(4 downto 0);
+    begin
+      attenu_sig_var := unsigned(attenu_sig);
+      for i in 0 to 9 loop
+        if unsigned(attenu_array_sig(i)) > attenu_sig_var then
+          attenu_array(i) <= std_logic_vector(unsigned(attenu_array_sig(i)) - attenu_sig_var);
+        else
+          attenu_array(i) <= attenu_array_sig(i);
+        end if;
+      end loop;
+    end process attenu_logic;
 -- End Architecture 
 -------------------------------------------
 end rtl;
