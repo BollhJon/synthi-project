@@ -1,63 +1,252 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases fm-Synthese
-#-- Project    : Synthi-Project
+#-- Title      : testcases for multi DDS and attenu logic
+#-- Project    : DTP2
 #-------------------------------------------------------------------------------
-#-- File       : testcase_ms1.dat
-#-- Author     : Bollhalder Jonas
-#-- Company    : 
-#-- Created    : 2021-05-01
-#-- Last update: 2021-05-01
-#-- Platform   : 
+#-- File       : testcase_multiDDS.dat
+#-- Author     : Hans-Joachim Gelke
+#-- Created    : 2021-05-25
+#-- Last update: 2019-05-25
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for fm-Synthese of Synthi-Project
+#-- Description: testcase for multi DDS and attenu logic
+#-------------------------------------------------------------------------------
+#-- Copyright (c) 2021
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-05-01  1.0      Mueller Pavel    Created
+#-- 2021-05-25  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
 
-reset_target 10
+reset_target 20
+set_switches 00 00 00 00
 
-# send note on signal
-usb_uart_send_data 90
-run_simulation_for 00 00 04 00
+#--- FILL ARRAY 1--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
 
-usb_uart_send_data 50
-run_simulation_for 00 00 04 00
+# Sende Note
+usb_uart_send_data 30 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 03
+run_simulation_for 00 00 00 ff
 
-usb_uart_send_data 72
-run_simulation_for 00 00 04 00
-
-# turn bluetooth control on
-bt_uart_send_data 01
-# change the fm-ratios
-bt_uart_send_data 41 
-#fm ratio 1:16
-bt_uart_send_data 5A
-#fm depth 10
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
 run_simulation_for 00 09 00 00
 
-bt_uart_send_data 48 
-#fm ratio 1:8
-bt_uart_send_data 5C 
-#fm depth 12
+#--- FILL ARRAY 2--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 40 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 04
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
 run_simulation_for 00 09 00 00
 
-bt_uart_send_data 4F 
-#fm ratio 1:2
-bt_uart_send_data 5F 
-#fm depth 15
+#--- FILL ARRAY 3--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 50 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 05
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
 run_simulation_for 00 09 00 00
 
-bt_uart_send_data 40 
-#fm ratio 0
-bt_uart_send_data 5F 
-#fm depth 15
+#--- FILL ARRAY 4--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 60 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 06
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
 run_simulation_for 00 09 00 00
 
-bt_uart_send_data 4F 
-#fm ratio 16:1
-bt_uart_send_data 50 
-#fm depth 0
+#--- FILL ARRAY 5--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 6--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 80 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 08
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 7--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 90 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 8--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 55 
+run_simulation_for 00 00 00 60
+check_display_hex0 05
+check_display_hex1 05
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 8--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 45 
+run_simulation_for 00 00 00 60
+check_display_hex0 05
+check_display_hex1 04
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 9--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 65 
+run_simulation_for 00 00 00 60
+check_display_hex0 05
+check_display_hex1 06
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 10--
+# Send status 0x9 = Note On
+usb_uart_send_data 90 
+check_display_hex0 00
+check_display_hex1 09
+run_simulation_for 00 00 00 60
+
+# Sende Note
+usb_uart_send_data 75 
+run_simulation_for 00 00 00 60
+check_display_hex0 05
+check_display_hex1 07
+run_simulation_for 00 00 00 ff
+
+# Sende Velocity
+usb_uart_send_data 70 
+run_simulation_for 00 00 00 60
+check_display_hex0 00
+check_display_hex1 07
 run_simulation_for 00 09 00 00
