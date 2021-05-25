@@ -36,7 +36,7 @@ entity dds_mod is
        phi_incr_i        : in std_logic_vector(N_CUM-1 downto 0);
        step_i            : in std_logic;
        tone_on_i         : in std_logic;
-       attenu_i          : in std_logic_vector(4 downto 0);
+       attenu_i          : in std_logic_vector(3 downto 0);
        lut_sel	         : in std_logic_vector(2 downto 0);
        dds_o             : out std_logic_vector(N_AUDIO-1 downto 0)
        );
@@ -120,9 +120,9 @@ begin
     begin
       shift_var := (others => '0');
       if unsigned(phi_incr_i) > 0 then   
-        for i in 0 to 4 loop
+        for i in 0 to 3 loop
           if attenu_i(i) = '1' then
-            shift_var := shift_var + shift_right(lut_val,(5-i));
+            shift_var := shift_var + shift_right(lut_val,(4-i));
           end if;
         end loop;
       else

@@ -67,11 +67,11 @@ begin  -- process attenu_logic
 
   case to_integer(count) is
     when 0 to 1  => next_attenu <= std_logic_vector(to_unsigned(0,5));
-    when 2       => next_attenu <= std_logic_vector(to_unsigned(15,5));
-    when 3 to 4  => next_attenu <= std_logic_vector(to_unsigned(21,5));
-    when 5 to 6  => next_attenu <= std_logic_vector(to_unsigned(24,5));
-    when 7 to 8  => next_attenu <= std_logic_vector(to_unsigned(26,5));
-    when 9 to 10  => next_attenu <= std_logic_vector(to_unsigned(27,5));
+    when 2       => next_attenu <= std_logic_vector(to_unsigned(3,5));
+    when 3 to 4  => next_attenu <= std_logic_vector(to_unsigned(7,5));
+    when 5 to 6  => next_attenu <= std_logic_vector(to_unsigned(10,5));
+    when 7 to 8  => next_attenu <= std_logic_vector(to_unsigned(15,5));
+    when 9 to 10  => next_attenu <= std_logic_vector(to_unsigned(20,5));
     when others => next_attenu <= std_logic_vector(to_unsigned(30,5));
   end case;
 end process attenu_logic;
