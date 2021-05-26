@@ -3,11 +3,9 @@
 -- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : uni_shiftreg.vhd
--- Author     : muellpav
--- Company    : 
+-- Author     : Müller Pavel
 -- Created    : 2021-03-22
--- Last update: 2021-03-22
--- Platform   : 
+-- Last update: 2021-05-12
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Universal shift register for i2s master
@@ -17,6 +15,7 @@
 -- Revisions  :
 -- Date        Version  Author          Description
 -- 2021-03-22  1.0      muellpav	      Created
+-- 2021-05-12  1.1      Müller Pavel    Bugfix
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -32,7 +31,7 @@ entity uni_shiftreg is
 
   port (
     par_in      : in std_logic_vector(width-1 downto 0);
-	  ser_in		 : in std_logic;
+	  ser_in		  : in std_logic;
     load        : in std_logic;
     enable      : in std_logic;
     rst_n       : in std_logic;

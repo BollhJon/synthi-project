@@ -5,7 +5,7 @@
 -- File       : dds_car.vhd
 -- Author     : Bollhalder Jonas
 -- Created    : 2021-03-31
--- Last update: 2021-05-04
+-- Last update: 2021-05-23
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: dds_car for Synthi-Project
@@ -15,9 +15,13 @@
 -- Revisions  :
 -- Date        Version  Author                Description
 -- 2021-03-31  1.0      Bollhalder Jonas      Created
+-- 2021-04-12  1.1      Bollhalder Jonas      Bugfixes
 -- 2021-05-04  1.1      Mueller Pavel         modifications for custom LUT
--- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano and Orgel
--- 2021-05-05  1.3      Mueller Pavel         added LUT for guitar
+-- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano, Orgel and guitar
+-- 2021-05-15  1.3      Mueller Pavel         attenu extendet to 16 values
+-- 2021-05-17  1.4      Mueller Pavel         logic elements reduced
+-- 2021-05-19  1.5      Mueller Pavel         attenu extendet to 32 values
+-- 2021-05-23  1.6      Mueller Pavel         modified for fm carrier
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -129,27 +133,6 @@ begin
       end loop ; 
 
       dds_o <= std_logic_vector(shift_var);
-      
-
-    --case to_integer(unsigned(attenu_i)) is
-    --  -- when 0 => dds_o <= (others => '0');                                                                                                 -- 0
-    --  when 1 => dds_o <= std_logic_vector(shift_right(lut_val,3));                                                                        -- 2/16
-    --  when 2 => dds_o <= std_logic_vector(shift_right(lut_val,3)+shift_right(lut_val,4));                                                 -- 3/16
-    --  when 3 => dds_o <= std_logic_vector(shift_right(lut_val,2));                                                                        -- 4/16
-    --  when 4 => dds_o <= std_logic_vector(shift_right(lut_val,2)+shift_right(lut_val,4));                                                 -- 5/16
-    --  when 5 => dds_o <= std_logic_vector(shift_right(lut_val,2)+shift_right(lut_val,3));                                                 -- 6/16
-    --  when 6 => dds_o <= std_logic_vector(shift_right(lut_val,2)+shift_right(lut_val,3)+shift_right(lut_val,4));                          -- 7/16
-    --  when 7 => dds_o <= std_logic_vector(shift_right(lut_val,1));                                                                        -- 8/16
-    --  when 8 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,4));                                                 -- 9/16
-    --  when 9 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,3));                                                 -- 10/16
-    --  when 10 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,3)+shift_right(lut_val,4));                         -- 11/16
-    --  when 11 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2));                                                -- 12/16
-    --  when 12 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2)+shift_right(lut_val,4));                         -- 13/16
-    --  when 13 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2)+shift_right(lut_val,3));                         -- 14/16
-    --  when 14 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2)+shift_right(lut_val,3)+shift_right(lut_val,4));  -- 15/16
-    --  when 15 => dds_o <= std_logic_vector(lut_val);                                                                                      -- 16/16
-    --  when others => dds_o <= (others => '0');
-    --end case;
 
   end process attenuator;
 

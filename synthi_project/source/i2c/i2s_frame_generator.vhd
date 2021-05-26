@@ -3,11 +3,9 @@
 -- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : i2s_frame_generator.vhd
--- Author     : muellpav
--- Company    : 
+-- Author     : Müller Pavel
 -- Created    : 2021-03-22
 -- Last update: 2021-03-22
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Generates the frames for i2s master
@@ -15,8 +13,10 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author          Description
--- 2021-03-22  1.0      muellpav	      Created
+-- Date        Version  Author            Description
+-- 2021-03-22  1.0      Müller Pavel      Created
+-- 2021-05-12  1.1      Müller Pavel      Bugfix
+-- 2021-05-14  1.2      Bollhalder Jonas  Bugfix
 -------------------------------------------------------------------------------
 
 library ieee;

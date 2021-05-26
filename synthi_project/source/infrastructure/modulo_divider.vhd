@@ -1,13 +1,11 @@
 -------------------------------------------------------------------------------
 -- Title      : modulo divider
--- Project    : 
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : modulo divider
 -- Author     : gelk
--- Company    : 
 -- Created    : 2019-09-04
 -- Last update: 2020-10-13
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: modulo divider with generic width. Output MSB with 50% duty cycle.
@@ -16,9 +14,10 @@
 -- Copyright (c) 2018 -2021
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author        Description
--- 2018-02-08  1.0      gelk          Created
--- 2020-10-13  1.2      Boehi Dominik changes for lab
+-- Date        Version  Author            Description
+-- 2018-02-08  1.0      gelk              Created
+-- 2020-10-13  1.1      Boehi Dominik     changes for lab
+-- 2020-03-21  1.2      Bollhalder Jonas  changed to 6.25 MHz
 -------------------------------------------------------------------------------
 -- Library & Use Statements
 -------------------------------------------

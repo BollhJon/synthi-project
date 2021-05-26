@@ -4,10 +4,8 @@
 -------------------------------------------------------------------------------
 -- File       : audio_top.vhd
 -- Author     : dqtm
--- Company    : 
 -- Created    : 2013-02-26
 -- Last update: 2013-02-26
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: i2c interface to initialize audio codec WM8731
@@ -17,7 +15,7 @@
 --               output sda = '0' means pull down to ground
 --
 -------------------------------------------------------------------------------
--- Copyright (c) 2013 - 2021
+-- Copyright (c) 2021
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author  			Description

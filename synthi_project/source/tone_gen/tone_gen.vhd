@@ -4,10 +4,8 @@
 -------------------------------------------------------------------------------
 -- File       : tone_gen.vhd
 -- Author     : Bollhalder Jonas
--- Company    : 
 -- Created    : 2021-03-31
 -- Last update: 2021-05-06
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: generates the tone for Synthi-Project
@@ -15,8 +13,19 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author                Description
--- 2021-03-31  1.0      Bollhalder Jonas	    Created
+-- Date         Version Author            Description
+-- 2021-03-31   1.0     Bollhalder Jonas  Created
+-- 2021-04-26   1.1     Müller Pavel      MS4-Integration
+-- 2021-04-26   1.2     Müller Pavel      Upgraded to mutli DDS
+-- 2021-05-03   1.3     Müller Pavel      implemented fm synthesis
+-- 2021-05-04   1.4     Bollhalder Jonas  implemented simple attenu logic
+-- 2021-05-05   1.5     Müller Pavel      added custom LUT selector
+-- 2021-05-06   1.6     Müller Pavel      added envelope logic
+-- 2021-05-17   1.7     Müller Pavel      added selector for envelope, modulator and carrier
+-- 2021-05-19   1.8     Müller Pavel      upgraded attenuator to 5 Bits
+-- 2021-05-24   1.9     Müller Pavel      reduced selector for modulator to 3 Bit
+-- 2021-05-24   1.10    Müller Pavel      upgraded fm ratio to 5 Bits
+-- 2021-05-25   1.11    Müller Pavel      updated attenuator logic
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements

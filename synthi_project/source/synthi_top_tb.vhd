@@ -3,21 +3,21 @@
 -- Project    : Synthi-Project
 -------------------------------------------------------------------------------
 -- File       : synthi_top_tb.vhd
--- Author     : Boehi Dominik
--- Company    : 
+-- Author     : Boehi Dominik 
 -- Created    : 2021-03-08
--- Last update: 2021-03-15
--- Platform   : 
+-- Last update: 2021-05-05
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
--- Description: 
+-- Description: Testbench for design "synthi_top"
 -------------------------------------------------------------------------------
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author          Description
--- 2021-03-08  1.0      Boehi Dominik	  Created
--- 2021-03-15  1.1      Boehi Dominik   small changes
+-- Date        Version  Author            Description
+-- 2021-03-08  1.0      Boehi Dominik	    Created
+-- 2021-03-29  1.1      Boehi Dominik     MS2 Simulation
+-- 2021-04-16  1.2      Bollhalder Jonas  Bugfix
+-- 2021-05-05  1.3      Müller Pavel      added test for bluetooth uart and usb uart
 -------------------------------------------------------------------------------
 
 library ieee;

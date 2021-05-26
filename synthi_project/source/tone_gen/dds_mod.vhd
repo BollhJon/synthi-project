@@ -5,7 +5,7 @@
 -- File       : dds_mod.vhd
 -- Author     : Bollhalder Jonas
 -- Created    : 2021-03-31
--- Last update: 2021-05-04
+-- Last update: 2021-05-23
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: dds_mod for Synthi-Project
@@ -15,9 +15,13 @@
 -- Revisions  :
 -- Date        Version  Author                Description
 -- 2021-03-31  1.0      Bollhalder Jonas      Created
+-- 2021-04-12  1.1      Bollhalder Jonas      Bugfixes
 -- 2021-05-04  1.1      Mueller Pavel         modifications for custom LUT
--- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano and Orgel
--- 2021-05-05  1.3      Mueller Pavel         added LUT for guitar
+-- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano, Orgel and guitar
+-- 2021-05-15  1.3      Mueller Pavel         attenu extendet to 16 values
+-- 2021-05-17  1.4      Mueller Pavel         logic elements reduced
+-- 2021-05-19  1.5      Mueller Pavel         attenu extendet to 32 values
+-- 2021-05-23  1.6      Mueller Pavel         modified for fm carrier
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
