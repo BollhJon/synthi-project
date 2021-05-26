@@ -2,7 +2,7 @@
 #-- Title      : Testcases LUT
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase_ms1.dat
+#-- File       : testcase_LUT.dat
 #-- Author     : Bollhalder Jonas
 #-- Company    : 
 #-- Created    : 2021-05-04
@@ -22,23 +22,41 @@ reset_target 10
 
 #Turn bt controll on
 bt_uart_send_data 01
+#Disable envelopes for instruments
+bt_uart_send_data 8F
 
-# set wave to sawtooth with falling shape
-bt_uart_send_data 51
-
+#Turn on single DDS with sine shape
 usb_uart_send_data 90
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 60
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 7F
 run_simulation_for 00 05 00 00
 
+# set wave to sawtooth with falling shape
+bt_uart_send_data 61
+run_simulation_for 00 05 00 00
+
 # set wave to sawtooth with rising shape
-bt_uart_send_data 52
+bt_uart_send_data 62
 run_simulation_for 00 05 00 00
 
 # set wave to triangle
-bt_uart_send_data 53
+bt_uart_send_data 63
+run_simulation_for 00 05 00 00
+
+# set wave to rectangle
+bt_uart_send_data 64
+run_simulation_for 00 05 00 00
+
+# set wave to piano
+bt_uart_send_data 68
+run_simulation_for 00 05 00 00
+
+# set wave to organ
+bt_uart_send_data 69
+run_simulation_for 00 05 00 00
+
+# set wave to guitar
+bt_uart_send_data 6A
 run_simulation_for 00 05 00 00

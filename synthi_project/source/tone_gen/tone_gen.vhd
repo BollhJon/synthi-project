@@ -172,6 +172,7 @@ begin
       begin	
         case to_integer(unsigned(lut_sel_env)) is
           when 0 => lut_sel_env_sig <= lut_sel_car;
+          when 15 => lut_sel_env_sig <= "0000";
           when others => lut_sel_env_sig <= lut_sel_env;
         end case ;
       end process lut_sel_env_logic;

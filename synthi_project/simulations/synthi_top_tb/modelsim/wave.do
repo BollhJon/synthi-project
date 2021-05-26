@@ -1,29 +1,19 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /synthi_top_tb/CLOCK_50
-add wave -noupdate /synthi_top_tb/KEY_0
-add wave -noupdate -format Analog-Step -height 74 -max 8628.0000000000018 -min 44.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/phi_incr_car_sig
-add wave -noupdate -format Analog-Step -height 74 -max 4092.0 -min -4096.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_o_mod_sig
-add wave -noupdate -format Analog-Step -height 74 -max 3963.0000000000009 -min -3968.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/dds_o
-add wave -noupdate -format Analog-Step -height 74 -max 4536.0 -min 44.0 -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/phi_incr_fsig
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/codec_controller_1/volume_i
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/codec_controller_1/emphasis_i
-add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/write_data_o
-add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/State
-add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/next_State
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/codec_controller_1/count
-add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/mode_change
-add wave -noupdate /synthi_top_tb/DUT/codec_controller_1/volume_change
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/fm_ratio
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/fm_depth
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/attenu_i
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/attenu_sig
-add wave -noupdate -format Analog-Step -height 74 -max 3660.9999999999995 -min -3735.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/dds_l_o
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/attenu_array_sig
-add wave -noupdate -radix unsigned /synthi_top_tb/DUT/tone_gen_1/attenu_array
-add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/attenu_1/tone_on_i
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/clk_6m
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/reset_n
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/lut_sel_car
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/tone_on_i(0)
+add wave -noupdate -format Analog-Step -height 150 -max 4200.0 -min -4200.0 -radix decimal /synthi_top_tb/DUT/tone_gen_1/dds_o_array(0)
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/phi_incr_i
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/step_i
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/tone_on_i
+add wave -noupdate -max 1.0 -min -1.0 /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/attenu_i
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/lut_sel
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/dds_o
+add wave -noupdate /synthi_top_tb/DUT/tone_gen_1/fm_dds_inst_gen(0)/inst_fm_dds/dds_car_1/count
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {3276175 ns} 0}
+WaveRestoreCursors {{Cursor 1} {42852350 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 507
 configure wave -valuecolwidth 258
@@ -39,4 +29,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {22270338 ns}
+WaveRestoreZoom {134032 ns} {56430672 ns}
