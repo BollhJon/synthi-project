@@ -4,19 +4,18 @@
 -------------------------------------------------------------------------------
 -- File       : infrastructure.vhd
 -- Author     : Boehi Dominik
--- Company    : 
 -- Created    : 2021-03-01
 -- Last update: 2021-04-15
--- Platform   : 
--- Standard   : VHDL'93/02
+-- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description:
 -------------------------------------------------------------------------------
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author          Description
--- 2021-03-01  1.0      Boehi Dominik	  Created
+-- Date        Version  Author            Description
+-- 2021-03-01  1.0      Boehi Dominik	    Created
+-- 2021-04-15  1.1      Bollhalder Jonas  implemented bluetooth
 -------------------------------------------------------------------------------
 
 library ieee;

@@ -4,22 +4,23 @@
 -------------------------------------------------------------------------------
 -- File       : codec_controller.vhd
 -- Author     : gelk
--- Company    : 
 -- Created    : 2019-03-06
--- Last update: 2021-05-17
--- Platform   : 
+-- Last update: 2021-05-30
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Der Baustein wartet bis das reset_n signal inaktiv wird.
 --              Danach sendet dieser Codec Konfigurierungsdaten an
 --              den Baustein i2c_Master
 -------------------------------------------------------------------------------
--- Copyright (c) 2019 - 2021
+-- Copyright (c) 2021
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  			Description
--- 2019-03-06  1.0      gelk    			Created
--- 2021-03-14  1.1		Bollhalder Jonas	changes for Synthi Project
+-- Date        Version  Author  			    Description
+-- 2019-03-06  1.0      gelk    			    Created
+-- 2021-03-14  1.1		  Bollhalder Jonas	changes for Synthi Project
+-- 2021-03-26  1.2      Bollhalder Jonas  rearranged
+-- 2021-05-17  1.3      Müller Pavel      added volume control
+-- 2021-05-30  1.4      Müller Pavel      bugfix
 -------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;

@@ -5,7 +5,7 @@
 -- File       : synthi_top.vhd
 -- Author     : Boehi Dominik
 -- Created    : 2021-03-01
--- Last update: 2021-05-17
+-- Last update: 2021-05-24
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Top level file for Synthi-Project
@@ -15,17 +15,19 @@
 -- Revisions  :
 -- Date        Version  Author            Description
 -- 2021-03-01  1.0      Boehi Dominik	    Created
--- 2021-04-23  1.1      Bollhalder Jonas  MS2-integration
--- 2021-05-12  1.2      Boehi Dominik     MS3-integration
--- 2021-05-15  1.3      Bollhalder Jonas  Implemented Bluetooth uart_top
--- 2021-05-16  1.4      Bollhalder Jonas  Implemented reg-controller
--- 2021-06-03  1.5      Bollhalder Jonas  Optimized reg-controller
--- 2021-06-03  1.6      Müller Pavel      Implemented FM-Synthesis
--- 2021-06-06  1.7      Müller Pavel      Implemented selector for waves
--- 2021-06-10  1.8      Müller Pavel      Implemented logic for envelopes
--- 2021-06-17  1.9      Bollhalder Jonas  Full capacity Upgrade for reg-controller
--- 2021-06-17  1.10     Müller Pavel      Rearranged registers in reg-controller
--- 2021-06-17  1.11     Müller Pavel      Wave selector for envelope, carrier and modulator added
+-- 2021-03-23  1.1      Bollhalder Jonas  MS2-integration
+-- 2021-04-12  1.2      Boehi Dominik     MS3-integration
+-- 2021-04-15  1.3      Bollhalder Jonas  Implemented Bluetooth uart_top
+-- 2021-04-16  1.4      Bollhalder Jonas  Implemented reg-controller
+-- 2021-05-03  1.5      Bollhalder Jonas  Optimized reg-controller
+-- 2021-05-03  1.6      Müller Pavel      Implemented FM-Synthesis
+-- 2021-05-06  1.7      Müller Pavel      Implemented selector for waves
+-- 2021-05-10  1.8      Müller Pavel      Implemented logic for envelopes
+-- 2021-05-17  1.9      Bollhalder Jonas  Full capacity Upgrade for reg-controller
+-- 2021-05-17  1.10     Müller Pavel      Rearranged registers in reg-controller
+-- 2021-05-17  1.11     Müller Pavel      Wave selector for envelope, carrier and modulator added
+-- 2021-05-24  1.12     Müller Pavel      DDS splitted for for modulator and carrier
+-- 2021-05-24  1.13     Müller Pavel      Upgraded fm-Ratio to 5 Bit
 -------------------------------------------------------------------------------
 
 library ieee;

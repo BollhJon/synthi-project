@@ -1,20 +1,11 @@
--------------------------------------------
--- Block code:  clock_sync.vhd
--- History:     4.Sept.2019 - 1st version (gelk)
---                 <date> - <changes>  (<author>)
--- Function: edge detector with rise & fall outputs. 
---           Declaring FFs as a shift-register.
--------------------------------------------
 -------------------------------------------------------------------------------
--- Title      : Testbench for design "uart_top"
--- Project    : 
+-- Title      : clock_sync.vhd
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : clock_sync.vhd
 -- Author     : gelk
--- Company    : 
 -- Created    : 2019-09-04
 -- Last update: 2020-11-23
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: 
@@ -22,10 +13,11 @@
 -- Copyright (c) 2018 -2021
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author  Description
--- 2019-09-04  1.0      gelk    Created
--- 2020-11-23  1.1      Boehi Dominik
+-- Date        Version  Author        Description
+-- 2019-09-04  1.0      gelk          Created
+-- 2020-11-23  1.1      Boehi Dominik small changes
 -------------------------------------------------------------------------------
+
 -- Library & Use Statements
 library ieee;
 use ieee.std_logic_1164.all;

@@ -1,13 +1,11 @@
 -------------------------------------------------------------------------------
 -- Title      : vhdl hex to sevensegment
--- Project    : 
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : vhdl_hex2sevenseg.vhd
 -- Author     : dqtm
--- Company    : 
 -- Created    : 2014-10-15
 -- Last update: 2020-10-14
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: 

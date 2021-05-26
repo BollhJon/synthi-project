@@ -4,10 +4,8 @@
 -------------------------------------------------------------------------------
 -- File       : baud_tick.vhd
 -- Author     : Boehi Dominik
--- Company    : 
 -- Created    : 2020-11-12
--- Last update: 2020-11-12
--- Platform   : 
+-- Last update: 2021-04-06
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Generates the baud tick signal out of the 6.25kHz signal.
@@ -17,6 +15,7 @@
 -- Revisions  :
 -- Date        Version  Author            Description
 -- 2020-11-12  1.0      Boehi Dominik	    Created
+-- 2021-04-26  1.1      Müller Pavel      Reduced clk speed to 6.25 MHz
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements

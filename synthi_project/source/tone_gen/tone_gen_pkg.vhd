@@ -1,24 +1,33 @@
 -------------------------------------------------------------------------------
--- Project     : Synthi Project
--- Description : Constants and LUT for tone generation with DDS
---
---
+-- Title      : Tone generator package
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
---
--- Change History
--- Date     |Name      |Modification
-------------|----------|-------------------------------------------------------
--- 12.04.13 | dqtm     | file created for DTP2 Milestone-3 in FS13
--- 02.04.14 | dqtm     | updated for DTP2 in FS14, cause using new parameters
--- 04.05.21 | muellpav | added LUT for Piano
--- 05.05.21 | muellpav | added LUT for Orgel
--- 05.05.21 | muellpav | added LUT for guitar
--- 08.05.21 | muellpav | added LUT for envelopes
--- 16.05.21 | muellpav | added LUT for sawtooth with falling shape
--- 17.05.21 | muellpav | added LUT for triangle wave
--- 18.05.21 | muellpav | edited LUT for envelope from 2^4 to 2^5
--- 19.05.21 | muellpav | added LUT for sawtooth with falling shape and rectangle
+-- File       : tone_gen_pkg.vhd
+-- Author     : dqtm
+-- Created    : 2013-04-12
+-- Last update: 2021-05-19
+-- Standard   : VHDL'08
 -------------------------------------------------------------------------------
+-- Description: fm-dds
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        	Version Author          Description
+-- 12-04-2013	1.0		dqtm			created
+-- 02.04.2014	1.1		dqtm			updated with new parameters
+-- 04.05.2021	1.2		Müller Pavel	added LUT for Piano
+-- 05.05.2021	1.3		Müller Pavel	added LUT for Organ
+-- 05.05.2021	1.4		Müller Pavel	added LUT for Guitar
+-- 06.05.2021	1.5		Müller Pavel	added envelope LUT for Piano
+-- 08.05.2021	1.6		Müller Pavel	Updated envelope LUT for Piano
+-- 10.05.2021	1.7		Müller Pavel	Updated envelope LUT for Piano
+-- 15.05.2021	1.8		Müller Pavel	added envelope LUT for organ and guitar
+-- 17.05.2021	1.9		Müller Pavel	added LUT for Sawtooth with falling shape and Triangle
+-- 17.05.2021	1.10	Müller Pavel	rearranged LUT's
+-- 19.05.2021	1.11	Müller Pavel	Upgraded envelopes to 5 bit
+-- 19.05.2021	1.12	Müller Pavel	added LUT for Sawtooth with rising shape
+
 
 -------------------------------------------------------------------------------
 -- Package  Declaration

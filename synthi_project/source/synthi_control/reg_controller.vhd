@@ -5,7 +5,7 @@
 -- File       : reg_controller.vhd
 -- Author     : Bollhalder Jonas
 -- Created    : 2021-04-15
--- Last update: 2021-04-15
+-- Last update: 2021-05-03
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: The received byte messages are evaluated and stored in the 

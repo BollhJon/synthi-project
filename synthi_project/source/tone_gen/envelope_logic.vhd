@@ -6,7 +6,7 @@
 -- Author     : Mueller Pavel
 -- Company    : 
 -- Created    : 2021-05-06
--- Last update: 2021-05-06
+-- Last update: 2021-05-19
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -17,6 +17,7 @@
 -- Revisions  :
 -- Date        Version  Author          Description
 -- 2021-05-06  1.0      Mueller Pavel	  Created
+-- 2021-05-19  1.1      Mueller Pavel   Attenu extendet   
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements

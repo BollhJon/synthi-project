@@ -27,13 +27,13 @@ LIBRARY work;
 ENTITY uart_top IS 
 	PORT
 	(
-		clk :  IN  STD_LOGIC;
-		reset_n :  IN  STD_LOGIC;
-		ser_data_i :  IN  STD_LOGIC;
+		clk 		:  IN  STD_LOGIC;
+		reset_n 	:  IN  STD_LOGIC;
+		ser_data_i 	:  IN  STD_LOGIC;
 		rx_data_rdy :  OUT  STD_LOGIC;
-		rx_data :  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
-		seg0_o :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
-		seg1_o :  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0)
+		rx_data 	:  OUT  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		seg0_o 		:  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0);
+		seg1_o 		:  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0)
 	);
 END uart_top;
 
@@ -42,25 +42,25 @@ ARCHITECTURE bdf_type OF uart_top IS
 COMPONENT baud_tick
 GENERIC (width : INTEGER
 			);
-	PORT(clk : IN STD_LOGIC;
-		 reset_n : IN STD_LOGIC;
-		 start_bit : IN STD_LOGIC;
-		 baud_tick : OUT STD_LOGIC
+	PORT(clk 		: IN STD_LOGIC;
+		 reset_n 	: IN STD_LOGIC;
+		 start_bit 	: IN STD_LOGIC;
+		 baud_tick 	: OUT STD_LOGIC
 	);
 END COMPONENT;
 
 COMPONENT flanken_detekt_vhdl
-	PORT(data_in : IN STD_LOGIC;
-		 clk : IN STD_LOGIC;
-		 reset_n : IN STD_LOGIC;
-		 rising_pulse : OUT STD_LOGIC;
-		 falling_pulse : OUT STD_LOGIC
+	PORT(data_in 		: IN STD_LOGIC;
+		 clk 			: IN STD_LOGIC;
+		 reset_n 		: IN STD_LOGIC;
+		 rising_pulse 	: OUT STD_LOGIC;
+		 falling_pulse 	: OUT STD_LOGIC
 	);
 END COMPONENT;
 
 COMPONENT vhdl_hex2sevseg
 	PORT(data_in : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-		 seg_o : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		 seg_o 	 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
 	);
 END COMPONENT;
 

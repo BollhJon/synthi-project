@@ -3,11 +3,9 @@
 -- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : i2s_master.vhd
--- Author     : muellpav
--- Company    : 
+-- Author     : Müller Pavel
 -- Created    : 2021-03-22
 -- Last update: 2021-03-23
--- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: Top level design for I2S
@@ -15,8 +13,9 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author          Description
--- 2021-03-22  1.0      muellpav	      Created
+-- Date        Version  Author            Description
+-- 2021-03-22  1.0      Müller Pavel      Created
+-- 2021-03-23  1.1      Bollhalder Jonas  MS2 integration
 -------------------------------------------------------------------------------
 
 library ieee;

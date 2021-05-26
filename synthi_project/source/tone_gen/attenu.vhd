@@ -1,13 +1,11 @@
 -------------------------------------------------------------------------------
 -- Title      : attenu logic
--- Project    : 
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : attenu.vhd
--- Author     :   bollhjon
--- Company    : 
+-- Author     : Bollhalder Jonas
 -- Created    : 2021-05-04
--- Last update: 2021-05-04
--- Platform   : 
+-- Last update: 2021-05-25
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
 -- Description: control the attenu by the tone_on vector
@@ -15,8 +13,10 @@
 -- Copyright (c) 2021 
 -------------------------------------------------------------------------------
 -- Revisions  :
--- Date        Version  Author          Description
--- 2021-05-04  1.0      bollhjon	    Created
+-- Date        Version  Author            Description
+-- 2021-05-04  1.0      Bollhalder Jonas	Created
+-- 2021-05-24  1.1      Müller Pavel      Changed attenu logic
+-- 2021-05-25  1.2      Müller Pavel      Changed values in case statement
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements

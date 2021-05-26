@@ -1,20 +1,28 @@
 -------------------------------------------------------------------------------
--- Project     : audio_top
--- Description : WM8731 Codec Register Values for selected modes
---
---
+-- Title      : reg_table_pkg
+-- Project    : synthi Project
 -------------------------------------------------------------------------------
---
--- Change History
--- Date     |Name      |Modification
-------------|----------|-------------------------------------------------------
--- 26.02.13 | dqtm     | file created for DTP2 Lab3
--- 24.02.15 | dqtm     | simplified names of register indexes
--- 03.03.15 | gelk     | adapted sampling rate to 48 khz
--- 04.03.15 | gelk     | also analog loop with 48 khz sampling rate
+-- File       : reg_table_pkg.vhd
+-- Author     : dqtm
+-- Created    : 2013-02-26
+-- Last update: 2021-05-24
+-- Standard   : VHDL'08
+-------------------------------------------------------------------------------
+-- Description: Include in Design of Block codec_control.vhd :
+--              use work.reg_table_pkg.all;
+-------------------------------------------------------------------------------
+-- Copyright (c) 2021 
+-------------------------------------------------------------------------------
+-- Revisions  :
+-- Date        Version  Author          Description
+-- 2013-02-26  1.0      dqtm	          file created for DTP2 Lab3
+-- 2015-02-24  1.1      dqtm            simplified names of register indexes
+-- 2015-03-03  1.2      gelk            adapted sampling rate to 48 khz
+-- 2015-03-04  1.3      gelk            also analog loop with 48 khz sampling rate
+-- 2021-05-17  1.4      Müller Pavel    implemented volume control
+-- 2021-05-24  1.4      Müller Pavel    changed values of volume
 -------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
 -- Package  Declaration
 -------------------------------------------------------------------------------
 -- Include in Design of Block codec_control.vhd :

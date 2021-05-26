@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 -- Title      : fm-dds
--- Project    : 
+-- Project    : Synthi Project
 -------------------------------------------------------------------------------
 -- File       : fm_dds.vhd
--- Author     : muellpav
+-- Author     : Mueller Pavel
 -- Company    : 
 -- Created    : 2021-05-03
--- Last update: 2021-05-03
+-- Last update: 2021-05-25
 -- Platform   : 
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
@@ -16,7 +16,15 @@
 -------------------------------------------------------------------------------
 -- Revisions  :
 -- Date        Version  Author          Description
--- 2021-05-03  1.0      muellpav			 Created
+-- 2021-05-03  1.0      Mueller Pavel	  Created
+-- 2021-05-03  1.1      Mueller Pavel   added selector for custom LUT
+-- 2021-05-06  1.2      Mueller Pavel   added envelope logic
+-- 2021-05-15  1.3      Mueller Pavel   extended fm-ratio
+-- 2021-05-17  1.4      Mueller Pavel   logic elements reduced
+-- 2021-05-19  1.5      Mueller Pavel   attenu extended
+-- 2021-05-24  1.6      Mueller Pavel   DDS splitted to dds carrier and modulator
+-- 2021-05-24  1.7      Mueller Pavel   extended fm-ratio to 5 bit
+-- 2021-05-25  1.8      Mueller Pavel   implemented atenu logic
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
