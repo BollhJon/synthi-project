@@ -1,88 +1,66 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases fm-Ratios
-#-- Project    : Synthi-Project
+#-- Title      : testcases for envelope logic
+#-- Project    : DTP2
 #-------------------------------------------------------------------------------
-#-- File       : testcase_fmratio.dat
-#-- Author     : Bollhalder Jonas
-#-- Company    : 
-#-- Created    : 2021-05-01
-#-- Last update: 2021-05-01
-#-- Platform   : 
+#-- File       : testcase_envelope.dat
+#-- Author     : Hans-Joachim Gelke
+#-- Created    : 2021-05-25
+#-- Last update: 2021-05-25
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for fm-Synthese of Synthi-Project
+#-- Description: testcase for envelope logic
+#-------------------------------------------------------------------------------
+#-- Copyright (c) 2021
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-05-01  1.0      Mueller Pavel    Created
-#-- 2021-05-28  1.1      Bollhalder Jonas Updated
+#-- 2021-05-25  1.0      Bollhalder Jonas Created
 #-------------------------------------------------------------------------------
 
-reset_target 10
+reset_target 20
+set_switches 00 00 00 00
+bt_uart_send_data 01 
 
-# send note on signal
-usb_uart_send_data 90
-usb_uart_send_data 30
-usb_uart_send_data 72
+#--- Set envelope none, turn on Note and turn note off again--
+#bt_uart_send_data 80
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 70 
+#run_simulation_for 00 09 00 00
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 00 
+#run_simulation_for 00 00 0F 00
 
+#--- Set envelope piano, turn on Note and turn note off again--
+bt_uart_send_data 88
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 00 
+run_simulation_for 00 00 0F 00
 
-# turn bluetooth control on and mute fm synthesis
-bt_uart_send_data 01
-bt_uart_send_data 50
-# fm ratio carrier/modulator
-# change the fm-ratios
+#--- Set envelope organ, turn on Note and turn note off again--
+#bt_uart_send_data 89
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 70 
+#run_simulation_for 00 09 00 00
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 00 
+#run_simulation_for 00 00 0F 00
 
-# fm ratio 0 nr 0
-bt_uart_send_data 40
-bt_uart_send_data 90
-run_simulation_for 00 00 40 00
-
-# fm ratio 1:16 nr 1
-bt_uart_send_data 40
-bt_uart_send_data 91
-run_simulation_for 00 00 40 00
-
-# fm ratio 2:16 nr 2
-bt_uart_send_data 41
-bt_uart_send_data 90
-run_simulation_for 00 00 40 00
-
-# fm ratio 4:16 nr 4
-bt_uart_send_data 42
-bt_uart_send_data 90
-run_simulation_for 00 00 40 00
-
-# fm ratio 8:16 nr 8
-bt_uart_send_data 44
-bt_uart_send_data 90
-run_simulation_for 00 00 40 00
-
-# fm ratio 15:16 nr 15
-bt_uart_send_data 47
-bt_uart_send_data 91
-run_simulation_for 00 00 40 00
-
-# fm ratio 1:1 nr 16
-bt_uart_send_data 48
-bt_uart_send_data 90
-run_simulation_for 00 00 40 00
-
-# fm ratio 2:1 nr 17
-bt_uart_send_data 48
-bt_uart_send_data 91
-run_simulation_for 00 00 40 00
-
-# fm ratio 4:1 nr 19
-bt_uart_send_data 49
-bt_uart_send_data 91
-run_simulation_for 00 00 40 00
-
-# fm ratio 8:1 nr 23
-bt_uart_send_data 4B
-bt_uart_send_data 91
-run_simulation_for 00 00 40 00
-
-# fm ratio 16:1 nr 31
-bt_uart_send_data 4F
-bt_uart_send_data 91
-run_simulation_for 00 00 40 00
+#--- Set envelope guitar, turn on Note and turn note off again--
+#bt_uart_send_data 8A
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 70 
+#run_simulation_for 00 09 00 00
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 00 
+#run_simulation_for 00 00 0F 00

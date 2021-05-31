@@ -46,7 +46,7 @@ end fm_dds;
 
 architecture rtl of fm_dds is
 
-  signal phi_incr_car_sig : unsigned(N_CUM-1 downto 0);
+  signal phi_incr_car_sig : signed(N_CUM-1 downto 0);
   signal phi_incr_mod_sig : unsigned(N_CUM-1 downto 0);
   signal dds_o_mod_sig : std_logic_vector(N_AUDIO -1 downto 0);
 
@@ -161,7 +161,7 @@ end process ratio;
 phi_add: process (all) is
 begin  -- process phi_add
 
-  phi_incr_car_sig <= to_unsigned((to_integer(signed(dds_o_mod_sig)) + to_integer(unsigned(phi_incr_fsig))),N_CUM);
+  phi_incr_car_sig <= signed(dds_o_mod_sig) + signed(phi_incr_fsig);
   
 end process phi_add;
   
