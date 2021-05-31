@@ -1,0 +1,67 @@
+#-------------------------------------------------------------------------------
+#-- Title      : testcases for envelope logic
+#-- Project    : DTP2
+#-------------------------------------------------------------------------------
+#-- File       : testcase_envelope.dat
+#-- Author     : Hans-Joachim Gelke
+#-- Created    : 2021-05-25
+#-- Last update: 2021-05-25
+#-- Standard   : VHDL'08
+#-------------------------------------------------------------------------------
+#-- Description: testcase for envelope logic
+#--              to test envelope logic set number in envelope_logic.vhd:72 from 100000 to 100
+#-------------------------------------------------------------------------------
+#-- Copyright (c) 2021
+#-------------------------------------------------------------------------------
+#-- Revisions  :
+#-- Date        Version  Author           Description
+#-- 2021-05-25  1.0      Bollhalder Jonas Created
+#-------------------------------------------------------------------------------
+
+reset_target 20
+set_switches 00 00 00 00
+bt_uart_send_data 01 
+
+#--- Set envelope none, turn on Note and turn note off again--
+#bt_uart_send_data 80
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 70 
+#run_simulation_for 00 09 00 00
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 00 
+#run_simulation_for 00 00 0F 00
+
+#--- Set envelope piano, turn on Note and turn note off again--
+bt_uart_send_data 88
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 00 
+run_simulation_for 00 00 0F 00
+
+#--- Set envelope organ, turn on Note and turn note off again--
+#bt_uart_send_data 89
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 70 
+#run_simulation_for 00 09 00 00
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 00 
+#run_simulation_for 00 00 0F 00
+
+#--- Set envelope guitar, turn on Note and turn note off again--
+#bt_uart_send_data 8A
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 70 
+#run_simulation_for 00 09 00 00
+#usb_uart_send_data 90 
+#usb_uart_send_data 30 
+#usb_uart_send_data 00 
+#run_simulation_for 00 00 0F 00

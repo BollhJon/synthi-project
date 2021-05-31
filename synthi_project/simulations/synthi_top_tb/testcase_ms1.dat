@@ -15,9 +15,16 @@
 #-- Revisions  :
 #-- Date        Version  Author             Description
 #-- 2021-04-06  1.0      Bollhalder Jonas   Created
+#-- 2021-05-25  1.1      Bollhalder Jonas   Updated
 #-------------------------------------------------------------------------------
-# Digital AD/DA
+
+# setup
 reset_target 20
+set_switches 00 00 00 00
+# deactivate bluetooth control
+bt_uart_send_data 00
+
+# Digital AD/DA
 set_switches 00 00 00 00
 run_simulation_for 00 01 f0 00
 check_i2c_reg_0 00 00 00 17
@@ -32,7 +39,6 @@ check_i2c_reg_8 00 00 00 00
 check_i2c_reg_9 00 00 00 01
 
 # Analog Bypass
-reset_target 20
 set_switches 00 00 00 01 
 run_simulation_for 00 01 f0 00
 check_i2c_reg_0 00 00 00 17
@@ -47,7 +53,6 @@ check_i2c_reg_8 00 00 00 00
 check_i2c_reg_9 00 00 00 01
 
 # Mute Right
-reset_target 20
 set_switches 00 00 00 03 
 run_simulation_for 00 01 f0 00
 check_i2c_reg_0 00 00 00 0f
@@ -62,7 +67,6 @@ check_i2c_reg_8 00 00 00 00
 check_i2c_reg_9 00 00 00 01
 
 # Mute Left
-reset_target 20
 set_switches 00 00 00 05 
 run_simulation_for 00 01 f0 00
 check_i2c_reg_0 00 00 00 0f
@@ -77,7 +81,6 @@ check_i2c_reg_8 00 00 00 00
 check_i2c_reg_9 00 00 00 01
 
 # Mute Both
-reset_target 20
 set_switches 00 00 00 07 
 run_simulation_for 00 01 f0 00
 check_i2c_reg_0 00 00 00 0f

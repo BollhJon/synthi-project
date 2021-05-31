@@ -69,6 +69,7 @@ package reg_table_pkg is
 
 -- C_ADDR_LEFT/RIGHT_HP_OUT
   constant C_HP_OUT_HPVOL_P6DB  : std_logic_vector(8 downto 0) := "001111111";  -- Headphone volume +6dB (127)
+  constant C_HP_OUT_HPVOL_P4DB  : std_logic_vector(8 downto 0) := "001111101";  -- Headphone volume +4dB
   constant C_HP_OUT_HPVOL_P3DB  : std_logic_vector(8 downto 0) := "001111100";  -- Headphone volume +3dB (124)
   constant C_HP_OUT_HPVOL_0DB   : std_logic_vector(8 downto 0) := "001111001";  -- Headphone volume +0dB (121)
   constant C_HP_OUT_HPVOL_M5DB  : std_logic_vector(8 downto 0) := "001110100";  -- Headphone volume -5dB (116)
@@ -122,8 +123,8 @@ package reg_table_pkg is
   constant C_W8731_ANALOG_BYPASS : t_codec_register_array := (
     0 => "000000000" or C_LINE_IN_LINVOL_0DB,
     1 => "000000000" or C_LINE_IN_LINVOL_0DB,
-    2 => "000000000" or C_HP_OUT_HPVOL_0DB,
-    3 => "000000000" or C_HP_OUT_HPVOL_0DB,
+    2 => "000000000" or C_HP_OUT_HPVOL_P4DB,
+    3 => "000000000" or C_HP_OUT_HPVOL_P4DB,
     4 => "000000000" or C_ANALOG_AP_MUTEMIC or C_ANALOG_AP_BYPASS,
     5 => "000000000" or C_DIGITAL_AP_DACMU or C_DIGITAL_AP_DEEMP_DIS,
     6 => "000000000" or C_POWER_DOWN_NONE,

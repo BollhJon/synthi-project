@@ -1,8 +1,8 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases FM-Synthese
+#-- Title      : Testcases fm-Ratios
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase_fmSynthesis.dat
+#-- File       : testcase_fmratio.dat
 #-- Author     : Bollhalder Jonas
 #-- Company    : 
 #-- Created    : 2021-05-01
@@ -26,46 +26,63 @@ usb_uart_send_data 30
 usb_uart_send_data 72
 
 
-# turn bluetooth control on
+# turn bluetooth control on and mute fm synthesis
 bt_uart_send_data 01
 bt_uart_send_data 50
-
-
 # fm ratio carrier/modulator
-# fam ratio 1:1 change modulation depth
-# fm ratio 1:1 nr 16
-bt_uart_send_data 48
-bt_uart_send_data 90
-bt_uart_send_data 50
-run_simulation_for 00 09 00 00
-
-bt_uart_send_data 55
-run_simulation_for 00 09 00 00
-
-bt_uart_send_data 5A
-run_simulation_for 00 09 00 00
-
-bt_uart_send_data 5F
-run_simulation_for 00 09 00 00
-
-
 # change the fm-ratios
+
 # fm ratio 0 nr 0
 bt_uart_send_data 40
 bt_uart_send_data 90
-run_simulation_for 00 09 00 00
+run_simulation_for 00 00 40 00
 
 # fm ratio 1:16 nr 1
 bt_uart_send_data 40
 bt_uart_send_data 91
-run_simulation_for 00 09 00 00
+run_simulation_for 00 00 40 00
+
+# fm ratio 2:16 nr 2
+bt_uart_send_data 41
+bt_uart_send_data 90
+run_simulation_for 00 00 40 00
+
+# fm ratio 4:16 nr 4
+bt_uart_send_data 42
+bt_uart_send_data 90
+run_simulation_for 00 00 40 00
+
+# fm ratio 8:16 nr 8
+bt_uart_send_data 44
+bt_uart_send_data 90
+run_simulation_for 00 00 40 00
+
+# fm ratio 15:16 nr 15
+bt_uart_send_data 47
+bt_uart_send_data 91
+run_simulation_for 00 00 40 00
 
 # fm ratio 1:1 nr 16
 bt_uart_send_data 48
 bt_uart_send_data 90
-run_simulation_for 00 09 00 00
+run_simulation_for 00 00 40 00
+
+# fm ratio 2:1 nr 17
+bt_uart_send_data 48
+bt_uart_send_data 91
+run_simulation_for 00 00 40 00
+
+# fm ratio 4:1 nr 19
+bt_uart_send_data 49
+bt_uart_send_data 91
+run_simulation_for 00 00 40 00
+
+# fm ratio 8:1 nr 23
+bt_uart_send_data 4B
+bt_uart_send_data 91
+run_simulation_for 00 00 40 00
 
 # fm ratio 16:1 nr 31
 bt_uart_send_data 4F
 bt_uart_send_data 91
-run_simulation_for 00 09 00 00
+run_simulation_for 00 00 40 00

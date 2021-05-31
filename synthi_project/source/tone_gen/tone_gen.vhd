@@ -153,17 +153,17 @@ begin
   
   comb_sum_output : process(all)
     variable var_sum : signed(N_AUDIO-1 downto 0);
-    begin
-      var_sum := (others => '0');
-      if step_i = '1' then
-        dds_sum_loop : for i in 0 to 9 loop
-        var_sum := var_sum + signed(dds_o_array(i));
-        end loop dds_sum_loop;
-        next_sum_reg <= var_sum;
-      else
-        next_sum_reg <= sum_reg;
-      end if;
-    end process comb_sum_output;
+  begin
+    var_sum := (others => '0');
+    if step_i = '1' then
+      dds_sum_loop : for i in 0 to 9 loop
+      var_sum := var_sum + signed(dds_o_array(i));
+      end loop dds_sum_loop;
+      next_sum_reg <= var_sum;
+    else
+      next_sum_reg <= sum_reg;
+    end if;
+  end process comb_sum_output;
   
   reg_sum_output : process(all)
   begin
@@ -178,26 +178,26 @@ begin
   dds_r_o <= std_logic_vector(sum_reg);
 
   lut_sel_env_logic : process(all)
-      begin	
-        case to_integer(unsigned(lut_sel_env)) is
-          when 0 => lut_sel_env_sig <= lut_sel_car;
-          when others => lut_sel_env_sig <= lut_sel_env;
-        end case ;
-      end process lut_sel_env_logic;
+  begin	
+    case to_integer(unsigned(lut_sel_env)) is
+      when 0 => lut_sel_env_sig <= lut_sel_car;
+      when 1 => lut_sel_env_sig <= "0000";
+      when others => lut_sel_env_sig <= lut_sel_env;
+    end case ;
+  end process lut_sel_env_logic;
   
   attenu_logic: process (all) is
     variable attenu_sig_var : unsigned(4 downto 0);
-    begin
-      attenu_sig_var := unsigned(attenu_sig);
-      for i in 0 to 9 loop
-        if unsigned(attenu_array_sig(i)) > attenu_sig_var then
-          attenu_array(i) <= std_logic_vector(unsigned(attenu_array_sig(i)) - attenu_sig_var);
-        else
-          attenu_array(i) <= attenu_array_sig(i);
-        end if;
-      end loop;
-    end process attenu_logic;
+  begin
+    attenu_sig_var := unsigned(attenu_sig);
+    for i in 0 to 9 loop
+      if unsigned(attenu_array_sig(i)) > attenu_sig_var then
+        attenu_array(i) <= std_logic_vector(unsigned(attenu_array_sig(i)) - attenu_sig_var);
+      else
+        attenu_array(i) <= attenu_array_sig(i);
+      end if;
+    end loop;
+  end process attenu_logic;
 -- End Architecture 
 -------------------------------------------
 end rtl;
-

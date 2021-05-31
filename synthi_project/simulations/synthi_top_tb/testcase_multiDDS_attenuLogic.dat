@@ -1,0 +1,88 @@
+#-------------------------------------------------------------------------------
+#-- Title      : testcases for multi DDS and attenu logic
+#-- Project    : DTP2
+#-------------------------------------------------------------------------------
+#-- File       : testcase_multiDDS.dat
+#-- Author     : Hans-Joachim Gelke
+#-- Created    : 2021-05-25
+#-- Last update: 2019-05-25
+#-- Standard   : VHDL'08
+#-------------------------------------------------------------------------------
+#-- Description: testcase for multi DDS and attenu logic
+#-------------------------------------------------------------------------------
+#-- Copyright (c) 2021
+#-------------------------------------------------------------------------------
+#-- Revisions  :
+#-- Date        Version  Author           Description
+#-- 2021-05-25  1.0      Mueller Pavel    Created
+#-------------------------------------------------------------------------------
+
+reset_target 20
+set_switches 00 00 00 00
+bt_uart_send_data 00 
+
+#--- FILL ARRAY 1--
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 2--
+usb_uart_send_data 90 
+usb_uart_send_data 40 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 3--
+usb_uart_send_data 90 
+usb_uart_send_data 50 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 4--
+usb_uart_send_data 90 
+usb_uart_send_data 60 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 5--
+usb_uart_send_data 90 
+usb_uart_send_data 70 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 6--
+usb_uart_send_data 90 
+usb_uart_send_data 80 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 7--
+usb_uart_send_data 90 
+usb_uart_send_data 90 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 8--
+usb_uart_send_data 90 
+usb_uart_send_data 55 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 8--
+usb_uart_send_data 90 
+usb_uart_send_data 45 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 9--
+usb_uart_send_data 90 
+usb_uart_send_data 65 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+
+#--- FILL ARRAY 10--
+usb_uart_send_data 90 
+usb_uart_send_data 75 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00

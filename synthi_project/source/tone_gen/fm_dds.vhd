@@ -54,7 +54,7 @@ end fm_dds;
 
 architecture rtl of fm_dds is
 
-  signal phi_incr_car_sig : unsigned(N_CUM-1 downto 0);
+  signal phi_incr_car_sig : signed(N_CUM-1 downto 0);
   signal phi_incr_mod_sig : unsigned(N_CUM-1 downto 0);
   signal dds_o_mod_sig : std_logic_vector(N_AUDIO -1 downto 0);
 
@@ -121,23 +121,22 @@ ratio: process (all) is
 
 begin  -- process fm_ratio
   shift_var := (others => '0');
-  fm_ratio_var := unsigned(fm_ratio)-1;
+  fm_ratio_var := unsigned(fm_ratio);
   phi_incr_var := unsigned(phi_incr_fsig);
 
-  if fm_ratio = "00000" then
-    shift_var := (others => '0');
-  elsif fm_ratio = "10000" then
-    shift_var := phi_incr_var; 
-  elsif fm_ratio(4) = '1' then
+  if fm_ratio(4) = '1' then
+  --ratios 1:1 to 16:1
+    shift_var := phi_incr_var;
     for i in 0 to 3 loop
       if fm_ratio(i) = '1' then
-        shift_var := shift_var + shift_right(phi_incr_var,(4-i));
+        shift_var := shift_var + shift_left(phi_incr_var,(i));
       end if;
     end loop ;
-  else
+  elsif fm_ratio(4) = '0' then
+  --ratios 0, 1:16 to 15:16
     for i in 0 to 3 loop
-      if fm_ratio_var(i) = '0' then
-        shift_var := shift_var + shift_left(phi_incr_var,(4-i));
+      if fm_ratio_var(i) = '1' then
+        shift_var := shift_var + shift_right(phi_incr_var,(4-i));
       end if;
     end loop;
   end if; 
@@ -170,7 +169,7 @@ end process ratio;
 phi_add: process (all) is
 begin  -- process phi_add
 
-  phi_incr_car_sig <= to_unsigned((to_integer(signed(dds_o_mod_sig)) + to_integer(unsigned(phi_incr_fsig))),N_CUM);
+  phi_incr_car_sig <= signed(dds_o_mod_sig) + signed(phi_incr_fsig);
   
 end process phi_add;
   

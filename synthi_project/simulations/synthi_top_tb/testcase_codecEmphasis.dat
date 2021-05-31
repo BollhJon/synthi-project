@@ -1,26 +1,41 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Template for testcases
+#-- Title      : testcases for emphasis
 #-- Project    : DTP2
 #-------------------------------------------------------------------------------
-#-- File       : testcase.dat
-#-- Author     : Hans-Joachim Gelke
+#-- File       : testcase_codecEmphasis.dat
+#-- Author     : Mueller Pavel
 #-- Company    : 
 #-- Created    : 2018-10-21
 #-- Last update: 2019-2-13
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: For students as template
+#-- Description: 
 #-------------------------------------------------------------------------------
 #-- Copyright (c) 2018 - 2019
 #-------------------------------------------------------------------------------
 #-- Revisions  :
-#-- Date        Version  Author  Description
-#-- 2019-02-13  1.0      Hans-Joachim    Created
+#-- Date        Version  Author           Description
+#-- 2019-02-13  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
-
-# Testcases für tone_generator
-
+#Test midi uart
 reset_target 20
-set_switches 00 00 01 10
-run_simulation_for 01 FF FF FF
+set_switches 00 00 00 00
+
+# activate bluetooth control
+bt_uart_send_data 01
+
+# Filter 1
+bt_uart_send_data 21
+run_simulation_for 00 05 00 00
+check_i2c_reg_5 00 00 00 03
+
+# Filter 2
+bt_uart_send_data 22
+run_simulation_for 00 05 00 00
+check_i2c_reg_5 00 00 00 05
+
+# Filter 3
+bt_uart_send_data 23
+run_simulation_for 00 05 00 00
+check_i2c_reg_5 00 00 00 07
