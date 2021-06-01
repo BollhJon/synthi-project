@@ -209,6 +209,7 @@ begin  -- architecture struct
 
       if cmd.all = "reset_target" then
         rst_sim(tv, key_0);
+        rst_sim(tv, key_1);
       elsif cmd.all = "run_simulation_for" then
         run_sim(tv);
       elsif cmd.all = "usb_uart_send_data" then

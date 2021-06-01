@@ -70,7 +70,7 @@ begin
       next_lut_addr <= to_unsigned(0, 8);
     end if;
 
-    if count > to_unsigned(100000, N_CUM) then --
+    if count > to_unsigned(100000, N_CUM) then --compare to 100000
       case to_integer(unsigned(lut_sel)) is
         when 8|10 =>
           if lut_addr < 255 then

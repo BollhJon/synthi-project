@@ -23,15 +23,15 @@ set_switches 00 00 00 00
 bt_uart_send_data 01 
 
 #--- Set envelope none, turn on Note and turn note off again--
-#bt_uart_send_data 80
-#usb_uart_send_data 90 
-#usb_uart_send_data 30 
-#usb_uart_send_data 70 
-#run_simulation_for 00 09 00 00
-#usb_uart_send_data 90 
-#usb_uart_send_data 30 
-#usb_uart_send_data 00 
-#run_simulation_for 00 00 0F 00
+bt_uart_send_data 80
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 00 
+run_simulation_for 00 00 0F 00
 
 #--- Set envelope piano, turn on Note and turn note off again--
 bt_uart_send_data 88
@@ -45,23 +45,23 @@ usb_uart_send_data 00
 run_simulation_for 00 00 0F 00
 
 #--- Set envelope organ, turn on Note and turn note off again--
-#bt_uart_send_data 89
-#usb_uart_send_data 90 
-#usb_uart_send_data 30 
-#usb_uart_send_data 70 
-#run_simulation_for 00 09 00 00
-#usb_uart_send_data 90 
-#usb_uart_send_data 30 
-#usb_uart_send_data 00 
-#run_simulation_for 00 00 0F 00
+bt_uart_send_data 89
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 00 
+run_simulation_for 00 00 0F 00
 
 #--- Set envelope guitar, turn on Note and turn note off again--
-#bt_uart_send_data 8A
-#usb_uart_send_data 90 
-#usb_uart_send_data 30 
-#usb_uart_send_data 70 
-#run_simulation_for 00 09 00 00
-#usb_uart_send_data 90 
-#usb_uart_send_data 30 
-#usb_uart_send_data 00 
-#run_simulation_for 00 00 0F 00
+bt_uart_send_data 8A
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 70 
+run_simulation_for 00 09 00 00
+usb_uart_send_data 90 
+usb_uart_send_data 30 
+usb_uart_send_data 00 
+run_simulation_for 00 00 0F 00

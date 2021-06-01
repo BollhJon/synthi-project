@@ -1,0 +1,44 @@
+#-------------------------------------------------------------------------------
+#-- Title      : Reg Controller
+#-- Project    : DTP2
+#-------------------------------------------------------------------------------
+#-- File       : testcase_regController.dat
+#-- Author     : Bollhalder Jonas
+#-- Company    : 
+#-- Created    : 2021-06-01
+#-- Last update: 2021-06-01
+#-- Platform   : 
+#-- Standard   : VHDL'08
+#-------------------------------------------------------------------------------
+#-- Description: Set all regs inside the controller
+#-------------------------------------------------------------------------------
+#-- Copyright (c) 2018 - 2019
+#-------------------------------------------------------------------------------
+#-- Revisions  :
+#-- Date        Version  Author   Description
+#-- 2021-06-01  1.0      bollhjon Created
+#-------------------------------------------------------------------------------
+#Test midi uart
+reset_target 20
+set_switches 00 00 00 00
+
+#set regs over bt_uart
+bt_uart_send_data 12
+bt_uart_send_data 23
+bt_uart_send_data 34
+bt_uart_send_data 45
+bt_uart_send_data 56
+bt_uart_send_data 67
+bt_uart_send_data 78
+bt_uart_send_data 89
+bt_uart_send_data 9A
+bt_uart_send_data AB
+bt_uart_send_data BC
+bt_uart_send_data CD
+bt_uart_send_data DE
+bt_uart_send_data EF
+bt_uart_send_data F1
+
+#set bt configration active
+bt_uart_send_data 01
+run_simulation_for 00 00 0F 00
