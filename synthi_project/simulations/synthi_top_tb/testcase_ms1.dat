@@ -3,10 +3,10 @@
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms1.dat
-#-- Author     : Bollhalder Jonas
+#-- Author     : Boehi Dominik
 #-- Company    : 
-#-- Created    : 2021-04-06
-#-- Last update: 2021-04-06
+#-- Created    : 2021-03-29
+#-- Last update: 2021-06-01
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
@@ -14,8 +14,8 @@
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author             Description
-#-- 2021-04-06  1.0      Bollhalder Jonas   Created
-#-- 2021-05-25  1.1      Bollhalder Jonas   Updated
+#-- 2021-03-29  1.0      Boehi Dominik      Created
+#-- 2021-06-01  1.1      Bollhalder Jonas   Finalised
 #-------------------------------------------------------------------------------
 
 # setup

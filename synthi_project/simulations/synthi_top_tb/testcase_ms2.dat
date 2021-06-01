@@ -3,25 +3,26 @@
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
 #-- File       : testcase_ms2.dat
-#-- Author     : Boehi Dominik
+#-- Author     : Müller Pavel
 #-- Company    : 
-#-- Created    : 2021-03-17
-#-- Last update: 2021-03-17
+#-- Created    : 2021-04-19
+#-- Last update: 2021-06-01
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
 #-- Description: Testcases for Milestone 2 of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
-#-- Date        Version  Author          Description
-#-- 2021-03-17  1.0      Boehi Dominik   Created
+#-- Date        Version  Author           Description
+#-- 2021-04-19  1.0      Müller Pavel     Created
+#-- 2021-06-01  1.0      Bollhalder Jonas Finalised
 #-------------------------------------------------------------------------------
 
 # testcases for i2s
 reset_target 20
 set_switches 00 00 00 08
 
-# send i2s
+# send and check i2s
 send_i2s 11 22 33 44
 check_i2s 11 22 33 44
 
