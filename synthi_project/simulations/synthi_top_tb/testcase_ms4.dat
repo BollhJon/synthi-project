@@ -15,6 +15,7 @@
 #-- Revisions  :
 #-- Date        Version  Author           Description
 #-- 2021-04-19  1.0      Bollhalder Jonas Created
+#-- 2021-06-01  1.1 	 Bollhalder Jonas Finalised
 #-------------------------------------------------------------------------------
 
 reset_target 10
@@ -24,38 +25,32 @@ run_simulation_for 00 00 04 00
 
 usb_uart_send_data 71
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 72
 run_simulation_for 00 00 04 00
 
 usb_uart_send_data 61
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 62
 run_simulation_for 00 00 04 00
 
 usb_uart_send_data 51
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 52
 run_simulation_for 00 00 04 00
 
 usb_uart_send_data 41
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 42
 run_simulation_for 00 00 04 00
 
 #trun of by velocity 71 and 51
 usb_uart_send_data 71
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 00
 run_simulation_for 00 00 04 00
 
 usb_uart_send_data 51
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 00
 run_simulation_for 00 00 04 00
 
@@ -65,7 +60,6 @@ run_simulation_for 00 00 04 00
 
 usb_uart_send_data 61
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 62
 run_simulation_for 00 00 04 00
 
@@ -74,6 +68,5 @@ run_simulation_for 00 00 04 00
 
 usb_uart_send_data 41
 run_simulation_for 00 00 04 00
-
 usb_uart_send_data 42
 run_simulation_for 00 00 04 00
