@@ -19,9 +19,10 @@
 -- 2021-05-04  1.1      Mueller Pavel         modifications for custom LUT
 -- 2021-05-05  1.2      Mueller Pavel         added LUT for Piano, Orgel and guitar
 -- 2021-05-15  1.3      Mueller Pavel         attenu extendet to 16 values
--- 2021-05-17  1.4      Mueller Pavel         logic elements reduced
--- 2021-05-19  1.5      Mueller Pavel         attenu extendet to 32 values
--- 2021-05-23  1.6      Mueller Pavel         modified for fm carrier
+-- 2021-05-17  1.4      Mueller Pavel         added LUT for sawtooth, triangle and rectangle
+-- 2021-05-17  1.5      Mueller Pavel         logic elements reduced
+-- 2021-05-19  1.6      Mueller Pavel         attenu extendet to 32 values
+-- 2021-05-23  1.7      Mueller Pavel         modified for fm carrier
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -111,7 +112,8 @@ begin
       when 4 => lut_val  <= to_signed(LUT_rectangle(lut_addr), N_AUDIO);
       when 8 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
       when 9 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
-      when 10 => lut_val  <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
+      when 10 => lut_val <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
+      when 11 => lut_val <= to_signed(LUT_klavier2(lut_addr), N_AUDIO);
       when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
     end case;
         
