@@ -15,18 +15,19 @@
 -- Revisions  :
 -- Date        	Version Author          Description
 -- 12-04-2013	1.0		dqtm			created
--- 02.04.2014	1.1		dqtm			updated with new parameters
--- 04.05.2021	1.2		Müller Pavel	added LUT for Piano
--- 05.05.2021	1.3		Müller Pavel	added LUT for Organ
--- 05.05.2021	1.4		Müller Pavel	added LUT for Guitar
--- 06.05.2021	1.5		Müller Pavel	added envelope LUT for Piano
--- 08.05.2021	1.6		Müller Pavel	Updated envelope LUT for Piano
--- 10.05.2021	1.7		Müller Pavel	Updated envelope LUT for Piano
--- 15.05.2021	1.8		Müller Pavel	added envelope LUT for organ and guitar
--- 17.05.2021	1.9		Müller Pavel	added LUT for Sawtooth with falling shape and Triangle
--- 17.05.2021	1.10	Müller Pavel	rearranged LUT's
--- 19.05.2021	1.11	Müller Pavel	Upgraded envelopes to 5 bit
--- 19.05.2021	1.12	Müller Pavel	added LUT for Sawtooth with rising shape
+-- 02-04-2014	1.1		dqtm			updated with new parameters
+-- 04-05-2021	1.2		Müller Pavel	added LUT for Piano
+-- 05-05-2021	1.3		Müller Pavel	added LUT for Organ
+-- 05-05-2021	1.4		Müller Pavel	added LUT for Guitar
+-- 06-05-2021	1.5		Müller Pavel	added envelope LUT for Piano
+-- 08-05-2021	1.6		Müller Pavel	Updated envelope LUT for Piano
+-- 10-05-2021	1.7		Müller Pavel	Updated envelope LUT for Piano
+-- 15-05-2021	1.8		Müller Pavel	added envelope LUT for organ and guitar
+-- 17-05-2021	1.9		Müller Pavel	added LUT for Sawtooth with falling shape and Triangle
+-- 17-05-2021	1.10	Müller Pavel	rearranged LUT's
+-- 19-05-2021	1.11	Müller Pavel	Upgraded envelopes to 5 bit
+-- 19-05-2021	1.12	Müller Pavel	added LUT for Sawtooth with rising shape
+-- 03-06-2021	1.13	Müller Pavel	bugfix for cracking sound on changing soundwaves
 
 
 -------------------------------------------------------------------------------
@@ -105,7 +106,7 @@ package tone_gen_pkg is
 	
 	-- Sawtooth wave with falling shape
 	constant LUT_sawtooth_falling : t_lut_rom :=(
-	4095,4063,4031,3999,3967,3935,3903,3871,3839,3807,3774,3742,3710,3678,3646,3614,3582,
+	0,4095,4031,3999,3967,3935,3903,3871,3839,3807,3774,3742,3710,3678,3646,3614,3582,
 	3550,3518,3486,3454,3422,3390,3358,3326,3294,3262,3230,3197,3165,3133,3101,3069,3037,
 	3005,2973,2941,2909,2877,2845,2813,2781,2749,2717,2685,2653,2620,2588,2556,2524,2492,
 	2460,2428,2396,2364,2332,2300,2268,2236,2204,2172,2140,2108,2076,2043,2011,1979,1947,
@@ -125,7 +126,7 @@ package tone_gen_pkg is
 
 	-- Sawtooth wave with rising shape
 	constant LUT_sawtooth_rising : t_lut_rom :=(
-	-4095,-4063,-4031,-3999,-3967,-3935,-3903,-3871,-3839,-3807,-3774,-3742,-3710,-3678,
+	0,-4095,-4063,-4031,-3999,-3967,-3935,-3903,-3871,-3839,-3807,-3774,-3742,-3710,-3678,
 	-3646,-3614,-3582,-3550,-3518,-3486,-3454,-3422,-3390,-3358,-3326,-3294,-3262,-3230,
 	-3197,-3165,-3133,-3101,-3069,-3037,-3005,-2973,-2941,-2909,-2877,-2845,-2813,-2781,
 	-2749,-2717,-2685,-2653,-2620,-2588,-2556,-2524,-2492,-2460,-2428,-2396,-2364,-2332,
@@ -140,12 +141,12 @@ package tone_gen_pkg is
 	2027,2060,2092,2124,2156,2188,2220,2252,2284,2316,2348,2380,2412,2444,2476,2508,2540,
 	2572,2604,2637,2669,2701,2733,2765,2797,2829,2861,2893,2925,2957,2989,3021,3053,3085,
 	3117,3149,3181,3213,3246,3278,3310,3342,3374,3406,3438,3470,3502,3534,3566,3598,3630,
-	3662,3694,3726,3758,3790,3823,3855,3887,3919,3951,3983,4015,4047,-4095
+	3662,3694,3726,3758,3790,3823,3855,3887,3919,3951,3983,4015,4047
 	);
 
 	-- Triangle wave
 	constant LUT_triangle : t_lut_rom :=(
-	-4095,-4031,-3967,-3903,-3839,-3774,-3710,-3646,-3582,-3518,-3454,-3390,-3326,-3262,
+	0,-4095,-4031,-3967,-3903,-3839,-3774,-3710,-3646,-3582,-3518,-3454,-3390,-3326,-3262,
 	-3197,-3133,-3069,-3005,-2941,-2877,-2813,-2749,-2685,-2620,-2556,-2492,-2428,-2364,
 	-2300,-2236,-2172,-2108,-2043,-1979,-1915,-1851,-1787,-1723,-1659,-1595,-1531,-1467,
 	-1402,-1338,-1274,-1210,-1146,-1082,-1018,-954,-890,-825,-761,-697,-633,-569,-505,
@@ -160,7 +161,7 @@ package tone_gen_pkg is
 	-473,-537,-601,-665,-729,-793,-857,-922,-986,-1050,-1114,-1178,-1242,-1306,-1370,
 	-1434,-1499,-1563,-1627,-1691,-1755,-1819,-1883,-1947,-2011,-2076,-2140,-2204,-2268,
 	-2332,-2396,-2460,-2524,-2588,-2653,-2717,-2781,-2845,-2909,-2973,-3037,-3101,-3165,
-	-3230,-3294,-3358,-3422,-3486,-3550,-3614,-3678,-3742,-3807,-3871,-3935,-3999,-4095
+	-3230,-3294,-3358,-3422,-3486,-3550,-3614,-3678,-3742,-3807,-3871,-3935,-3999
 	);
 
 	-- Rectangle wave
