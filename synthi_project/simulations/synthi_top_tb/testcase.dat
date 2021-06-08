@@ -1,67 +1,71 @@
 #-------------------------------------------------------------------------------
-#-- Title      : testcases for envelope logic
-#-- Project    : DTP2
+#-- Title      : Testcases LUT
+#-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase_envelope.dat
-#-- Author     : Hans-Joachim Gelke
-#-- Created    : 2021-05-25
-#-- Last update: 2021-05-25
+#-- File       : testcase_LUT.dat
+#-- Author     : Mueller Pavel
+#-- Company    : 
+#-- Created    : 2021-05-04
+#-- Last update: 2021-06-03
+#-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: testcase for envelope logic
-#--              to test envelope logic set number in envelope_logic.vhd:72 from 100000 to 100
-#-------------------------------------------------------------------------------
-#-- Copyright (c) 2021
+#-- Description: Testcases for custom LUT of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-05-25  1.0      Bollhalder Jonas Created
+#-- 2021-05-10  1.0      Mueller Pavel    Created
+#-- 2021-05-17  1.1      Mueller Pavel    Added comands for orgel LUT
+#-- 2021-06-01  1.2      Bollhalder Jonas Finalised
+#-- 2021-06-03  1.3      Mueller Pavel    Added comands for piano 2
 #-------------------------------------------------------------------------------
 
-reset_target 20
-set_switches 00 00 00 00
-bt_uart_send_data 01 
+reset_target 10
 
-#--- Set envelope none, turn on Note and turn note off again--
-bt_uart_send_data 80
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 70 
-run_simulation_for 00 09 00 00
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 00 
-run_simulation_for 00 00 0F 00
+#Turn bt controll on
+bt_uart_send_data 01
+run_simulation_for 00 00 04 00
 
-#--- Set envelope piano, turn on Note and turn note off again--
-bt_uart_send_data 88
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 70 
-run_simulation_for 00 09 00 00
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 00 
-run_simulation_for 00 00 0F 00
+#Disable envelopes for instruments
+bt_uart_send_data 8F
+run_simulation_for 00 00 04 00
 
-#--- Set envelope organ, turn on Note and turn note off again--
-bt_uart_send_data 89
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 70 
-run_simulation_for 00 09 00 00
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 00 
-run_simulation_for 00 00 0F 00
+#Turn on single DDS with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 60
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 05 00 00
 
-#--- Set envelope guitar, turn on Note and turn note off again--
-bt_uart_send_data 8A
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 70 
-run_simulation_for 00 09 00 00
-usb_uart_send_data 90 
-usb_uart_send_data 30 
-usb_uart_send_data 00 
-run_simulation_for 00 00 0F 00
+# set wave to sawtooth with falling shape
+bt_uart_send_data 61
+run_simulation_for 00 05 00 00
+
+# set wave to sawtooth with rising shape
+bt_uart_send_data 62
+run_simulation_for 00 05 00 00
+
+# set wave to triangle
+bt_uart_send_data 63
+run_simulation_for 00 05 00 00
+
+# set wave to rectangle
+bt_uart_send_data 64
+run_simulation_for 00 05 00 00
+
+# set wave to piano
+bt_uart_send_data 68
+run_simulation_for 00 05 00 00
+
+# set wave to organ
+bt_uart_send_data 69
+run_simulation_for 00 05 00 00
+
+# set wave to guitar
+bt_uart_send_data 6A
+run_simulation_for 00 05 00 00
+
+# set wave to piano 2
+bt_uart_send_data 6B
+run_simulation_for 00 05 00 00

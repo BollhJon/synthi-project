@@ -104,12 +104,11 @@ begin
     lut_addr := to_integer(count(N_CUM-1 downto N_CUM - N_LUT));
 	 
     case to_integer(unsigned(lut_sel)) is
-      --when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
-      when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);
-      when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);
-      when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);
-      when 4 => lut_val  <= to_signed(LUT_rectangle(lut_addr), N_AUDIO);
-      when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
+      when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);   -- sawtooth wave with falling edge
+      when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);    -- sawtooth wave with rising edge
+      when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);           -- triangle wave
+      when 4 => lut_val  <= to_signed(LUT_rectangle(lut_addr), N_AUDIO);          -- rectangle wave
+      when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);               -- standart wave -> sinus
     end case;
         
     
@@ -120,41 +119,22 @@ begin
   --------------------------------------------------
   attenuator: process (all)
     variable shift_var : signed(N_AUDIO-1 downto 0);
-    
+    -- generates an attenuator from 0 to 16/16 in steps of 1/16
     begin
       shift_var := (others => '0');
+      -- when the phi increment singnal is more that zero the attenuator logic will be activated
       if unsigned(phi_incr_i) > 0 then   
         for i in 0 to 3 loop
           if attenu_i(i) = '1' then
+            -- shifts the value from the lut i times right
             shift_var := shift_var + shift_right(lut_val,(4-i));
           end if;
         end loop;
       else
         shift_var := to_signed(0,N_AUDIO);
       end if; 
-
+      -- write the variable to the output
       dds_o <= std_logic_vector(shift_var);
-      
-
-    --case to_integer(unsigned(attenu_i)) is
-    --  -- when 0 => dds_o <= (others => '0');                                                                                                 -- 0
-    --  when 1 => dds_o <= std_logic_vector(shift_right(lut_val,3));                                                                        -- 2/16
-    --  when 2 => dds_o <= std_logic_vector(shift_right(lut_val,3)+shift_right(lut_val,4));                                                 -- 3/16
-    --  when 3 => dds_o <= std_logic_vector(shift_right(lut_val,2));                                                                        -- 4/16
-    --  when 4 => dds_o <= std_logic_vector(shift_right(lut_val,2)+shift_right(lut_val,4));                                                 -- 5/16
-    --  when 5 => dds_o <= std_logic_vector(shift_right(lut_val,2)+shift_right(lut_val,3));                                                 -- 6/16
-    --  when 6 => dds_o <= std_logic_vector(shift_right(lut_val,2)+shift_right(lut_val,3)+shift_right(lut_val,4));                          -- 7/16
-    --  when 7 => dds_o <= std_logic_vector(shift_right(lut_val,1));                                                                        -- 8/16
-    --  when 8 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,4));                                                 -- 9/16
-    --  when 9 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,3));                                                 -- 10/16
-    --  when 10 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,3)+shift_right(lut_val,4));                         -- 11/16
-    --  when 11 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2));                                                -- 12/16
-    --  when 12 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2)+shift_right(lut_val,4));                         -- 13/16
-    --  when 13 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2)+shift_right(lut_val,3));                         -- 14/16
-    --  when 14 => dds_o <= std_logic_vector(shift_right(lut_val,1)+shift_right(lut_val,2)+shift_right(lut_val,3)+shift_right(lut_val,4));  -- 15/16
-    --  when 15 => dds_o <= std_logic_vector(lut_val);                                                                                      -- 16/16
-    --  when others => dds_o <= (others => '0');
-    --end case;
 
   end process attenuator;
 

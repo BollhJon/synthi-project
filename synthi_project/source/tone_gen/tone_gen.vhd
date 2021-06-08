@@ -136,7 +136,7 @@ begin
         clk_6m     => clk_6m,
         reset_n    => reset_n,
         tone_on_i  => tone_on_i(i),
-        --velocity_i => velocity_i(i), wurde noch nicht implementiert
+        --velocity_i => velocity_i(i), wurde nicht implementiert
         lut_sel    => lut_sel_env_sig,
         attenu_o   => attenu_array_sig(i)
         );
@@ -165,6 +165,7 @@ begin
     end if;
   end process comb_sum_output;
   
+  -- flip flop
   reg_sum_output : process(all)
   begin
     if reset_n = '0' then
@@ -174,26 +175,32 @@ begin
     end if;
   end process reg_sum_output;
 
+  -- write singnal sum_reg to output
   dds_l_o <= std_logic_vector(sum_reg);
   dds_r_o <= std_logic_vector(sum_reg);
 
+  -- logic for automatic, manual or no envelope
   lut_sel_env_logic : process(all)
   begin	
     case to_integer(unsigned(lut_sel_env)) is
-      when 0 => lut_sel_env_sig <= lut_sel_car;
-      when 1 => lut_sel_env_sig <= "0000";
-      when others => lut_sel_env_sig <= lut_sel_env;
+      when 0 => lut_sel_env_sig <= lut_sel_car;       -- automatic envelope
+      when 1 => lut_sel_env_sig <= "0000";            -- no envelope
+      when others => lut_sel_env_sig <= lut_sel_env;  -- manual envelope
     end case ;
   end process lut_sel_env_logic;
   
+  -- logic for attenuator
   attenu_logic: process (all) is
     variable attenu_sig_var : unsigned(4 downto 0);
   begin
     attenu_sig_var := unsigned(attenu_sig);
+    -- removes the attenuator value from attenu.vhd from the attenuator signal for all 10 DDS
     for i in 0 to 9 loop
+      -- if the value from attenu.vhd is lager than the attenuator signal, then it will bi removed from the attenuator signal
       if unsigned(attenu_array_sig(i)) > attenu_sig_var then
         attenu_array(i) <= std_logic_vector(unsigned(attenu_array_sig(i)) - attenu_sig_var);
-      else
+      -- if the value is smaller, the signal will be directly assigned to the attenuator array
+        else
         attenu_array(i) <= attenu_array_sig(i);
       end if;
     end loop;
