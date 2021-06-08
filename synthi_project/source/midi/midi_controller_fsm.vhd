@@ -17,6 +17,7 @@
 -- 2021-04-19  1.0      Böhi dominik      Created
 -- 2021-04-27  1.1      Bollhalder Jonas  Edits for poly DDS
 -- 2021-05-15  1.2      Müller Pavel      Bugfix for octave change on Piano
+-- 2021-06-08  1.3      Müller Pavel      Integrated DDS used
 -------------------------------------------------------------------------------
 
 library ieee;
@@ -31,6 +32,7 @@ entity midi_controller_fsm is
        reset_n          : in  std_logic;
        rx_data          : in  std_logic_vector(7 downto 0);
        rx_data_rdy      : in  std_logic;
+       dds_used_i       : in  std_logic_vector(9 downto 0);
        note_on		      : out std_logic_vector(9 downto 0);
        note_o           : out t_tone_array;
        velocity         : out t_tone_array
@@ -143,11 +145,15 @@ begin  -- architecture str
       ------------------------------------------------------
       for i in 0 to 9 loop
         if reg_note(i) = data1_reg and reg_note_on(i) = '1' then -- Found a matching note
-          note_available := '1';
-          if status_reg(6 downto 4) = "000" then -- note off
-            next_reg_note_on(i) <= '0'; -- turn off note
-          elsif status_reg(6 downto 4) = "001" and data2_reg = "0000000" then
-            next_reg_note_on(i) <= '0'; -- turn off note if velocity is 0
+          if dds_used_i(i) = '1' then
+            note_available := '0';
+          else
+            note_available := '1';
+            if status_reg(6 downto 4) = "000" then -- note off
+              next_reg_note_on(i) <= '0'; -- turn off note
+            elsif status_reg(6 downto 4) = "001" and data2_reg = "0000000" then
+              next_reg_note_on(i) <= '0'; -- turn off note if velocity is 0
+            end if;
           end if;
         end if;
       end loop;
