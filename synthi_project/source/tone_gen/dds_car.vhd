@@ -106,15 +106,15 @@ begin
 	 
     case to_integer(unsigned(lut_sel)) is
       --when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
-      when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);
-      when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);
-      when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);
-      when 4 => lut_val  <= to_signed(LUT_rectangle(lut_addr), N_AUDIO);
-      when 8 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);
-      when 9 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);
-      when 10 => lut_val <= to_signed(LUT_guitar(lut_addr), N_AUDIO);
-      when 11 => lut_val <= to_signed(LUT_klavier2(lut_addr), N_AUDIO);
-      when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
+      when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);   -- sawtooth wave with falling shape
+      when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);    -- sawtooth wave with rising shape
+      when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);           -- triangle wave
+      when 4 => lut_val  <= to_signed(LUT_rectangle(lut_addr), N_AUDIO);          -- rectangle wave
+      when 8 => lut_val  <= to_signed(LUT_klavier(lut_addr), N_AUDIO);            -- piano 1 wave
+      when 9 => lut_val  <= to_signed(LUT_orgel(lut_addr), N_AUDIO);              -- organ wave
+      when 10 => lut_val <= to_signed(LUT_guitar(lut_addr), N_AUDIO);             -- guitar wave
+      when 11 => lut_val <= to_signed(LUT_klavier2(lut_addr), N_AUDIO);           -- piano 2 wave
+      when others => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);               -- standart sine wave
     end case;
         
     
@@ -125,15 +125,16 @@ begin
   --------------------------------------------------
   attenuator: process (all)
     variable shift_var : signed(N_AUDIO-1 downto 0);
-    
+    -- generates an attenuator from 0 to 32/32 in steps of 1/32
     begin
       shift_var := (others => '0');  
       for i in 0 to 4 loop
         if attenu_i(i) = '1' then
+          -- shifts the value from the lut i times right
           shift_var := shift_var + shift_right(lut_val,(5-i));
         end if;
       end loop ; 
-
+      -- write the variable to the output
       dds_o <= std_logic_vector(shift_var);
 
   end process attenuator;

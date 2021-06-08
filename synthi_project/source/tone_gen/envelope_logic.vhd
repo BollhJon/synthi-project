@@ -18,6 +18,7 @@
 -- Date        Version  Author          Description
 -- 2021-05-06  1.0      Mueller Pavel	  Created
 -- 2021-05-19  1.1      Mueller Pavel   Attenu extendet   
+-- 2021-06-04  1.2      Mueller Pavel   Integrated std envelope
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -34,7 +35,7 @@ entity envelope_logic is
     clk_6m       : in  std_logic;
     reset_n    : in  std_logic;
     tone_on_i  : in  std_logic;
-    -- velocity_i : in  std_logic_vector(6 downto 0); wurde noch nicht implementiert
+    -- velocity_i : in  std_logic_vector(6 downto 0); not implemented
     lut_sel    : in  std_logic_vector(3 downto 0);
     attenu_o   : out std_logic_vector(4 downto 0)
     );
@@ -47,6 +48,7 @@ architecture rtl of envelope_logic is  -- architecture rtl
 
 begin
   
+  -- flip flop
   counter_register: process (all) is
   begin  -- process counter_register
    if reset_n = '0' then
@@ -58,25 +60,29 @@ begin
     end if;
   end process counter_register;
 
+  -- process for counter logic
   counter_logic: process (all) is
   begin  -- process counter_logic
     next_count <= count;
     next_lut_addr <= lut_addr;
 
+    -- increases count on every rising edge of clk_6m
     if tone_on_i = '1' then
       next_count <= count + to_unsigned(1,N_CUM);
+    -- set both signals to zero when tone on = 0
     else
       next_count <= to_unsigned(0,N_CUM);
       next_lut_addr <= to_unsigned(0, 8);
     end if;
 
-    if count > to_unsigned(100000, N_CUM) then --compare to 100000
+    -- limitation for the counters
+    if count > to_unsigned(80000, N_CUM) then --compare to 100000
       case to_integer(unsigned(lut_sel)) is
-        when 8|10 =>
+        when 2|3|8|10|11 => -- when envelope mode is std, piano or guitar the counter will count to 255
           if lut_addr < 255 then
             next_lut_addr <= lut_addr + to_unsigned(1,8);
           end if;
-        when 9 =>
+        when 9 => -- when evelope mode is organ, the counter will count to 255 and then return to value #40 until key is released
             if lut_addr < 255 then
               next_lut_addr <= lut_addr + to_unsigned(1,8);
             else
@@ -89,13 +95,16 @@ begin
   end process counter_logic;
 
 
+  -- process for the output logic
   output_logic: process (all) is
   begin  -- process output_logic
 
     case to_integer(unsigned(lut_sel)) is
-      when 8  => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(to_integer(lut_addr)),5));
-      when 9  => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_orgel(to_integer(lut_addr)),5));
-      when 10 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_guitar(to_integer(lut_addr)),5));
+      when 2    => attenu_o  <= std_logic_vector(to_unsigned(LUT_h(to_integer(lut_addr)),5));           -- std envelope
+      when 3    => attenu_o  <= std_logic_vector(to_unsigned(LUT_h2(to_integer(lut_addr)),5));          -- std envelope 2
+      when 8|11 => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_klavier(to_integer(lut_addr)),5));   -- piano envelope
+      when 9    => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_orgel(to_integer(lut_addr)),5));     -- organ envelope
+      when 10   => attenu_o  <= std_logic_vector(to_unsigned(LUT_h_guitar(to_integer(lut_addr)),5));    -- guitar envelope
       when others => attenu_o  <= std_logic_vector(to_unsigned(31, 5));
     end case;
   end process output_logic;
