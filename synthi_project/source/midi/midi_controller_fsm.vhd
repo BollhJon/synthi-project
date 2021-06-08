@@ -145,16 +145,17 @@ begin  -- architecture str
       ------------------------------------------------------
       for i in 0 to 9 loop
         if reg_note(i) = data1_reg and reg_note_on(i) = '1' then -- Found a matching note
-          if dds_used_i(i) = '1' then
-            note_available := '0';
-          else
-            note_available := '1';
             if status_reg(6 downto 4) = "000" then -- note off
               next_reg_note_on(i) <= '0'; -- turn off note
+              if dds_used_i(i) = '0' then
+                note_available := '1'; -- as long as the DDS is used to finish its wave the note will not be available
+              end if;
             elsif status_reg(6 downto 4) = "001" and data2_reg = "0000000" then
               next_reg_note_on(i) <= '0'; -- turn off note if velocity is 0
+              if dds_used_i(i) = '0' then
+                note_available := '1'; -- as long as the DDS is used to finish its wave the note will not be available
+              end if;
             end if;
-          end if;
         end if;
       end loop;
 

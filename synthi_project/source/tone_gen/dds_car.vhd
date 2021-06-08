@@ -85,19 +85,24 @@ begin
     next_count <= count;
     dds_used_o <= '0';   
 
-    -- when tone on and the step signals are high, the counter will start to count
-    if (tone_on_i = '1') and (step_i = '1') then
-      next_count <= count + unsigned(phi_incr_i);
+    -- check if the tone on is high
+    if (tone_on_i = '1') then
       dds_used_o <= '1'; -- signal that the DDS is curently in use
-    -- when tone on signal is low, the step signal is high and the counter is more than zero, the counter will count until end of the wave.
-    elsif (tone_on_i = '0') and (step_i = '1') and (count > 0) then
+      -- when the step sinal is high the cou
+      if step_i = '1' then
+        next_count <= count + unsigned(phi_incr_i);
+      end if;
+    -- when tone on signal is low and the counter is more than zero, the counter will count until end of the wave.
+    elsif (tone_on_i = '0') and (count > 0) then
       -- check if wave is finished
       if (count + unsigned(phi_incr_i)) < count then
-        next_count <= to_unsigned(0, N_CUM);
+        next_count <= to_unsigned(0, N_CUM); -- wave is finished so it is set to zero
       -- else the wave will be finished
       else
-        next_count <= count + unsigned(phi_incr_i);
         dds_used_o <= '1'; -- signal that the DDS is still in use to finish the note
+        if step_i = '1' then
+          next_count <= count + unsigned(phi_incr_i); -- wave is not finished so it continues with the wave
+        end if;
       end if;
     end if;
    
