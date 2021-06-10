@@ -372,7 +372,7 @@ begin  -- architecture str
       reset_n     => reset_n_sig,
       rx_data     => usb_data_sig,
       rx_data_rdy => usb_data_rdy_sig,
-      dds_used_i  => dds_used_sig,
+      dds_used_i  => dds_used_sig
       note_on     => note_on_sig,
       note_o      => note_sig,
       velocity    => velocity_sig

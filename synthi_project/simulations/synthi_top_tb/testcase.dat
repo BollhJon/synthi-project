@@ -1,23 +1,20 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases LUT
+#-- Title      : Testcases knack Unterdrueckung
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase_LUT.dat
+#-- File       : testcase_knackUnterdrueckung.dat
 #-- Author     : Mueller Pavel
 #-- Company    : 
-#-- Created    : 2021-05-04
-#-- Last update: 2021-06-03
+#-- Created    : 2021-06-08
+#-- Last update: 2021-06-08
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for custom LUT of Synthi-Project
+#-- Description: Testcases for crack sounds
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-05-10  1.0      Mueller Pavel    Created
-#-- 2021-05-17  1.1      Mueller Pavel    Added comands for orgel LUT
-#-- 2021-06-01  1.2      Bollhalder Jonas Finalised
-#-- 2021-06-03  1.3      Mueller Pavel    Added comands for piano 2
+#-- 2021-06-08  1.0      Mueller Pavel    Created
 #-------------------------------------------------------------------------------
 
 reset_target 10
@@ -30,42 +27,66 @@ run_simulation_for 00 00 04 00
 bt_uart_send_data 8F
 run_simulation_for 00 00 04 00
 
-#Turn on single DDS with sine shape
+#Turn on DDS 1 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 40
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 00 04 00
+
+#Turn on DDS 2 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 50
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 05 00 00
+
+#Turn on DDS 3 with sine shape
 usb_uart_send_data 90
 run_simulation_for 00 00 04 00
 usb_uart_send_data 60
 run_simulation_for 00 00 04 00
 usb_uart_send_data 7F
+run_simulation_for 00 00 04 00
+
+#Turn on DDS 4 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 70
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
 run_simulation_for 00 05 00 00
 
-# set wave to sawtooth with falling shape
-bt_uart_send_data 61
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 40
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
+run_simulation_for 00 00 04 00
+
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 50
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
 run_simulation_for 00 05 00 00
 
-# set wave to sawtooth with rising shape
-bt_uart_send_data 62
-run_simulation_for 00 05 00 00
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 60
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
+run_simulation_for 00 00 04 00
 
-# set wave to triangle
-bt_uart_send_data 63
-run_simulation_for 00 05 00 00
-
-# set wave to rectangle
-bt_uart_send_data 64
-run_simulation_for 00 05 00 00
-
-# set wave to piano
-bt_uart_send_data 68
-run_simulation_for 00 05 00 00
-
-# set wave to organ
-bt_uart_send_data 69
-run_simulation_for 00 05 00 00
-
-# set wave to guitar
-bt_uart_send_data 6A
-run_simulation_for 00 05 00 00
-
-# set wave to piano 2
-bt_uart_send_data 6B
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 70
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
 run_simulation_for 00 05 00 00

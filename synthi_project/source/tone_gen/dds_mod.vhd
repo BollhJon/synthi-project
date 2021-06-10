@@ -21,7 +21,7 @@
 -- 2021-05-15  1.3      Mueller Pavel         attenu extendet to 16 values
 -- 2021-05-17  1.4      Mueller Pavel         logic elements reduced
 -- 2021-05-19  1.5      Mueller Pavel         attenu extendet to 32 values
--- 2021-05-23  1.6      Mueller Pavel         modified for fm carrier
+-- 2021-05-23  1.6      Mueller Pavel         modified for fm modulator
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements

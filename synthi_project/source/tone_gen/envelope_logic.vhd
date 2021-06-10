@@ -32,11 +32,12 @@ use work.tone_gen_pkg.all;
 entity envelope_logic is
   
   port (
-    clk_6m       : in  std_logic;
+    clk_6m     : in  std_logic;
     reset_n    : in  std_logic;
-    tone_on_i  : in  std_logic;
+    -- tone_on_i  : in  std_logic;
     -- velocity_i : in  std_logic_vector(6 downto 0); not implemented
     lut_sel    : in  std_logic_vector(3 downto 0);
+    dds_used_i : in  std_logic;
     attenu_o   : out std_logic_vector(4 downto 0)
     );
 end envelope_logic;
@@ -67,7 +68,7 @@ begin
     next_lut_addr <= lut_addr;
 
     -- increases count on every rising edge of clk_6m
-    if tone_on_i = '1' then
+    if dds_used_i = '1' then
       next_count <= count + to_unsigned(1,N_CUM);
     -- set both signals to zero when tone on = 0
     else

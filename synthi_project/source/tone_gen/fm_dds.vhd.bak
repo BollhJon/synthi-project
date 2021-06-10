@@ -110,7 +110,7 @@ begin  -- architecture rtl
       tone_on_i  => tone_on_i,
       attenu_i   => attenu_i,
 		  lut_sel	   => lut_sel_car,
-      dds_o      => fm_dds_o,
+      dds_o      => fm_dds_o
       dds_used_o => dds_used_o
       );
 

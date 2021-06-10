@@ -1,0 +1,92 @@
+#-------------------------------------------------------------------------------
+#-- Title      : Testcases cracking
+#-- Project    : Synthi-Project
+#-------------------------------------------------------------------------------
+#-- File       : testcase_crack.dat
+#-- Author     : Mueller Pavel
+#-- Company    : 
+#-- Created    : 2021-06-08
+#-- Last update: 2021-06-08
+#-- Platform   : 
+#-- Standard   : VHDL'08
+#-------------------------------------------------------------------------------
+#-- Description: Testcases for crack sounds
+#-------------------------------------------------------------------------------
+#-- Revisions  :
+#-- Date        Version  Author           Description
+#-- 2021-06-08  1.0      Mueller Pavel    Created
+#-------------------------------------------------------------------------------
+
+reset_target 10
+
+#Turn bt controll on
+bt_uart_send_data 01
+run_simulation_for 00 00 04 00
+
+#Disable envelopes for instruments
+bt_uart_send_data 8F
+run_simulation_for 00 00 04 00
+
+#Turn on DDS 1 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 40
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 00 04 00
+
+#Turn on DDS 2 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 50
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 05 00 00
+
+#Turn on DDS 3 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 60
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 00 04 00
+
+#Turn on DDS 4 with sine shape
+usb_uart_send_data 90
+run_simulation_for 00 00 04 00
+usb_uart_send_data 70
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7F
+run_simulation_for 00 05 00 00
+
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 40
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
+run_simulation_for 00 00 04 00
+
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 50
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
+run_simulation_for 00 05 00 00
+
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 60
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
+run_simulation_for 00 00 04 00
+
+# Turn off note that has been played
+usb_uart_send_data 80
+run_simulation_for 00 00 04 00
+usb_uart_send_data 70
+run_simulation_for 00 00 04 00
+usb_uart_send_data 7A
+run_simulation_for 00 05 00 00
