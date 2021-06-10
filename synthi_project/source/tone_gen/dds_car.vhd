@@ -118,8 +118,8 @@ begin
   begin
     lut_addr := to_integer(count(N_CUM-1 downto N_CUM - N_LUT));
 	 
+    -- selects the different LUTs
     case to_integer(unsigned(lut_sel)) is
-      --when 0 => lut_val  <= to_signed(LUT(lut_addr), N_AUDIO);
       when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);   -- sawtooth wave with falling shape
       when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);    -- sawtooth wave with rising shape
       when 3 => lut_val  <= to_signed(LUT_triangle(lut_addr), N_AUDIO);           -- triangle wave

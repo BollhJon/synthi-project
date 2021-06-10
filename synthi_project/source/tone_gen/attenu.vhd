@@ -31,7 +31,7 @@ entity attenu is
   port (
     clk_6m    : in  std_logic;
     reset_n   : in  std_logic;
-    tone_on_i : in  std_logic_vector(9 downto 0);
+    dds_used_i: in  std_logic_vector(9 downto 0);
     attenu_o  : out std_logic_vector(4 downto 0));
 end entity attenu;
 
@@ -60,7 +60,7 @@ attenu_logic: process (all) is
 begin  -- process attenu_logic
   count := (others => '0');
   for i in 0 to 9 loop
-    if tone_on_i(i)='1' then
+    if dds_used_i(i) ='1' then
       count := count + 1;
     end if;
   end loop;  -- i

@@ -63,13 +63,14 @@ architecture rtl of tone_gen is
 -------------------------------------------
   type t_dds_o_array is array (0 to 9) of std_logic_vector(N_AUDIO-1 downto 0);
   type t_attenu_array is array (0 to 9) of std_logic_vector(4 downto 0);
-  signal dds_o_array : t_dds_o_array;
-  signal sum_reg : signed(N_AUDIO-1 downto 0);
-  signal next_sum_reg : signed(N_AUDIO-1 downto 0);
-  signal attenu_array : t_attenu_array;
-  signal lut_sel_env_sig : std_logic_vector(3 downto 0) := "0000";
+  signal dds_o_array      : t_dds_o_array;
+  signal sum_reg          : signed(N_AUDIO-1 downto 0);
+  signal next_sum_reg     : signed(N_AUDIO-1 downto 0);
+  signal attenu_array     : t_attenu_array;
+  signal lut_sel_env_sig  : std_logic_vector(3 downto 0) := "0000";
   signal attenu_array_sig : t_attenu_array;
-  signal attenu_sig : std_logic_vector(4 downto 0);
+  signal attenu_sig       : std_logic_vector(4 downto 0);
+  signal dds_used_sig     : std_logic_vector(9 downto 0);
 
 
 -- Begin Architecture
@@ -95,18 +96,18 @@ architecture rtl of tone_gen is
     port (
       clk_6m      : in  std_logic;
       reset_n     : in  std_logic;
-      tone_on_i   : in  std_logic;
       --velocity_i  : in  std_logic_vector(6 downto 0);
       lut_sel 		: in  std_logic_vector(3 downto 0);
+      dds_used_i  : in  std_logic;
       attenu_o    : out std_logic_vector(4 downto 0));
   end component envelope_logic;
 
   component attenu is
     port (
-      clk_6m    : in  std_logic;
-      reset_n   : in  std_logic;
-      tone_on_i : in  std_logic_vector(9 downto 0);
-      attenu_o  : out std_logic_vector(4 downto 0));
+      clk_6m      : in  std_logic;
+      reset_n     : in  std_logic;
+      dds_used_i  : in  std_logic_vector(9 downto 0);
+      attenu_o    : out std_logic_vector(4 downto 0));
   end component attenu;
 
 begin
@@ -128,9 +129,11 @@ begin
       lut_sel_car	  => lut_sel_car,
       lut_sel_mod	  => lut_sel_mod,
       fm_dds_o      => dds_o_array(i),
-      dds_used_o    => dds_used_o(i)
+      dds_used_o    => dds_used_sig(i)
       );
   end generate fm_dds_inst_gen;
+
+  dds_used_o <= dds_used_sig;
 
   -- instance "envelope_logic_1"
   envelope_logic_inst_gen: for i in 0 to 9 generate
@@ -138,9 +141,10 @@ begin
       port map (
         clk_6m     => clk_6m,
         reset_n    => reset_n,
-        tone_on_i  => tone_on_i(i),
+        --tone_on_i  => tone_on_i(i),
         --velocity_i => velocity_i(i), wurde nicht implementiert
         lut_sel    => lut_sel_env_sig,
+        dds_used_i => dds_used_sig(i),
         attenu_o   => attenu_array_sig(i)
         );
   end generate envelope_logic_inst_gen;
@@ -149,7 +153,8 @@ begin
     port map(
       clk_6m    => clk_6m,
       reset_n   => reset_n,
-      tone_on_i => tone_on_i,
+      --tone_on_i => tone_on_i,
+      dds_used_i=> dds_used_sig,
       attenu_o  => attenu_sig
       );
 
