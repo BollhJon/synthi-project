@@ -100,6 +100,7 @@ begin
   output_logic: process (all) is
   begin  -- process output_logic
 
+    -- select envelope LUT
     case to_integer(unsigned(lut_sel)) is
       when 2    => attenu_o  <= std_logic_vector(to_unsigned(LUT_h(to_integer(lut_addr)),5));           -- std envelope
       when 3    => attenu_o  <= std_logic_vector(to_unsigned(LUT_h2(to_integer(lut_addr)),5));          -- std envelope 2

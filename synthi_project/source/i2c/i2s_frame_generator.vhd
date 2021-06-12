@@ -61,10 +61,9 @@ begin  -- architecture str
   
   flip_flops: process (all) is
   begin  -- process flip_flops
-    if rst_n = '0' then                   -- asynchronous reset (active low)
-      count <= natural(0);				-- convert integer value 0 to unsigned
-														-- with 4 bits
-    elsif falling_edge(bckl) then         -- falling inverted clock edge
+    if rst_n = '0' then           -- asynchronous reset (active low)
+      count <= natural(0);				-- convert integer value 0 to unsigned with 4 bits
+    elsif falling_edge(bckl) then -- falling inverted clock edge
       count <= next_count;
     end if;
   end process flip_flops;

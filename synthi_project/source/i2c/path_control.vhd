@@ -40,18 +40,11 @@ end entity path_control;
 
 architecture str of path_control is
 
-  -----------------------------------------------------------------------------
-  -- Internal signal declarations
-  -----------------------------------------------------------------------------
-
-  -----------------------------------------------------------------------------
-  -- Component declarations
-  -----------------------------------------------------------------------------
-
 begin  -- architecture str
 
   switch: process (all) is
   begin
+    -- switch between codec adc and dds source and send to codec dac
     if sw = '1' then
       dacdat_pl_o <= adcdat_pl_i;
       dacdat_pr_o <= adcdat_pr_i;
@@ -61,9 +54,6 @@ begin  -- architecture str
     end if;
     
   end process switch;
-  -----------------------------------------------------------------------------
-  -- Component instantiations
-  -----------------------------------------------------------------------------
 
 end architecture str;
 

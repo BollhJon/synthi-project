@@ -24,11 +24,11 @@ USE ieee.std_logic_1164.all;
 
 -- Entity Declaration 
 ENTITY flanken_detekt_vhdl IS
-  PORT( data_in 	: IN    std_logic;
-			clk		: IN    std_logic;
-			reset_n	: IN    std_logic;
-    	   rising_pulse    : OUT   std_logic;
-			falling_pulse     : OUT   std_logic
+  PORT( data_in 			: IN    std_logic;
+			clk				: IN    std_logic;
+			reset_n			: IN    std_logic;
+    	    rising_pulse    : OUT   std_logic;
+			falling_pulse   : OUT   std_logic
     	);
 END flanken_detekt_vhdl;
 
@@ -41,13 +41,8 @@ ARCHITECTURE rtl OF flanken_detekt_vhdl IS
 	SIGNAL q_1: std_logic;
 	
 -- Begin Architecture
-BEGIN 
-    -------------------------------------------
-    -- Process for combinatorial logic
-    ------------------------------------------- 
-	 -- not needed in this file, using concurrent logic
-	 
-	 -------------------------------------------
+BEGIN 	 
+	-------------------------------------------
     -- Process for registers (flip-flops)
     -------------------------------------------
 	flip_flops : PROCESS(all)
@@ -64,8 +59,8 @@ BEGIN
 	 -------------------------------------------
     -- Concurrent Assignments  
     -------------------------------------------
-	 flanken_detect: process(ALL)
-	 BEGIN
+	flanken_detect: process(ALL)
+	BEGIN
 		rising_pulse <= q_0 and not q_1;
 		falling_pulse <= not q_0 and q_1;
 	end process flanken_detect;

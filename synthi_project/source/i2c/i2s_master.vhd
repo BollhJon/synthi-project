@@ -30,11 +30,11 @@ entity i2s_master is
     dacdat_pr_i	: in std_logic_vector(15 downto 0);
     dacdat_pl_i	: in std_logic_vector(15 downto 0);
     adcdat_s_i	: in std_logic;
-    clk_6m	: in std_logic;
-    rst_n	: in std_logic;
+    clk_6m	    : in std_logic;
+    rst_n	      : in std_logic;
     dacdat_s_o	: out std_logic;
-    step_o	: out std_logic;
-    ws_o	: out std_logic;
+    step_o	    : out std_logic;
+    ws_o	      : out std_logic;
     adcdat_pl_o	: out std_logic_vector(15 downto 0);
     adcdat_pr_o	: out std_logic_vector(15 downto 0)
     );

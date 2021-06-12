@@ -26,9 +26,6 @@ use ieee.numeric_std.all;
 
 entity infrastructure is
 
---  generic (
---    );
-
   port (
     clock_50 : in std_logic;
     key_0    : in std_logic;

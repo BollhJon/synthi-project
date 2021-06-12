@@ -58,13 +58,16 @@ end process attenu_ff;
 attenu_logic: process (all) is
   variable count : unsigned(3 downto 0);
 begin  -- process attenu_logic
+  -- default statement
   count := (others => '0');
+  -- count how many dds are in use
   for i in 0 to 9 loop
     if dds_used_i(i) ='1' then
       count := count + 1;
     end if;
   end loop;  -- i
 
+  -- depending on counter set attenu signal
   case to_integer(count) is
     when 1       => next_attenu <= std_logic_vector(to_unsigned(0,5));
     when 2       => next_attenu <= std_logic_vector(to_unsigned(3,5));
@@ -80,7 +83,6 @@ attenu_out: process (all) is
 begin  -- process attenu_out
   attenu_o <= attenu;
 end process attenu_out;
-
 
 end architecture rtl;
 

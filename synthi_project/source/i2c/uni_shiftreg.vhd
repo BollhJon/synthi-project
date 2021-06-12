@@ -28,7 +28,6 @@ entity uni_shiftreg is
   generic (
     width : positive := 16
     );
-
   port (
     par_in      : in std_logic_vector(width-1 downto 0);
 	  ser_in		  : in std_logic;
@@ -60,6 +59,7 @@ architecture str of uni_shiftreg is
   -------------------------------------------------
   shift_comb: process (all) is
   begin  -- process shift_comb
+    -- logic to shift trough registers
     if load = '1' then
       next_shiftreg <= par_in;
     elsif enable = '1' then
@@ -74,7 +74,7 @@ architecture str of uni_shiftreg is
   --------------------------------------------------
   shift_dffs: process (all) is
   begin  -- process shift_dffs
-    if rst_n = '0' then                 -- asynchronous reset (active low)
+    if rst_n = '0' then             -- asynchronous reset (active low)
       shiftreg <= (others => '0');
     elsif rising_edge(clk_6m) then  -- rising clock edge
       shiftreg <= next_shiftreg;

@@ -29,9 +29,10 @@ USE ieee.numeric_std.all;
 -- Entity Declaration 
 -------------------------------------------
 ENTITY modulo_divider IS
-  PORT(   clk			: IN    std_logic;
+  PORT(   
+      clk		      : IN    std_logic;
 			clk_12m     : OUT   std_logic;
-	       clk_6m     : OUT   std_logic
+	    clk_6m      : OUT   std_logic
     	);
 END modulo_divider;
 

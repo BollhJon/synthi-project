@@ -18,12 +18,13 @@
 -- Date        Version  Author  		Description
 -- 2021-03-01  1.0      Boehi Dominik   Created
 -------------------------------------------------------------------------------
-
+-- Library & Use Statements
+-------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
-
-LIBRARY work;
-
+-------------------------------------------
+-- Entity Declaration 
+-------------------------------------------
 ENTITY uart_top IS 
 	PORT
 	(
@@ -36,9 +37,13 @@ ENTITY uart_top IS
 		seg1_o 		:  OUT  STD_LOGIC_VECTOR(6 DOWNTO 0)
 	);
 END uart_top;
-
+-------------------------------------------
+-- Architecture Declaration
+-------------------------------------------
 ARCHITECTURE bdf_type OF uart_top IS 
-
+-------------------------------------------
+-- Components Declaration
+-------------------------------------------
 COMPONENT baud_tick
 GENERIC (width : INTEGER
 			);
@@ -116,7 +121,9 @@ GENERIC (width : INTEGER
 		 hex_msb_out : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
 END COMPONENT;
-
+-------------------------------------------
+-- Signals & Constants Declaration
+-------------------------------------------
 SIGNAL	baud_tick_sig :  STD_LOGIC;
 SIGNAL	bit_count_sig :  STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL	data_valid_sig :  STD_LOGIC;

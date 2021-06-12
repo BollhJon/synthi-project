@@ -8,7 +8,8 @@
 -- Last update: 2021-05-30
 -- Standard   : VHDL'08
 -------------------------------------------------------------------------------
--- Description: Der Baustein wartet bis das reset_n signal inaktiv wird.
+-- Description: Der Baustein wartet bis das reset_n signal inaktiv wird oder
+--              eines der Konfigurations signale sich ändert.
 --              Danach sendet dieser Codec Konfigurierungsdaten an
 --              den Baustein i2c_Master
 -------------------------------------------------------------------------------
@@ -175,7 +176,7 @@ write_data_o (15 downto 9) <= std_logic_vector(count);
         signal_o => mode_change
         );
 
-    -- instance "vector_check_2"
+  -- instance "vector_check_2"
   vector_check_2: vector_check
      generic map (
         width => 7)

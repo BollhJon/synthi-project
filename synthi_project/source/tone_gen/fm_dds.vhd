@@ -35,6 +35,8 @@ use ieee.numeric_std.all;
 library work;
 use work.tone_gen_pkg.all;
 
+-- Entity Declaration 
+-------------------------------------------
 entity fm_dds is
   
   port (
@@ -53,12 +55,17 @@ entity fm_dds is
     );
 end fm_dds;
 
+-- Architecture Declaration
+-------------------------------------------
 architecture rtl of fm_dds is
-
+  -- Signals & Constants Declaration
+  -------------------------------------------
   signal phi_incr_car_sig : signed(N_CUM-1 downto 0);
   signal phi_incr_mod_sig : unsigned(N_CUM-1 downto 0);
   signal dds_o_mod_sig : std_logic_vector(N_AUDIO -1 downto 0);
 
+  -- Component Declaration
+  -------------------------------------------
   component dds_mod is
     port (
       clk_6m     : in  std_logic;
@@ -85,6 +92,8 @@ architecture rtl of fm_dds is
       );
   end component dds_car;
 
+-- Begin Architecture
+-------------------------------------------
 begin  -- architecture rtl
 
   -- instance "dds_mod"

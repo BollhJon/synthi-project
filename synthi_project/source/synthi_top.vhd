@@ -29,7 +29,8 @@
 -- 2021-05-24  1.12     Müller Pavel      DDS splitted for for modulator and carrier
 -- 2021-05-24  1.13     Müller Pavel      Upgraded fm-Ratio to 5 Bit
 -------------------------------------------------------------------------------
-
+-- Library & Use Statements
+-------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -38,7 +39,8 @@ use work.tone_gen_pkg.all;
 use work.reg_controller_pkg.all;
 
 -------------------------------------------------------------------------------
-
+-- Entity Declaration 
+-------------------------------------------
 entity synthi_top is
 
   port (
@@ -86,7 +88,8 @@ entity synthi_top is
 end entity synthi_top;
 
 -------------------------------------------------------------------------------
-
+-- Architecture Declaration
+-------------------------------------------
 architecture str of synthi_top is
 
   -----------------------------------------------------------------------------
