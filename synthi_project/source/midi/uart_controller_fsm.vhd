@@ -34,15 +34,15 @@ use ieee.numeric_std.all;
 -------------------------------------------
 entity uart_controller_fsm is
 GENERIC (width : positive := 10);
-  port(clk      : in  std_logic;
-       reset_n  : in  std_logic;
-		 falling_pulse : in std_logic;
-		 baud_tick : in std_logic;
-		 bit_count : in std_logic_vector(3 downto 0);
-		 parallel_data : in std_logic_vector(width-1 downto 0);
-		 shift_enable : out std_logic;
-		 start_bit : out std_logic;
-		 data_valid : out std_logic	 
+  port(clk            : in  std_logic;
+       reset_n        : in  std_logic;
+		   falling_pulse  : in std_logic;
+		   baud_tick      : in std_logic;
+		   bit_count      : in std_logic_vector(3 downto 0);
+		   parallel_data  : in std_logic_vector(width-1 downto 0);
+		   shift_enable   : out std_logic;
+		   start_bit      : out std_logic;
+		   data_valid     : out std_logic	 
        );
 end uart_controller_fsm;
 
@@ -67,10 +67,8 @@ begin
   begin
     if reset_n = '0' then
       fsm_state <= st_idle;
-
     elsif rising_edge(clk) then
       fsm_state <= next_fsm_state;
-
     end if;
   end process flip_flops;
 
@@ -85,66 +83,72 @@ begin
 
     case fsm_state is
 	 
+      -- change from idle to start_bit
       when st_idle => 
-			if(falling_pulse = '1') then
-			next_fsm_state <= st_start_bit;
-			else
-			next_fsm_state <= st_idle;
-			end if;
+			  if(falling_pulse = '1') then
+			    next_fsm_state <= st_start_bit;
+			  else
+			    next_fsm_state <= st_idle;
+			  end if;
        
+      -- change from start_bit to wait_rx_byte
       when st_start_bit => 
-			next_fsm_state <= st_wait_rx_byte;
+			  next_fsm_state <= st_wait_rx_byte;
           
+      -- whenn byte complete change to check_rx
       when st_wait_rx_byte => 
-			if (bit_count = "0000" and baud_tick  = '1') then
-			next_fsm_state <= st_check_rx;
-			else
-			next_fsm_state <= st_wait_rx_byte;
-			end if;
+			  if (bit_count = "0000" and baud_tick  = '1') then
+			    next_fsm_state <= st_check_rx;
+			  else
+			    next_fsm_state <= st_wait_rx_byte;
+			  end if;
 		
+      -- change to idle
       when st_check_rx => 
-			next_fsm_state <= st_idle;
+			  next_fsm_state <= st_idle;
         
       when others =>
-			next_fsm_state <= fsm_state;
+			  next_fsm_state <= fsm_state;
 
     end case;
 
   end process state_logic;
 
   
-  --------------------------------------------------
-  -- PROCESS FOR OUTPUT-COMB-LOGIC 
-  --------------------------------------------------
-  fsm_out_logic : process (all)
-  begin
-    -- default statements
-	 start_bit <= '0';
-	 shift_enable <= '0';
-	 data_valid <= '0';
+--------------------------------------------------
+-- PROCESS FOR OUTPUT-COMB-LOGIC 
+--------------------------------------------------
+fsm_out_logic : process (all)
+begin
+  -- default statements
+	start_bit <= '0';
+	shift_enable <= '0';
+	data_valid <= '0';
 
-    case fsm_state is
-      when st_start_bit => start_bit <= '1';
+  -- set output depending on the state
+  case fsm_state is
+    when st_start_bit => 
+      start_bit <= '1';
         
-      when st_wait_rx_byte =>
+    when st_wait_rx_byte =>
 			if(baud_tick = '1') then
-			shift_enable <= '1';
+		  	shift_enable <= '1';
 			else
-			shift_enable <= '0';
+			  shift_enable <= '0';
 			end if;
 		
 		when st_check_rx =>
-		if(parallel_data(0) = '0' and parallel_data(9) = '1') then
-		data_valid <= '1';
-		else
-		data_valid <= '0';
-		end if;
+		  if(parallel_data(0) = '0' and parallel_data(9) = '1') then
+		    data_valid <= '1';
+		  else
+		    data_valid <= '0';
+		  end if;
        
-      when others => null;
+    when others => null;
                      
-    end case;
+  end case;
 
-  end process fsm_out_logic;
+end process fsm_out_logic;
 
 
 -- End Architecture 

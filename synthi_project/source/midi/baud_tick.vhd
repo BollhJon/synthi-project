@@ -79,14 +79,11 @@ BEGIN
   --------------------------------------------------
   flip_flops : PROCESS(all)
   BEGIN
-  
   	IF reset_n = '0' THEN
-		count <= to_unsigned(0,width); -- convert integer value 0 to unsigned with 4bits
-		
-   ELSIF rising_edge(clk) THEN
-		count <= next_count;
-	END IF;
-	 
+		  count <= to_unsigned(0,width); -- convert integer value 0 to unsigned with 4bits
+    ELSIF rising_edge(clk) THEN
+		  count <= next_count;
+	  END IF;
   END PROCESS flip_flops;		
   
    --------------------------------------------------
@@ -94,19 +91,11 @@ BEGIN
   --------------------------------------------------
   decoder : PROCESS(all)
   BEGIN
-  
-	baud_tick <= '0'; 
-	IF (count = 0) THEN
-		baud_tick <= '1';
-	END IF;
-	
+  	baud_tick <= '0'; 
+	  IF (count = 0) THEN
+		  baud_tick <= '1';
+	  END IF;
   END PROCESS decoder;	
-  
-  
-  --------------------------------------------------
-  -- CONCURRENT ASSIGNMENTS
-  --------------------------------------------------
-  -- convert count from unsigned to std_logic (output data-type)
   
  -- End Architecture 
 ------------------------------------------- 

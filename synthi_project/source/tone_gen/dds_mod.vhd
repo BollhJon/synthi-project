@@ -81,9 +81,11 @@ begin
     -- default statements (hold current value)
     next_count <= count;   
 
+    -- count logic to count up when tone_on
     if (tone_on_i = '1') and (step_i = '1') then
       next_count <= count + unsigned(phi_incr_i);
     elsif (tone_on_i = '0') and (step_i = '1') and (count > 0) then
+      -- check counter to fade out without sound cracks
       if (count + unsigned(phi_incr_i)) < count then
         next_count <= to_unsigned(0, N_CUM);
       else
@@ -103,6 +105,7 @@ begin
   begin
     lut_addr := to_integer(count(N_CUM-1 downto N_CUM - N_LUT));
 	 
+    -- select LUT
     case to_integer(unsigned(lut_sel)) is
       when 1 => lut_val  <= to_signed(LUT_sawtooth_falling(lut_addr), N_AUDIO);   -- sawtooth wave with falling edge
       when 2 => lut_val  <= to_signed(LUT_sawtooth_rising(lut_addr), N_AUDIO);    -- sawtooth wave with rising edge

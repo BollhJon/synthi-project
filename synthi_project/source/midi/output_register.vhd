@@ -56,10 +56,9 @@ BEGIN
   --------------------------------------------------
   comb_logic: PROCESS(all)
   BEGIN	
-	-- store	
-	IF (data_valid = '1') THEN
-		next_count <= unsigned (parallel_in);
-  	
+	  -- store	
+	  IF (data_valid = '1') THEN
+		  next_count <= unsigned (parallel_in);
   	-- freezes
   	ELSE
   		next_count <= count;
@@ -76,9 +75,9 @@ BEGIN
   flip_flops : PROCESS(all)
   BEGIN	
   	IF reset_n = '0' THEN
-		count <= to_unsigned(0,width); -- convert integer value 0 to unsigned with 4bits
+		  count <= to_unsigned(0,width); -- convert integer value 0 to unsigned with 4bits
     ELSIF rising_edge(clk) THEN
-		count <= next_count ;
+		  count <= next_count ;
     END IF;
   END PROCESS flip_flops;		
   

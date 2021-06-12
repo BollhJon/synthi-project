@@ -38,12 +38,12 @@ use ieee.std_logic_1164.all;
 entity shiftreg_uart is
   generic (
     width : positive := 10);
-  port(clk, reset_n, load_in : in  std_logic;  -- Attention, this block has a set_n input for initialisation!!
-		 serial_out : out std_logic;
-		 serial_in : in std_logic;
-		 shift_enable : in std_logic;
-       parallel_in  : in  std_logic_vector(width-1 downto 0);
-		 parallel_out : out std_logic_vector(width-1 downto 0)
+  port( clk, reset_n, load_in : in  std_logic;  -- Attention, this block has a set_n input for initialisation!!
+		    serial_out   : out std_logic;
+		    serial_in    : in std_logic;
+		    shift_enable : in std_logic;
+        parallel_in  : in  std_logic_vector(width-1 downto 0);
+		    parallel_out : out std_logic_vector(width-1 downto 0)
        );
 end shiftreg_uart;
 

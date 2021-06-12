@@ -20,7 +20,7 @@
 -- 2017-01-15  1.0      dqtm          Created
 -- 2017-01-19  1.1      dqtm          further reduction for SEP HS1
 -- 2019-09-03  1.2      gelk          Separate Bit counter from FSM
--- 2020-12-03  1.3      Boehi dominik changes for mini-project
+-- 2020-12-03  1.3      Boehi Dominik changes for mini-project
 -------------------------------------------------------------------------------
 
 -- Library & Use Statements
@@ -48,8 +48,7 @@ architecture rtl of signal_checker is
  constant width : positive := 22;
  signal bit_count_i, next_bit_count_i : unsigned(width downto 0);
  signal pulse_count, next_pulse_count : unsigned(7 downto 0);
-  signal sync_q1, sync_q2, sync_q3 : std_logic;
-  -- shifted into shift register
+ signal sync_q1, sync_q2, sync_q3 : std_logic;
 
 -- Begin Architecture
 -------------------------------------------
