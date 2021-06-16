@@ -1,92 +1,77 @@
 #-------------------------------------------------------------------------------
-#-- Title      : Testcases knack Unterdrueckung
+#-- Title      : Testcases FM-Synthese
 #-- Project    : Synthi-Project
 #-------------------------------------------------------------------------------
-#-- File       : testcase_knackUnterdrueckung.dat
+#-- File       : testcase_fmSynthesis.dat
 #-- Author     : Mueller Pavel
 #-- Company    : 
-#-- Created    : 2021-06-08
-#-- Last update: 2021-06-08
+#-- Created    : 2021-05-01
+#-- Last update: 2021-05-28
 #-- Platform   : 
 #-- Standard   : VHDL'08
 #-------------------------------------------------------------------------------
-#-- Description: Testcases for crack sounds
+#-- Description: Testcases for fm-Synthese of Synthi-Project
 #-------------------------------------------------------------------------------
 #-- Revisions  :
 #-- Date        Version  Author           Description
-#-- 2021-06-08  1.0      Mueller Pavel    Created
+#-- 2021-05-01  1.0      Mueller Pavel    Created
+#-- 2021-05-28  1.1      Bollhalder Jonas Updated
 #-------------------------------------------------------------------------------
 
 reset_target 10
 
-#Turn bt controll on
+# send note on signal
+usb_uart_send_data 90
+usb_uart_send_data 40
+usb_uart_send_data 72
+
+
+# turn bluetooth control on
 bt_uart_send_data 01
-run_simulation_for 00 00 04 00
+bt_uart_send_data 50
 
-#Disable envelopes for instruments
-bt_uart_send_data 8F
-run_simulation_for 00 00 04 00
 
-#Turn on DDS 1 with sine shape
-usb_uart_send_data 90
-run_simulation_for 00 00 04 00
-usb_uart_send_data 40
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7F
-run_simulation_for 00 00 04 00
+# fm ratio carrier/modulator
+# fm ratio 1:1 change modulation depth
+# fm ratio 1:1 nr 16
+bt_uart_send_data 48
+bt_uart_send_data 91
+bt_uart_send_data 50
+run_simulation_for 00 0F 00 00
 
-#Turn on DDS 2 with sine shape
-usb_uart_send_data 90
-run_simulation_for 00 00 04 00
-usb_uart_send_data 50
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7F
-run_simulation_for 00 05 00 00
+bt_uart_send_data 53
+run_simulation_for 00 0F 00 00
 
-#Turn on DDS 3 with sine shape
-usb_uart_send_data 90
-run_simulation_for 00 00 04 00
-usb_uart_send_data 60
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7F
-run_simulation_for 00 00 04 00
+bt_uart_send_data 55
+run_simulation_for 00 0F 00 00
 
-#Turn on DDS 4 with sine shape
-usb_uart_send_data 90
-run_simulation_for 00 00 04 00
-usb_uart_send_data 70
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7F
-run_simulation_for 00 05 00 00
+bt_uart_send_data 58
+run_simulation_for 00 0F 00 00
 
-# Turn off note that has been played
-usb_uart_send_data 80
-run_simulation_for 00 00 04 00
-usb_uart_send_data 40
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7A
-run_simulation_for 00 00 04 00
+bt_uart_send_data 5A
+run_simulation_for 00 0F 00 00
 
-# Turn off note that has been played
-usb_uart_send_data 80
-run_simulation_for 00 00 04 00
-usb_uart_send_data 50
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7A
-run_simulation_for 00 05 00 00
+bt_uart_send_data 5F
+run_simulation_for 00 0F 00 00
 
-# Turn off note that has been played
-usb_uart_send_data 80
-run_simulation_for 00 00 04 00
-usb_uart_send_data 60
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7A
-run_simulation_for 00 00 04 00
 
-# Turn off note that has been played
-usb_uart_send_data 80
-run_simulation_for 00 00 04 00
-usb_uart_send_data 70
-run_simulation_for 00 00 04 00
-usb_uart_send_data 7A
-run_simulation_for 00 05 00 00
+# change the fm-ratios
+# fm ratio 0 nr 0
+bt_uart_send_data 40
+bt_uart_send_data 90
+run_simulation_for 00 0F 00 00
+
+# fm ratio 1:16 nr 1
+bt_uart_send_data 40
+bt_uart_send_data 91
+run_simulation_for 00 0F 00 00
+
+# fm ratio 1:1 nr 16
+bt_uart_send_data 48
+bt_uart_send_data 90
+run_simulation_for 00 0F 00 00
+
+# fm ratio 16:1 nr 31
+bt_uart_send_data 4F
+bt_uart_send_data 91
+run_simulation_for 00 0F 00 00

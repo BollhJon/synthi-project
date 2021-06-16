@@ -22,7 +22,7 @@ reset_target 10
 
 # send note on signal
 usb_uart_send_data 90
-usb_uart_send_data 30
+usb_uart_send_data 40
 usb_uart_send_data 72
 
 
